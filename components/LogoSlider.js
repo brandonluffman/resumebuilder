@@ -1,0 +1,48 @@
+import React, { useState } from 'react';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
+const LogoSlider = () => {
+    const [settings] = useState({
+      dots: false,
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 11,
+      autoplay: true,
+      speed: 50000,
+      autoplaySpeed: 0,
+      cssEase: 'linear',
+    });
+
+    const logos = [
+        '/amazon.png',
+        '/apple.png',
+        '/JaneStreet.png',
+        '/netflix.webp',
+        '/google.png',
+        '/meta.png',
+        '/openai.png',
+        '/citadel.png',
+        '/2sigma.png',
+        '/microsoft.png',
+        '/uber.png',
+
+        // Add more logos here
+      ];
+    // Your component logic
+    return (
+        <div className='logo-slider-div'>
+        <h2 className='logo-slider-header'><img src='/logo.png' className='logo-slider-header-img'></img><span className='blue-color-change logo-slider-header-span'>ResumeBuilderAI</span> users hired by</h2>
+        <Slider {...settings} className='logo-slider-outer'>
+          {logos.map((logo, index) => (
+            <div key={index} className="container logo-slider-container">
+              <img src={logo} alt='logo' className='logo-slider-img'/>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    );
+  };
+  export default LogoSlider;
+  

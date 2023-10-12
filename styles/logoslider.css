@@ -1,0 +1,47 @@
+.logo-slider {
+    overflow-x: hidden;
+}
+.logo-slider-img {
+    width:auto;
+    height:100px;
+}
+
+.logo-slider-container {
+    background-color: rgb(245, 245, 245);
+    padding:2rem 1rem;
+}
+
+.logo-slider-outer {
+    box-shadow: inset 1px 3px 8px rgba(0,0,0,0.2);
+
+}
+
+.logo-slider-header {
+    text-align: center;
+    font-size: 2rem;
+    color:rgb(100,100,100);
+    padding:1rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgb(222, 222, 222);
+    min-width:400px;
+    margin:0 auto;
+    /* margin-bottom: 2rem; */
+}
+
+.logo-slider-div {
+    background-color: rgb(245, 245, 245);
+    overflow-x: hidden;
+
+}
+
+.logo-slider-header-img {
+    width:75px;
+    margin-right: -1rem;
+}
+
+.logo-slider-header-span {
+    margin-right:0.75rem;
+    margin-left: 0;
+}
