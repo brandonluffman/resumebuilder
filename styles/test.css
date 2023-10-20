@@ -118,6 +118,7 @@
     font-weight: 700;
     text-transform: uppercase;
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .resume-input-container {
