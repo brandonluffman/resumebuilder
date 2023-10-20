@@ -39,7 +39,7 @@ export default function InputResume() {
       formData.append('file', file);
   
       // Use Heroku URL here:
-      const response = await fetch('https://resumeparserofficial.herokuapp.com/convert-pdf-to-text/', {
+      const response = await fetch('https://resumeparserofficial-03af5455fec2.herokuapp.com/convert-pdf-to-text/', {
         method: 'POST',
         body: formData,
       });
