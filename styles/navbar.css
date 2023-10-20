@@ -8,15 +8,16 @@
 
 .nav-menu {
     display: flex;
+    justify-content: space-around;
     list-style-type: none;
     align-items: center;
     margin:0;
 }
 
 .nav-link {
-    padding:0rem 1.5rem;
+    padding:0rem 0rem;
     font-weight: 700;
-    font-size:1.5rem;
+    font-size:1.1rem;
     /* overflow: hidden; */
     display: flex;
     align-items: center;
@@ -26,7 +27,12 @@
     position: relative;
 }
 .nav-link-welcome {
-    font-size: 1rem;
+    font-size: 0.8rem;
+    display: block;
+    margin: 0;
+}
+.nav-link-welcome > h1 {
+    margin: 0;
 }
 .nav-link:hover {
     cursor:pointer;
@@ -37,11 +43,11 @@
     margin:0;
     display: flex;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
-/* .navbar-logo {
-    margin:0;
-} */
+.navbar-logo img{
+    width:50px;
+}
 
 
 .navbar {
@@ -84,8 +90,8 @@
 }
 
 .logout-nav-btn {
-    font-size:1rem;
-    padding:1rem 2rem;
+    font-size:0.9rem;
+    padding:0.7rem 1.25rem;
     margin-left:1rem;
 }
 .dropdown-content {
@@ -100,12 +106,12 @@
     height:200px;
     width:350px;
     transition: 0.6s ease all;
-    transform: translateY(0px);
+    transform: translateY(-200px);
     padding:1rem;
     color:black;
     text-align: left;
    left:0px;
-
+    z-index:-2;
   }
 
 .dropdown-icon
@@ -121,7 +127,9 @@ margin: 0;
 }
 .dropdown:hover .dropdown-content {
 opacity:1;
-transform: translateY(167px);
+transform: translateY(140px);
+z-index:9999;
+
 }
 
 .dropdown:hover {
@@ -130,8 +138,8 @@ cursor: pointer;
 
 .vertical-line {
 border-left: 2px solid #efefef; /* Adjust the width and color as needed */
-height: 70px; /* Adjust the height of the line */
-margin:1rem 1rem;
+height: 50px; /* Adjust the height of the line */
+margin:0.5rem 1rem;
 }
 .nav-link > .btn-primary {
     border:1px solid white;

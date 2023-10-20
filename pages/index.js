@@ -82,8 +82,8 @@ export default function Home() {
 
       </div>
       <div className='index-features-container'>
-                <img src='/ribbon.png' width='100' className='index-cover-img'></img>
-        <h3 className='index-features-header'>Features designed to help you win your <span className='italic'>dream job</span></h3>
+                <img src='/ribbon.png' className='index-features-img'></img>
+        <h3 className='index-features-header'>Features designed to help you win your <span className='italic blue-color-change'>dream job</span></h3>
         <div className='index-features-grid'>
           <div className='index-features-grid-item'>
             {/* <img src='/bullseye.png' className='index-features-grid-img' width='50'></img> */}
@@ -183,7 +183,7 @@ export default function Home() {
           <div className="gradient-box"></div>
           <div className='index-blog-card-content'>
             <h2 className='index-blog-title'>The universal guide on how to write the perfect resume</h2>
-            <span className='index-blog-tag'>ATS</span>
+            <span className='index-blog-tag'>Resume</span>
             <div className='index-blog-bottom-div'>
               <p className='index-blog-bottom-copy'>Resume Guide <GoDotFill className='index-blog-bottom-dot' /> 52 Min Read</p>
             </div>

@@ -66,7 +66,7 @@ const Navbar = () => {
 
   return (
       <nav className={navbar ? 'scroll fixed-top' : 'navbar fixed-top'} id="navbar">
-      <h1 className='navbar-logo'><img src='/logo.png' width='75'></img>ResumeBuilderAI</h1>
+      <h1 className='navbar-logo'><img src='/logo.png'></img>ResumeBuilderAI</h1>
       <ul className='nav-menu'>
         <Link href='/'><li className='nav-link'>Home</li></Link>
         <Link href='/'><li className='nav-link'>About</li></Link>
@@ -90,7 +90,7 @@ const Navbar = () => {
         <div className='vertical-line'></div>
         {user?.user !== null ? (
               <div className='nav-link nav-link-welcome'>
-                <h1>Welcome, {user?.user}</h1>
+                {/* <h1>Welcome, {user?.user.uid}</h1> */}
                 <button className='logout-nav-btn btn nav-btn btn-secondary' onClick={handleLogout}>
                   Logout
                 </button>

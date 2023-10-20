@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.38.0",
+    "axios": "^1.5.1",
     "embla-carousel": "^8.0.0-rc14",
     "embla-carousel-autoplay": "^8.0.0-rc14",
     "embla-carousel-react": "^8.0.0-rc14",
     "next": "13.5.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-dropzone": "^14.2.3",
     "react-icons": "^4.11.0",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1"

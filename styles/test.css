@@ -1,0 +1,201 @@
+.test-container {
+    height:auto;
+    padding-top:100px;
+}
+.input-resume-container {
+    position: relative;
+}
+.test-header {
+    margin:0;
+    text-align: center;
+    margin-bottom:4rem;
+}
+
+.checklist-cats-container {
+    /* display: flex;
+    width: 100%;
+    justify-content: space-around; */
+}
+
+.test-grade-div {
+    margin: 0 auto;
+    width:auto;
+    width:100px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.test-checklist-header {
+    text-align: center;
+}
+
+.test-grade-header {
+    background-color: rgb(37,138,240);
+    color: white;
+    padding:4.5rem 3.5rem;
+    border-radius: 50%;
+    font-size:3.5rem;
+}
+
+.test-resume-information-container {
+    letter-spacing: .01vw;
+}
+
+.test-resume-menu {
+    display: grid;
+    grid-template-columns: repeat(3,3fr);
+    /* gap:50px; */
+    list-style-type: none;
+    border: 2px solid #000; /* Add a border with a 2px width and black color */
+    padding: 0rem;
+    margin:0rem;
+}
+.resume-info-grid-item {
+    text-align: center;
+    border: 2px solid #000; /* Add a 2px wide black border to each grid item */
+
+}
+.resume-info-key {
+    text-align: center;
+    margin-bottom:2rem;
+    font-weight: 700;
+    text-transform: capitalize;
+
+}
+
+
+.test-extracted-div {
+    /* color:white; */
+    font-weight: 700;
+}
+
+.test-extract-container {
+    display: flex;
+    margin-top:4rem;
+}
+
+.test-segment-div > div > h6 {
+    margin:0;
+    margin-top: 1rem;
+    color:rgb(37,138,240);
+    text-align: center;
+    margin-bottom:2rem;
+}
+
+.test-extract-div {
+    width:50%;
+    overflow: hidden;
+    padding:1rem;
+    letter-spacing: 0.0vw;
+
+}
+.test-extract-div:nth-of-type(1) {
+    border-right: 1px solid black;
+}
+
+.test-extract-header {
+    font-size:3rem;
+    margin: 1rem auto;
+    letter-spacing:-0.1vw;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.test-input-pdf {
+    width:100%;
+    background-color: transparent;
+}
+
+.test-btn-pdf {
+    margin:0 auto;
+    display: flex;
+    background-color: rgb(37,138,240);
+    border: none;
+    padding:0.8rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+.resume-input-container {
+    /* height:400px; */
+    width:50%;
+    /* background-color: rgb(240,240,240); */
+    margin:0 auto;
+    position: relative;
+    text-align: center;
+}   
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    width:50%;
+    height:400px;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: rgb(230, 230, 230);
+    margin: auto;
+    margin-bottom:2rem;
+    position: relative;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-absolute {
+    position: absolute;
+    top:25%;
+    left:0;
+    right:0;
+    text-align: center;
+
+}
+
+.dropzone-container {
+    /* position: relative; */
+}
+
+.test-input-icon {
+    font-size: 3rem;
+}
+
+.test-input-browse {
+    margin-bottom: 2rem;
+}
+.max-size-p {
+    margin-top:2rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.0vw;
+}
+.or-p {
+    margin-bottom:3rem;
+}
+.test-input-label {
+    background-color: white;
+    padding:0.8rem 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.segment-div {
+    border-bottom: 1px solid rgb(210, 210, 210);
+}
+
+.no-content-p {
+    margin:2rem 0rem;
+    text-align: center;
+    font-weight: 700;
+}
+.test-segment-div > div > p {
+    font-weight: 700;
+}
+
+.filename-div {
+    position: absolute;
+    top:410px;
+    right:400px;
+}
