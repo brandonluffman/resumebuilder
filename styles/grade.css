@@ -1,0 +1,67 @@
+.grade-container {
+    overflow-x: hidden;
+}
+.grade-container-item {
+    margin: 2rem 0rem;
+}
+.grade-container-item > h6 {
+    margin:0;
+    margin-bottom:1rem;
+    left:360px;
+    position: relative;
+}
+.grade-container-item > ul {
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    margin: 0 auto;
+}
+.grade-container-item > ul > li {
+    list-style-type: none;
+    margin: 0rem 0rem;
+    background-color: rgb(240, 240, 240);
+    padding: 2rem 1rem;
+    border: 1px solid white;
+    /* display: flex; */
+    /* align-items: center; */
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -.05vw;
+    width: 100%;
+    /* justify-content: space-between; */
+}
+
+.grade-check-icon {
+    color:rgb(52, 223, 98);
+    font-size: 2rem;
+}
+
+.grade-check-red-icon {
+    color:red;
+}
+
+.failed-icon {
+    color:red;
+}
+
+.CircularProgressbar .CircularProgressbar-text {
+    font-size: 1.5rem !important;
+}
+
+.grade-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
+}
+
+.grade-header {
+    font-size:2rem;
+    background-color: rgb(37,138,240);
+    color:white;
+    padding:1rem;
+    border-radius:50%;
+}
+
+.pending {
+    color: orange;
+}

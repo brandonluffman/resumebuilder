@@ -7,6 +7,7 @@ import '../styles/test.css'
 import '../styles/tailor.css'
 import '../styles/logoslider.css'
 import '../styles/imageslider.css'
+import '../styles/grade.css'
 
 
 function MyApp({ Component, pageProps }) {

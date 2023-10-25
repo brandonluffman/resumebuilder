@@ -1,6 +1,7 @@
 .test-container {
     height:auto;
     padding-top:100px;
+    overflow-x: hidden;
 }
 .input-resume-container {
     position: relative;
@@ -20,7 +21,7 @@
 .test-grade-div {
     margin: 0 auto;
     width:auto;
-    width:100px;
+    width:175px;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -72,7 +73,7 @@
 }
 
 .test-extract-container {
-    display: flex;
+    /* display: flex; */
     margin-top:4rem;
 }
 
@@ -85,14 +86,14 @@
 }
 
 .test-extract-div {
-    width:50%;
+    /* width:50%; */
     overflow: hidden;
     padding:1rem;
     letter-spacing: 0.0vw;
 
 }
 .test-extract-div:nth-of-type(1) {
-    border-right: 1px solid black;
+    /* border-right: 1px solid black; */
 }
 
 .test-extract-header {
@@ -199,4 +200,55 @@ input[type="file"] {
     position: absolute;
     top:410px;
     right:400px;
+    font-weight: 700;
+    letter-spacing: 0vw;
+    color:rgb(37,138,240);
+}
+
+.custom-file-absolute > p {
+    letter-spacing: -0.05vw;
+}
+.detected-categories-container {
+    /* Any general styling for the container */
+}
+.detected-categories-header {
+    text-align: center;
+}
+.detected {
+    color: green;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+}
+
+.not-detected {
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+}
+.no-file-div {
+    color:red;
+}
+/* .progress-circle {
+  transform: rotate(40deg);
+} */
+
+.resume-includes {
+    position: relative;
+    bottom:0;
+    font-size:0.8rem;
+    font-weight: 400;
+}
+
+.grade-item {
+    position: relative;
+}
+.grid-item-flexer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

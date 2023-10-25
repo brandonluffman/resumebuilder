@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import InputResume from '../components/InputResume'
+import GradeContainer from '../components/GradeContainer'
 const test = () => {
   const resumeInfo = {
     'name': 'brandon',
@@ -18,12 +19,14 @@ const test = () => {
     'Test': null
   }
 
+
   return (
     <>
     <Navbar />
     <div className='test-container'>
         <h2 className='test-header'>Have a resume?</h2>
         <InputResume />
+        <GradeContainer />
     </div>
     <div className='test-resume-information-container'>
     {/* <ul className='test-resume-menu'>
@@ -49,25 +52,6 @@ const test = () => {
       <div className='test-resume-info-certifications'></div>
       <div className='test-resume-info-summary'></div>
       <div className='test-resume-info-objective'></div> */}
-    </div>
-    <div className='test-grade-container'>
-      <div className='test-grade-div'>
-        <h4 className='test-grade-header'>78%</h4>
-        </div>
-      <div className='test-checklist-container'>
-        <h2 className='test-checklist-header'>Checklist</h2>
-        <div className='checklist-cats-container'>
-        <div className='test-checklist-category-container'>
-          <h2 className='checklist-cat-header'>Impact</h2>
-        </div>
-        <div className='test-checklist-category-container'>
-          <h2 className='checklist-cat-header'>Impact</h2>
-        </div>
-        <div className='test-checklist-category-container'>
-          <h2 className='checklist-cat-header'>Impact</h2>
-        </div>
-        </div>
-      </div>
     </div>
     <Footer />
     </>
