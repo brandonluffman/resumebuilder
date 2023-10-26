@@ -212,7 +212,7 @@ export default function InputResume() {
 
           <div className='grade-header-container'>
               <h6>Sections</h6>
-              <span className='grade-header'>A</span>
+              <span className='grade-header gold'>A</span>
           </div>
           {Object.keys(detectedCategories).length > 0 ? (
               <ul>
@@ -252,7 +252,7 @@ export default function InputResume() {
             )}
         </div>
         <div className='grade-container-item'>
-          <div className='grade-header-container'><h6>Impact</h6><span className='grade-header'>{gradeImpact}</span></div>
+          <div className='grade-header-container'><h6>Impact</h6><span className={gradeImpact == 'A' ? 'grade-header gold' : 'grade-header'}>{gradeImpact}</span></div>
               <ul>
               {quantify ? (<li className='grade-item'><div className='grid-item-flexer'>Quantify Impact<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>Your resume has been quantified , perfect !</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Quantify Impact <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Your resume seems to be missing key text signifiying your accomplishments through the use of numbers and percentages. It&apos;s important to quantify yuor experience to emphasize what has been done in an efficient to read manner for hiring managers.</span></li>)}
               {action ? (<li className='grade-item'><div className='grid-item-flexer'>Unique Action Words<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>Your resume includes Unique Action Words, nice!</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Unique Action Words <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>No Action words have been found. Often referred to as <q>power verbs</q>, Action words are crucial to a resume because they convey a proactive stance and demonstrate achievements and responsibilities. They help recruiters visualize the candidate&apos;s contributions and impact, making the resume more dynamic and compelling.</span></li>)}
@@ -261,7 +261,7 @@ export default function InputResume() {
               </ul>
         </div>
         <div className='grade-container-item'>
-            <div className='grade-header-container'><h6>Brevity</h6><span className='grade-header'>{gradeBrevity}</span></div>
+            <div className='grade-header-container'><h6>Brevity</h6><span className={gradeBrevity == 'A' ? 'grade-header gold' : 'grade-header'}>{gradeBrevity}</span></div>
               <ul>
               {threequarters ? (<li className='grade-item'><div className='grid-item-flexer'>Resume Length<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>Your resume length is up to par!</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Resume Length <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Your resume is too short, try adding some content to your resume to ensure it is of appropriate length. Aim for 3/4 of a page.</span></li>)}
               {bulletcheck ? (<li className='grade-item'><div className='grid-item-flexer'>Use of Bullets<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>Your resume contains bullet points, perfect! This allows ATS to properly scan your resume.</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Use of Bullets <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Your resume does not contain bullet points. Bullet points allow for ATS to easily parse through your resume.</span></li>)}
@@ -273,7 +273,7 @@ export default function InputResume() {
               </ul>
         </div>
         <div className='grade-container-item'>
-          <div className='grade-header-container'><h6>Styles</h6><span className='grade-header'>{gradeStyles}</span></div>
+          <div className='grade-header-container'><h6>Styles</h6><span className={gradeStyles == 'A' ? 'grade-header gold' : 'grade-header'}>{gradeStyles}</span></div>
             <ul>
                 {/* <li className='grade-item'>Buzzwords or Cliches **PENDING <MdPending className='grade-check-icon pending' /></li>
                 <li className='grade-item'>Readability **PENDING <MdPending className='grade-check-icon pending' /></li>
@@ -287,7 +287,7 @@ export default function InputResume() {
             </ul>
         </div>
         <div className='grade-container-item'>
-            <div className='grade-header-container'><h6>Crucial Details</h6><span className='grade-header'>{gradeDetails}</span></div>
+            <div className='grade-header-container'><h6>Crucial Details</h6><span className={gradeDetails == 'A' ? 'grade-header gold' : 'grade-header'}>{gradeDetails}</span></div>
             <ul>
                 {grammar ? (<li className='grade-item'><div className='grid-item-flexer'>Grammar/Mispellings<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>Your resume has gone through our Grammar Check and has passed!</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Grammar <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Your resume has gone through our Grammar Check and has failed. ***INSERT MISTAKES****</span></li>)}
                 {/* <li>Mispellings <AiFillCheckCircle className='grade-check-icon' /></li> */}
