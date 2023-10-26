@@ -5,6 +5,7 @@
 }
 .input-resume-container {
     position: relative;
+    padding-bottom: 2rem;
 }
 .test-header {
     margin:0;
@@ -16,6 +17,10 @@
     /* display: flex;
     width: 100%;
     justify-content: space-around; */
+}
+
+.input-resume-drop {
+    position: relative;
 }
 
 .test-grade-div {
@@ -109,18 +114,12 @@
     background-color: transparent;
 }
 
-.test-btn-pdf {
+.test-btn {
     margin:0 auto;
     display: flex;
-    background-color: rgb(37,138,240);
-    border: none;
-    padding:0.8rem 1.5rem;
-    border-radius: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    cursor: pointer;
 }
+
+
 
 .resume-input-container {
     /* height:400px; */
@@ -198,13 +197,29 @@ input[type="file"] {
 
 .filename-div {
     position: absolute;
-    top:410px;
-    right:400px;
+    top:-105px;
+    bottom:0;
+    right:0;
+    left:0;
+    margin:auto auto;
+    width:45%;
+    height:350px;
     font-weight: 700;
     letter-spacing: 0vw;
     color:rgb(37,138,240);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 20px;
 }
-
+.no-file-div {
+    position: absolute;
+    bottom:150px;
+    right:400px;
+    
+}
 .custom-file-absolute > p {
     letter-spacing: -0.05vw;
 }
@@ -237,18 +252,110 @@ input[type="file"] {
 } */
 
 .resume-includes {
-    position: relative;
+    position: absolute;
     bottom:0;
-    font-size:0.8rem;
+    font-size:1rem;
     font-weight: 400;
+    visibility: hidden;
+    padding:4rem 1rem 1rem 0rem;
+    opacity: 0;
+    transition: 0.2s ease;
 }
 
+.grade-item:hover > .resume-includes {
+    visibility: visible;
+    opacity: 1;
+}
+.grade-item:hover {
+    height: auto;
+    padding-bottom: 6rem;
+    cursor: pointer;
+}
 .grade-item {
     position: relative;
+    transition: 0.2s ease;
 }
 .grid-item-flexer {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+
+
+/* Loader Spinner */
+
+.loader {
+    color: rgb(37,138,240);
+    font-size: 100px;
+    text-indent: -9999em;
+    overflow: hidden;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: relative;
+    transform: translateZ(0);
+    animation: mltShdSpin 1.3s infinite ease, round 1.3s infinite ease;
+  }
+  
+  @keyframes mltShdSpin {
+    0% {
+      box-shadow: 0 -0.83em 0 -0.4em,
+      0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+      0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    5%,
+    95% {
+      box-shadow: 0 -0.83em 0 -0.4em, 
+      0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 
+      0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    10%,
+    59% {
+      box-shadow: 0 -0.83em 0 -0.4em, 
+      -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, 
+      -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    }
+    20% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em,
+       -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, 
+       -0.749em -0.34em 0 -0.477em;
+    }
+    38% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em,
+       -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, 
+       -0.82em -0.09em 0 -0.477em;
+    }
+    100% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 
+      0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+  }
+  
+  @keyframes round {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg) }
+  }
+
+.unlock-container {
+    width:100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    /* height: 100px; */
+    height: auto;
+    filter: blur(6px);
+    justify-content: center;
+    font-size: 4rem;
+    position: relative;
+    z-index:1;
+}
+
+.unlock-header {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 2rem;
 }

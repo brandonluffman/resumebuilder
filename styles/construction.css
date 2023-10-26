@@ -1,0 +1,23 @@
+.construction-img {
+    width:40%;
+    margin: 0 auto;
+    z-index:1;
+}
+.construction-header {
+    text-align: center;
+    width:60%;
+    margin:0 auto;
+    background-color: rgb(255, 199, 78);
+    border:3px solid black;
+    padding:2rem;
+    z-index:9 !important;
+    position: relative;
+}
+.construction-img-div {
+    width:100%;
+    justify-content: center;
+    display: flex;
+    align-items:end;
+    height:55vh;
+    z-index:0;
+}

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { supabase } from '../utils/auth';
-
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -26,9 +27,13 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
+    <>
+    <Navbar />
+    
+    <div className='login-container'>
       <form onSubmit={handleLogin}>
+      <h1>Login</h1>
+
         <input
           type="email"
           placeholder="Email"
@@ -41,8 +46,11 @@ export default function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Login</button>
+        <br></br>
+        <button type="submit" className='login-page-btn btn btn-primary'>Login</button>
       </form>
     </div>
+    <Footer />
+    </>
   );
 }

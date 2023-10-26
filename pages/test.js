@@ -24,7 +24,6 @@ const test = () => {
     <>
     <Navbar />
     <div className='test-container'>
-        <h2 className='test-header'>Have a resume?</h2>
         <InputResume />
         <GradeContainer />
     </div>

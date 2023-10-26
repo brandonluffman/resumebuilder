@@ -8,6 +8,8 @@ import '../styles/tailor.css'
 import '../styles/logoslider.css'
 import '../styles/imageslider.css'
 import '../styles/grade.css'
+import '../styles/construction.css'
+import '../styles/login.css'
 
 
 function MyApp({ Component, pageProps }) {
