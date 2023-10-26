@@ -183,7 +183,7 @@ export default function InputResume() {
           <h2 className='test-extract-header'>ATS Compatibility</h2>
 
           {
-            user.user ? <div className='ats-score-container'><CircularProgressbar value={`20.5`} text={`20.5%`} /></div>: <div><div className='unlock-container ats-score-container'><CircularProgressbar value={`20.5`} text={`20.5%`} /></div>          <h5 className='unlock-header'>Unlock ATS Score?</h5><button className='unlock-btn btn btn-primary'>Login</button></div>
+            user?.user ? <div className='ats-score-container'><CircularProgressbar value={`20.5`} text={`20.5%`} /></div>: <div><div className='unlock-container ats-score-container'><CircularProgressbar value={`20.5`} text={`20.5%`} /></div>          <h5 className='unlock-header'>Unlock ATS Score?</h5><button className='unlock-btn btn btn-primary'>Login</button></div>
           }
           </div>
           <div>
@@ -198,7 +198,7 @@ export default function InputResume() {
           <div>
           <h2 className='test-extract-header'>ATS Compatibility</h2>
              {
-            user.user ? <div className='ats-score-container'><CircularProgressbar value={`20.5`} text={`20.5%`} /></div>: <div><div className='unlock-container ats-score-container'><CircularProgressbar value={`20.5`} text={`20.5%`} /></div>          <h5 className='unlock-header'>Unlock ATS Score?</h5><button className='unlock-btn btn btn-primary'>Login</button></div>
+            user?.user ? <div className='ats-score-container'><CircularProgressbar value={`20.5`} text={`20.5%`} /></div>: <div><div className='unlock-container ats-score-container'><CircularProgressbar value={`20.5`} text={`20.5%`} /></div>          <h5 className='unlock-header'>Unlock ATS Score?</h5><button className='unlock-btn btn btn-primary'>Login</button></div>
           }
           </div>
         </div>
