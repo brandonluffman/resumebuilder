@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { supabase } from '../utils/auth';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 export default function Register() {
   const [email, setEmail] = useState('');
@@ -25,9 +27,12 @@ export default function Register() {
   };    
 
   return (
-    <div>
-      <h1>Register</h1>
+    <>
+    <Navbar />
+    <div className='login-container'>
       <form onSubmit={handleRegister}>
+      <h1>Register</h1>
+
         <input
           type="email"
           placeholder="Email"
@@ -40,8 +45,10 @@ export default function Register() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Register</button>
+        <button type="submit" className='login-page-btn btn btn-primary' >Register</button>
       </form>
     </div>
+    <Footer />
+    </>
   );
 }

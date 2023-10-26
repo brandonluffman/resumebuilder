@@ -10,6 +10,7 @@ import '../styles/imageslider.css'
 import '../styles/grade.css'
 import '../styles/construction.css'
 import '../styles/login.css'
+import '../styles/register.css'
 
 
 function MyApp({ Component, pageProps }) {
