@@ -29,7 +29,6 @@ export default function InputResume() {
   const [experienceFirst, setExperienceFirst] = useState('');
   const [user, setUser] = useState(null);
 
-  console.log(user.user)
   const myAnchorRef = useRef(null);
 
 
