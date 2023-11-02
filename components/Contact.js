@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react'
-import styled from "styled-components";
 import { BsPaperclip } from 'react-icons/bs';
 import emailjs from "@emailjs/browser";
 import { MdClear } from 'react-icons/md';
