@@ -14,6 +14,7 @@ import '../styles/register.css'
 import '../styles/contact.css'
 import '../styles/pricing.css'
 import '../styles/blog.css'
+import '../styles/templates.css'
 
 
 function MyApp({ Component, pageProps }) {

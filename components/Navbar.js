@@ -75,13 +75,13 @@ const Navbar = () => {
           {/* {isDropdownOpen && ( */}
             <ul className="dropdown-content">
               <li>
-              <IoIosCreate className='nav-link-icon' /><Link href="/build">Build a Resume</Link>
+              <Link href="/build"><IoIosCreate className='nav-link-icon' />Build a Resume</Link>
               </li>
               <li>
-                <SiSpeedtest className='nav-link-icon' /><Link href="/test">Test a Resume</Link>
+              <Link href="/test"><SiSpeedtest className='nav-link-icon' />Test a Resume</Link>
               </li>
               <li>
-                <BsPenFill className='nav-link-icon' /><Link href="/tailor">Tailor a Resume</Link>
+                <Link href="/tailor"><BsPenFill className='nav-link-icon' />Tailor a Resume</Link>
               </li>
             </ul>
            {/* )}  */}
@@ -91,13 +91,16 @@ const Navbar = () => {
           {/* {isDropdownOpen && ( */}
             <ul className="dropdown-content">
               <li>
-              <IoIosCreate className='nav-link-icon' /><Link href="/build">Resumes</Link>
+              {/* <IoIosCreate className='nav-link-icon' /> */}
+              <Link href="/resume-templates"><img src='/resume-icon.png' width='25' className='nav-link-icon'></img>Resumes</Link>
               </li>
               <li>
-                <SiSpeedtest className='nav-link-icon' /><Link href="/test">Cover Letters</Link>
+                {/* <SiSpeedtest className='nav-link-icon' /> */}
+                <Link href="/cover-letter-templates"><img src='/cover-letter-icon.png' width='25' className='nav-link-icon'></img>Cover Letters</Link>
               </li>
               <li>
-                <BsPenFill className='nav-link-icon' /><Link href="/tailor">Resignation Letters</Link>
+                {/* <BsPenFill className='nav-link-icon' /> */}
+                <Link href="/resignation-letter-templates"><img src='/resig-letter.png' width='25' className='nav-link-icon'></img>Resignation Letters</Link>
               </li>
             </ul>
            {/* )}  */}
