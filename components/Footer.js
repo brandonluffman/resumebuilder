@@ -35,9 +35,9 @@ const Footer = () => {
                           </div>
                           <div className='footer-links'>
                             <div className='footer-links-header'><p className='footer-link-header'>Examples</p></div>
-                            <p className='footer-link'>Resume</p>
-                            <p className='footer-link'>Cover Letter</p>
-                            <p className='footer-link'>Resignation</p>
+                            <Link href='/resume-templates'><p className='footer-link'>Resume</p></Link>
+                            <Link href='/cover-letter-templates'><p className='footer-link'>Cover Letter</p></Link>
+                            <Link href='/resignation-letter-templates'><p className='footer-link'>Resignation</p></Link>
                             {/* <Link href='/'><div className='footer-link'>FAQs</div></Link> */}
                           </div>
                           <div className='footer-links contact-links'>

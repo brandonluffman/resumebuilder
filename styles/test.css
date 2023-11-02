@@ -80,6 +80,7 @@
 .test-extract-container {
     /* display: flex; */
     margin-top:4rem;
+    
 }
 
 .test-segment-div > div > h6 {
@@ -107,6 +108,7 @@
     letter-spacing:-0.1vw;
     text-align: center;
     margin-bottom: 2rem;
+
 }
 
 .test-input-pdf {
@@ -141,6 +143,8 @@
     margin-bottom:2rem;
     position: relative;
 }
+
+
 
 input[type="file"] {
     display: none;
@@ -214,10 +218,14 @@ input[type="file"] {
     justify-content: center;
     border-radius: 20px;
 }
+.filename-div {
+    width:47%;
+    height:74%;
+}
 .no-file-div {
     position: absolute;
     bottom:150px;
-    right:400px;
+    right:30%;
     
 }
 .custom-file-absolute > p {
@@ -402,11 +410,56 @@ input[type="file"] {
 }
 
 .test-extract-container {
-    display: flex;
+    display: grid;
     align-items: center;
-    justify-content: space-around;
+    grid-template-columns: repeat(3,3fr);
+
+    
 }
 
 .test-extract-header {
     font-size:1.5rem;
+}
+
+
+@media (max-width: 919px) {
+    .custom-file-upload {
+        width:75%;
+    }
+    .no-file-div {
+        right:20%;
+    }
+    .filename-div {
+        width:71%;
+        height:74%;
+    }
+}
+@media (max-width: 768px) {
+    /* .custom-file-upload {
+        width:75%;
+    } */
+}
+@media (max-width: 500px) {
+    .custom-file-upload {
+        width:90%;
+        height: 300px;
+    }
+    .custom-file-absolute {
+        top:15%;
+    }
+    .no-file-div {
+        right:15%;
+        bottom:120px;
+    }
+    .test-header {
+        line-height: 6vh;
+        margin-bottom: 3rem;
+    }
+    .filename-div {
+        width:85%;
+        height:68%;
+    }
+    .test-btn {
+        margin-bottom:2rem;
+    }
 }

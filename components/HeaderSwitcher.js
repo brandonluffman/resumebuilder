@@ -23,7 +23,7 @@ const HeaderSwitcher = () => {
       {headers.map((header, index) => (
         <h2
           key={index}
-          className={`'index-about-fixed-header'} ${index === activeIndex ? 'fixed-header-active' : ''}`}
+          className={`index-about-fixed-header ${index === activeIndex ? 'fixed-header-active' : ''}`}
         >
           {header}
         </h2>

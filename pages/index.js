@@ -147,9 +147,9 @@ export default function Home() {
         <h2 className='index-cover-header'>Cover Letter Generation</h2>
         <p className='index-cover-copy'>Win over employers and recruiters by using one of our 27 professionally-designed cover letter templates. Download to Word or PDF.</p>
         <div className='index-cover-img-div'>
-        <img src='/cover-letter.svg' width='400' className='cover-letter-img cover-img-1'></img>
-        <img src='/cover-letter-2.svg' width='400' className='cover-letter-img cover-img-2'></img>
-        <img src='/cover-letter-3.png' width='400' className='cover-letter-img cover-img-3'></img>
+        <img src='/cover-letter.svg' className='cover-letter-img cover-img-1'></img>
+        <img src='/cover-letter-2.svg' className='cover-letter-img cover-img-2'></img>
+        <img src='/cover-letter-3.png' className='cover-letter-img cover-img-3'></img>
 
         </div>
         {/* <button type='button' className='index-cover-btn btn btn-black'>Build A Cover Letter</button> */}

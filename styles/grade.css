@@ -132,3 +132,51 @@
     z-index: 1000; /* Ensure it's above everything else */
     overflow-y: hidden !important;
   }
+
+
+  @media (max-width: 900px) {
+
+  .grade-container-item > ul {
+    margin: 0;
+    padding: 0;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.grade-header-container {
+    width:80%;
+}
+  }
+
+  @media (max-width: 768px) {
+
+    .grade-container-item > ul {
+      margin: 0;
+      padding: 0;
+      width: 80%;
+      margin: 0 auto;
+  }
+
+  .test-extract-container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(1,1fr);
+}
+    }
+
+    @media (max-width: 400px) {
+
+        .test-header {
+            padding:0rem 1rem;
+        }
+        .grade-container-item > ul {
+            margin: 0;
+            padding: 0;
+            width: 90%;
+            margin: 0 auto;
+        }
+        
+        .grade-header-container {
+            width:90%;
+        }
+        }

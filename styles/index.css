@@ -1,7 +1,8 @@
 .index-spotlight-container, .index-what-container, .index-about-container, .index-how-container, .index-banner-container, .index-blog-container, .index-features-container, .index-cover-container, .index-faqs-container {
-    height:95vh;
+    height:700px;
     position: relative;
     padding: 2rem;
+    overflow-x: hidden;
 
 }
 
@@ -134,7 +135,7 @@ basic {
     font-size: 1.25rem;
     position: absolute;
     top:100px;
-    right:50px;
+    right:10px;
     font-weight: 700;
     background-color: white;
     border-radius:20px;
@@ -246,12 +247,15 @@ basic {
     font-size: 5rem;
 }
 
+
 .index-about-fixed-div {
-    display: flex;
+    display: grid;
     font-size: 1rem;
     justify-content: space-around;
+    grid-template-columns: repeat(4,4fr);
     margin:2rem 0rem;
     margin-bottom:4rem;
+    margin-top:4rem;
 }
 .index-about-fixed-div > h2 {
     font-size:1.5rem;
@@ -262,6 +266,28 @@ basic {
     margin-bottom:2rem;
 }
 
+.index-about-fixed-div {
+    /* Your styles for the container */
+  }
+  
+  .index-about-fixed-header {
+    /* Your default styles for the headers */
+    cursor: pointer; /* Make it obvious you can click on headers */
+    padding:2rem;
+    transition: 0.5s ease all;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border:1px solid rgb(230, 230, 230)
+  }
+  
+  .fixed-header-active {
+    /* Your active header styles */
+    background-color: rgb(36, 107, 238); /* Example: active header text color is blue */
+    font-weight: bold;
+    color:white !important;
+  }
 
 
 .index-about-img-div {
@@ -355,6 +381,7 @@ basic {
 
 .cover-letter-img {
     height:450px;
+    width:400px;
 }
 .cover-img-2 {
     height:550px;
@@ -375,7 +402,7 @@ basic {
 
 .index-features-grid-item {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     /* text-align: left; */
     margin: 2rem auto;
 }
@@ -617,4 +644,184 @@ basic {
 
 .index-started-header {
     margin-top:0;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .index-spotlight-container {
+        padding-top:5rem;
+        background-position: top 150px right 4px;
+    }
+    .index-spotlight-header {
+        font-size: 3rem;
+    }
+    .index-spotlight-subheader {
+        font-size: 1.5rem;
+        width:90%;
+    }
+
+    .logo-slider-header {
+        display:grid !important;
+    }
+    .logo-slider-header-img {
+        margin:0 auto !important;
+
+    }
+
+    .index-about-fixed-div {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .index-about-fixed-header {
+        margin:0;
+    }
+    .index-features-grid {
+        padding:0rem 0rem;
+    }
+}
+
+
+@media (max-width: 550px) {
+    .index-spotlight-container {
+        padding:0rem 1rem;
+        padding-top:5rem;
+        background-image: none;
+    }
+    .index-created {
+        font-size:1rem;
+        padding:0.5rem 0.75rem;
+    }
+    .index-dot {
+        font-size: 1rem;
+        width:1rem;
+        margin-left:0.5rem;
+    }
+    .index-spotlight-btn {
+        margin:0.5rem 0rem;
+        width:300px;
+    }
+    .index-what-header {
+        font-size:1.75rem;
+        width:90%;
+        margin-bottom:2rem;
+    }
+
+    .index-what-subheader {
+        font-size:1.75rem;
+    }
+    .index-what-bot-img {
+        width:50%;
+    }
+    .index-spotlight-container, .index-what-container, .index-about-container, .index-how-container, .index-banner-container, .index-blog-container, .index-features-container, .index-cover-container, .index-faqs-container {
+        padding-left:1rem;
+        padding-right:1rem;
+    }
+
+    .index-about-header {
+        width:90%;
+        font-size: 1.5rem;
+        line-height: 4vh;
+    }
+    .index-about-fixed-div {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .index-about-fixed-header {
+        margin:0;
+    }
+
+    .index-about-subheader {
+        width:90%;
+        font-size:1.5rem;
+    }
+    .index-features-img {
+        width:15%;
+    }
+
+    .index-features-grid {
+        padding:0rem 1rem;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .index-features-grid-icon {
+        margin-right:0rem;
+    }
+    .index-cover-copy {
+        width:90%;
+    }
+    .cover-img-2, .cover-img-3 {
+        display: none;
+    }
+
+    .index-blog-card-container {
+        display: block;
+    }
+
+    .index-blog-card {
+        width:90%;
+        margin:2rem auto;
+    }
+    .gradient-box {
+        width: 100%;
+
+    }
+    .index-blog-header {
+        margin-bottom:4rem;
+    }
+    .faq-item {
+        width:90%;
+    }
+    .cover-letter-img {
+        height:auto;
+        width:300px;
+    }
+    .index-faqs-header {
+        margin-bottom:3rem;
+    }
+    .index-blog-title {
+        font-size: 2rem;
+        line-height: 4vh;
+    }
+    .faq-dropdown-content {
+        width:90%;
+        font-size:1rem;
+        letter-spacing: -0.1vw;
+    }
+}
+
+@media (max-width: 400px) {
+    .index-spotlight-container {
+        padding:0rem 1rem;
+        padding-top:5rem;
+        background-image: none;
+    }
+    .index-created {
+        font-size:1rem;
+        padding:0.5rem 0.75rem;
+    }
+    .index-blog-card {
+        width:95%;
+        margin:2rem auto;
+    }
+    .index-dot {
+        font-size: 1rem;
+        width:1rem;
+        margin-left:0.5rem;
+    }
+    .index-spotlight-btn {
+        margin:0.5rem 0rem;
+        width:300px;
+    }
+    .index-spotlight-header {
+        font-size: 2.5rem;
+        line-height: 5vh;
+    }
+    .index-spotlight-subheader {
+        font-size: 1.25rem;
+    }
+    .index-join-header {
+        font-size:1.75rem;
+    }
+    .index-join-p {
+        font-size: 1.5rem;
+    }
 }

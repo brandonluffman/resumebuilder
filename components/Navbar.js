@@ -9,6 +9,7 @@ import { supabase } from '../utils/auth';
 import { IoIosCreate } from 'react-icons/io';
 import { SiSpeedtest } from 'react-icons/si'
 import { BsPenFill } from 'react-icons/bs'
+import { FiMenu } from 'react-icons/fi'
 const Navbar = () => {
 
   const [showMe, setShowMe] = useState(false);
@@ -16,6 +17,12 @@ const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [navbar, setNavbar] = useState(false);
   const [user, setUser] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Function to toggle the menu state
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -104,14 +111,20 @@ const Navbar = () => {
               </li>
             </ul>
            {/* )}  */}
-        </li>        <Link href='/pricing'><li className='nav-link'>Pricing</li></Link>
+        </li>        
+        <Link href='/pricing'><li className='nav-link'>Pricing</li></Link>
         <div className='vertical-line'></div>
+        <div className='login-menu'>
         {user?.user !== null ? (
               <div className='nav-link nav-link-welcome'>
-                <h1>Welcome, {user?.user.email}</h1>
-                <button className='logout-nav-btn btn nav-btn btn-tertiary' onClick={handleLogout}>
+                <div className='profile-circle'>
+
+                <div className='profile-nav'>        <button className='logout-nav-btn logout-logged-in btn nav-btn btn-tertiary' onClick={handleLogout}>
                   Logout
-                </button>
+                </button></div>
+                </div>
+                {/* <h1>Welcome, Brandon</h1> */}
+        
               </div>
             ) : (
               <div className='nav-link'>
@@ -134,7 +147,58 @@ const Navbar = () => {
                 </li>
               </div>
             )}
-      </ul>
+            </div>
+            </ul>
+
+            <div className='hamburger-btn' onClick={toggleMenu}>
+                <FiMenu className='hamburger-menu-icon' />
+              </div>
+
+              {/* Mobile navigation menu */}
+              {isMenuOpen && (
+                <div className='mobile-nav'>
+                  {/* Menu content here */}
+                  <ul className=''>
+        <li className="nav-link dropdown" onClick={toggleDropdown}>
+          Features<RiArrowDropDownLine className='dropdown-icon'/>
+          {/* {isDropdownOpen && ( */}
+            <ul className="dropdown-content">
+              <li>
+              <Link href="/build"><IoIosCreate className='nav-link-icon' />Build a Resume</Link>
+              </li>
+              <li>
+              <Link href="/test"><SiSpeedtest className='nav-link-icon' />Test a Resume</Link>
+              </li>
+              <li>
+                <Link href="/tailor"><BsPenFill className='nav-link-icon' />Tailor a Resume</Link>
+              </li>
+            </ul>
+           {/* )}  */}
+        </li>
+        <li className="nav-link dropdown" onClick={toggleDropdown}>
+          Examples<RiArrowDropDownLine className='dropdown-icon'/>
+          {/* {isDropdownOpen && ( */}
+            <ul className="dropdown-content">
+              <li>
+              {/* <IoIosCreate className='nav-link-icon' /> */}
+              <Link href="/resume-templates"><img src='/resume-icon.png' width='25' className='nav-link-icon'></img>Resumes</Link>
+              </li>
+              <li>
+                {/* <SiSpeedtest className='nav-link-icon' /> */}
+                <Link href="/cover-letter-templates"><img src='/cover-letter-icon.png' width='25' className='nav-link-icon'></img>Cover Letters</Link>
+              </li>
+              <li>
+                {/* <BsPenFill className='nav-link-icon' /> */}
+                <Link href="/resignation-letter-templates"><img src='/resig-letter.png' width='25' className='nav-link-icon'></img>Resignation Letters</Link>
+              </li>
+            </ul>
+           {/* )}  */}
+        </li>        
+        <Link href='/pricing'><li className='nav-link'>Pricing</li></Link>
+        </ul>
+                </div>
+              )}
+      {/* </ul> */}
     </nav>
   )
 }

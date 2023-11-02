@@ -30,7 +30,7 @@ const Pricing = () => {
             <h3 className='pricing-grid-header'>No Card Required</h3>
             <p className='pricing-grid-p'>Get a feel for how it works. No payment required.</p>
             <hr className='pricing-grid-hr'></hr>
-            <h2 className='pricing-grid-plan'>Free</h2>
+            <h2 className='pricing-grid-plan blue-pricing-header'>Free</h2>
             {user?.user ? ( <Link href='/test'><button className='pricing-grid-btn btn-tertiary' type='button'>Get Started</button></Link>):(<Link href='/register'><button className='btn-tertiary pricing-grid-btn' type='button'>Get Started</button></Link>)}
         </div>
         <div className='pricing-grid-item'>
@@ -42,7 +42,7 @@ const Pricing = () => {
         </div>
         <div className='pricing-grid-item'>
             <h3 className='pricing-grid-header'>$29 / Monthly</h3>
-            <p className='pricing-grid-p'>Access to all features with unlimited AI Credits.</p>
+            <p className='pricing-grid-p'>Access to all features with <i>unlimited</i> AI Credits.</p>
             <hr className='pricing-grid-hr'></hr>
             <h2 className='pricing-grid-plan platinum-header'>Platinum</h2>
             {user?.user ? ( <Link href='/payment'><button className='btn-tertiary pricing-grid-btn' type='button'>Get Started</button></Link>):(<Link href='/register'><button className='btn-tertiary pricing-grid-btn' type='button'>Get Started</button></Link>)}
