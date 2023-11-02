@@ -11,6 +11,9 @@ import '../styles/grade.css'
 import '../styles/construction.css'
 import '../styles/login.css'
 import '../styles/register.css'
+import '../styles/contact.css'
+import '../styles/pricing.css'
+import '../styles/blog.css'
 
 
 function MyApp({ Component, pageProps }) {

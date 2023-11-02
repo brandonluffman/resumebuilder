@@ -1,0 +1,15 @@
+.blogs-container {
+    padding-top:100px;
+    text-align: center;
+    height:100vh;
+}
+
+.blogs-header {
+    font-size:4rem;
+    margin-top: 2rem;
+    margin-bottom: 8rem;
+}
+.blog-upcoming {
+    font-size: 3rem;
+}
+

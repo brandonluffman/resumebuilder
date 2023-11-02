@@ -82,11 +82,15 @@
 }
 
 .gold {
-    background-color: rgb(255, 201, 102);
+    background-color: rgb(255, 193, 79);
     color: black;
     font-weight: 600;
 }
-
+.silver {
+    background-color: #c0c0c0;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
 .none {
     display: none !important;
 }
@@ -94,7 +98,27 @@
 .input-resume-grade-container {
 
 }
-
+  
+@keyframes move-glisten {
+    0%, 100% {
+      box-shadow: 
+        0 0 15px #fff4c1, 
+        0 0 25px rgba(255, 244, 193, 0.5),
+        inset -100px 0 30px -60px rgba(255, 193, 79, 0.3), /* Start from the left */
+        inset 100px 0 30px -60px rgba(255, 193, 79, 0.3); /* Start from the right */
+    }
+    50% {
+      box-shadow: 
+        0 0 15px #fff4c1, 
+        0 0 25px rgba(255, 244, 193, 0.5),
+        inset 0 0 30px -5px rgba(255, 193, 79, 0.7), /* Move to the center */
+        inset 0 0 30px -5px rgba(255, 193, 79, 0.7); /* Move to the center */
+    }
+  }
+  
+  .gold-glisten-animation {
+    animation: move-glisten 3s infinite linear;
+  }
 .loading-splash {
     position: fixed;
     top: 0;

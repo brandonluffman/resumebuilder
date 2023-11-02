@@ -3,10 +3,10 @@ import { useState, useEffect } from 'react';
 
 const ImageSlider = () => {
     const images = [
-        '/apple.png',
-        '/amazon.png',
-        '/citadel.png',
-        '/openai.png',
+        '/capt-copy.png',
+        '/key-opt.png',
+        '/pattern-match.png',
+        '/monitor.png',
       ];
   
     const [currentIndex, setCurrentIndex] = useState(0);

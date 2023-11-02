@@ -373,6 +373,16 @@ input[type="file"] {
     margin-top: 2rem;
 }
 
+/* .locked-includes {
+    z-index:99999;
+    position: absolute;
+    top:0;
+    right:0px;
+    filter: blur(0px);
+    color:black;
+    background-color: pink;
+} */
+
 .locked-grade-item {
     filter: blur(2px);
 }

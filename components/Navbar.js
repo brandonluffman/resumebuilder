@@ -6,7 +6,9 @@ import { useState, useEffect } from "react";
 // import { BiLinkExternal } from 'react-icons/bi';
 import {RiArrowDropDownLine} from 'react-icons/ri'
 import { supabase } from '../utils/auth';
-
+import { IoIosCreate } from 'react-icons/io';
+import { SiSpeedtest } from 'react-icons/si'
+import { BsPenFill } from 'react-icons/bs'
 const Navbar = () => {
 
   const [showMe, setShowMe] = useState(false);
@@ -66,32 +68,45 @@ const Navbar = () => {
 
   return (
       <nav className={navbar ? 'scroll fixed-top' : 'navbar fixed-top'} id="navbar">
-      <h1 className='navbar-logo'><img src='/logo.png'></img>ResumeBuilderAI</h1>
+      <Link href='/'><h1 className='navbar-logo'><img src='/logo.png'></img>ResumeBuilder<span className='nav-logo-blue'>AI</span></h1></Link>
       <ul className='nav-menu'>
-        <Link href='/'><li className='nav-link'>Home</li></Link>
-        <Link href='/'><li className='nav-link'>About</li></Link>
         <li className="nav-link dropdown" onClick={toggleDropdown}>
-          Products<RiArrowDropDownLine className='dropdown-icon'/>
+          Features<RiArrowDropDownLine className='dropdown-icon'/>
           {/* {isDropdownOpen && ( */}
             <ul className="dropdown-content">
               <li>
-                <Link href="/build">Build a Resume</Link>
+              <IoIosCreate className='nav-link-icon' /><Link href="/build">Build a Resume</Link>
               </li>
               <li>
-                <Link href="/test">Test a Resume</Link>
+                <SiSpeedtest className='nav-link-icon' /><Link href="/test">Test a Resume</Link>
               </li>
               <li>
-                <Link href="/tailor">Tailor a Resume</Link>
+                <BsPenFill className='nav-link-icon' /><Link href="/tailor">Tailor a Resume</Link>
               </li>
             </ul>
            {/* )}  */}
         </li>
-        <Link href='/contact'><li className='nav-link'>Contact</li></Link>
+        <li className="nav-link dropdown" onClick={toggleDropdown}>
+          Examples<RiArrowDropDownLine className='dropdown-icon'/>
+          {/* {isDropdownOpen && ( */}
+            <ul className="dropdown-content">
+              <li>
+              <IoIosCreate className='nav-link-icon' /><Link href="/build">Resumes</Link>
+              </li>
+              <li>
+                <SiSpeedtest className='nav-link-icon' /><Link href="/test">Cover Letters</Link>
+              </li>
+              <li>
+                <BsPenFill className='nav-link-icon' /><Link href="/tailor">Resignation Letters</Link>
+              </li>
+            </ul>
+           {/* )}  */}
+        </li>        <Link href='/pricing'><li className='nav-link'>Pricing</li></Link>
         <div className='vertical-line'></div>
         {user?.user !== null ? (
               <div className='nav-link nav-link-welcome'>
-                {/* <h1>Welcome, {user?.user.uid}</h1> */}
-                <button className='logout-nav-btn btn nav-btn btn-secondary' onClick={handleLogout}>
+                <h1>Welcome, {user?.user.email}</h1>
+                <button className='logout-nav-btn btn nav-btn btn-tertiary' onClick={handleLogout}>
                   Logout
                 </button>
               </div>

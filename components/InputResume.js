@@ -8,6 +8,7 @@ import Loader from "react-loader-spinner";
 import { AiFillCheckCircle, AiOutlineClose, AiTwotoneLock } from 'react-icons/ai';
 import { MdPending } from 'react-icons/md'
 import { supabase } from '../utils/auth';
+import Link from 'next/link';
 
 export default function InputResume() {
   const [file, setFile] = useState(null);
@@ -182,7 +183,7 @@ export default function InputResume() {
           <h2 className='test-extract-header'>ATS Compatibility</h2>
 
           {
-            user?.user ? <div className='ats-score-container'><CircularProgressbar value={`20.5`} text={`20.5%`} /></div>: <div><div className='unlock-container ats-score-container'><CircularProgressbar value={`20.5`} text={`20.5%`} /></div>          <h5 className='unlock-header'>Unlock ATS Score?</h5><button className='unlock-btn btn btn-primary'>Login</button></div>
+            user?.user ? <div className='ats-score-container'><CircularProgressbar value={`20.5`} text={`20.5%`} /></div>: <div><div className='unlock-container ats-score-container'><CircularProgressbar value={`20.5`} text={`20.5%`} /></div>          <h5 className='unlock-header'>Unlock ATS Score?</h5><Link href='/login'><button className='unlock-btn btn btn-primary'>Login</button></Link></div>
           }
           </div>
           <div>
@@ -195,9 +196,9 @@ export default function InputResume() {
           )}
           </div>
           <div>
-          <h2 className='test-extract-header'>ATS Compatibility</h2>
+          <h2 className='test-extract-header'>Job Description Compatibility</h2>
              {
-            user?.user ? <div className='ats-score-container'><CircularProgressbar value={`20.5`} text={`20.5%`} /></div>: <div><div className='unlock-container ats-score-container'><CircularProgressbar value={`20.5`} text={`20.5%`} /></div>          <h5 className='unlock-header'>Unlock ATS Score?</h5><button className='unlock-btn btn btn-primary'>Login</button></div>
+            user?.user ? <div className='ats-score-container'><CircularProgressbar value={`20.5`} text={`20.5%`} /></div>: <div><div className='unlock-container ats-score-container'><CircularProgressbar value={`20.5`} text={`20.5%`} /></div><h5 className='unlock-header'>Tailor Your Resume?</h5><Link href='/tailor'><button className='unlock-btn btn btn-primary'>Tailor</button></Link></div>
           }
           </div>
         </div>
@@ -212,7 +213,7 @@ export default function InputResume() {
 
           <div className='grade-header-container'>
               <h6>Sections</h6>
-              <span className='grade-header gold'>A</span>
+              <span className='grade-header gold gold-glisten-animation'>A</span>
           </div>
           {Object.keys(detectedCategories).length > 0 ? (
               <ul>
@@ -252,34 +253,35 @@ export default function InputResume() {
             )}
         </div>
         <div className='grade-container-item'>
-          <div className='grade-header-container'><h6>Impact</h6><span className={gradeImpact == 'A' ? 'grade-header gold' : 'grade-header'}>{gradeImpact}</span></div>
+          <div className='grade-header-container'><h6>Impact</h6><span className={gradeImpact === 'A' ? 'grade-header gold' : (gradeImpact === 'C' ? 'grade-header silver' : 'grade-header')}>{gradeImpact}</span></div>
               <ul>
               {quantify ? (<li className='grade-item'><div className='grid-item-flexer'>Quantify Impact<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>Your resume has been quantified , perfect !</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Quantify Impact <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Your resume seems to be missing key text signifiying your accomplishments through the use of numbers and percentages. It&apos;s important to quantify yuor experience to emphasize what has been done in an efficient to read manner for hiring managers.</span></li>)}
               {action ? (<li className='grade-item'><div className='grid-item-flexer'>Unique Action Words<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>Your resume includes Unique Action Words, nice!</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Unique Action Words <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>No Action words have been found. Often referred to as <q>power verbs</q>, Action words are crucial to a resume because they convey a proactive stance and demonstrate achievements and responsibilities. They help recruiters visualize the candidate&apos;s contributions and impact, making the resume more dynamic and compelling.</span></li>)}
-              <li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Keyword Optimization<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'></span></li>
+              <li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Keyword Optimization<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes locked-includes'></span></li>
               {/* <li className='grade-item'>Accomplishment Oriented Language **PENDING <MdPending className='grade-check-icon pending' /></li> */}
               </ul>
         </div>
         <div className='grade-container-item'>
-            <div className='grade-header-container'><h6>Brevity</h6><span className={gradeBrevity == 'A' ? 'grade-header gold' : 'grade-header'}>{gradeBrevity}</span></div>
+            <div className='grade-header-container'><h6>Brevity</h6><span className={gradeBrevity === 'A' ? 'grade-header gold' : (gradeBrevity === 'C' ? 'grade-header silver' : 'grade-header')}>{gradeBrevity}</span></div>
               <ul>
               {threequarters ? (<li className='grade-item'><div className='grid-item-flexer'>Resume Length<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>Your resume length is up to par!</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Resume Length <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Your resume is too short, try adding some content to your resume to ensure it is of appropriate length. Aim for 3/4 of a page.</span></li>)}
               {bulletcheck ? (<li className='grade-item'><div className='grid-item-flexer'>Use of Bullets<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>Your resume contains bullet points, perfect! This allows ATS to properly scan your resume.</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Use of Bullets <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Your resume does not contain bullet points. Bullet points allow for ATS to easily parse through your resume.</span></li>)}
-              {bulletcheck ? (<li className='grade-item'><div className='grid-item-flexer'>Total Bullet Points <AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>You have *INPUT BULLET SUM* bullet points, that is ideal!</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Total Bullet Points <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Our resume parser only detected ***NUM BULLETS**** , the ideal amount of bullets per header is 3 to 5.</span></li>)}
-              {bulletcheck ? (<li className='grade-item'><div className='grid-item-flexer'>Bullet Point Length<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>The length of your bulleted text is superb!</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Bullet Point Length <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>The length of your bulleted text is too **short/long****. Ensure that bulleted text only spans 2 lines or sentences as a rule of thumb.</span></li>)}
-              {bulletcheck ? (<li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Filler Word Analysis<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'>Your resume is FREE of common filler (<q>fluff</q>) words that can ruin a resume. </span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Filler Word Analysis <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Your resume CONTAINS common filler (<q>fluff</q>) words that can ruin a resume. *****INSERT FILLER WORDS *****8</span></li>)}
-              {pagecount ? (<li className='grade-item'><div className='grid-item-flexer'>One Page<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>Your resume consists of a single page, that is terrific. </span></li>):(<li className='grade-item'><div className='grid-item-flexer'>One Page <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Your attachment has **NUM FILES** files, it should only be one page.</span></li>)}
+              {bulletcheck ? (<li className='grade-item'><div className='grid-item-flexer'>Total Bullet Points <AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>You have *INPUT BULLET SUM* bullet points, that is ideal!</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Total Bullet Points <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Our resume parser did not detect enough bullet points , the ideal amount of bullets per header is 3 to 5.</span></li>)}
+              {bulletcheck ? (<li className='grade-item'><div className='grid-item-flexer'>Bullet Point Length<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>The length of your bulleted text is superb!</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Bullet Point Length <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>The length of your bulleted text is inadequate for a resume. Ensure that bulleted text spans 2 lines or sentences as a rule of thumb.</span></li>)}
+              {/* {bulletcheck ? (<li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Filler Word Analysis<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'>Your resume is FREE of common filler (<q>fluff</q>) words that can ruin a resume. </span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Filler Word Analysis <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Your resume CONTAINS common filler (<q>fluff</q>) words that can ruin a resume. *****INSERT FILLER WORDS *****8</span></li>)} */}
+              {bulletcheck ? (<li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Filler Word Analysis<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'></span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Filler Word Analysis <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'></span></li>)}
+              {pagecount ? (<li className='grade-item'><div className='grid-item-flexer'>One Page<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>Your resume consists of a single page, that is terrific. </span></li>):(<li className='grade-item'><div className='grid-item-flexer'>One Page <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Your attachment has too many files, it should only be one page.</span></li>)}
 
               </ul>
         </div>
         <div className='grade-container-item'>
-          <div className='grade-header-container'><h6>Styles</h6><span className={gradeStyles == 'A' ? 'grade-header gold' : 'grade-header'}>{gradeStyles}</span></div>
+          <div className='grade-header-container'><h6>Styles</h6><span className={gradeStyles === 'A' ? 'grade-header gold' : (gradeStyles === 'C' ? 'grade-header silver' : 'grade-header')}>{gradeStyles}</span></div>
             <ul>
                 {/* <li className='grade-item'>Buzzwords or Cliches **PENDING <MdPending className='grade-check-icon pending' /></li>
                 <li className='grade-item'>Readability **PENDING <MdPending className='grade-check-icon pending' /></li>
                 <li className='grade-item'>Dates **PENDING <MdPending className='grade-check-icon pending' /></li>
                 <li className='grade-item'>Active Voice analysis **PENDING <MdPending className='grade-check-icon pending' /></li> */}
-                <li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Readability<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'></span></li>
+                <li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Readability<AiTwotoneLock className='grade-check-icon lock-icon' /></div> </li><span className='resume-includes locked-includes'></span>
                 <li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Dates<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'></span></li>
                 <li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Active Word Analysis<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'></span></li>
 
@@ -287,19 +289,18 @@ export default function InputResume() {
             </ul>
         </div>
         <div className='grade-container-item'>
-            <div className='grade-header-container'><h6>Crucial Details</h6><span className={gradeDetails == 'A' ? 'grade-header gold' : 'grade-header'}>{gradeDetails}</span></div>
+            <div className='grade-header-container'><h6>Crucial Details</h6><span className={gradeDetails === 'A' ? 'grade-header gold' : (gradeDetails === 'C' ? 'grade-header silver' : 'grade-header')}>{gradeDetails}</span></div>
             <ul>
-                {grammar ? (<li className='grade-item'><div className='grid-item-flexer'>Grammar/Mispellings<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>Your resume has gone through our Grammar Check and has passed!</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Grammar <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Your resume has gone through our Grammar Check and has failed. ***INSERT MISTAKES****</span></li>)}
+                {grammar ? (<li className='grade-item'><div className='grid-item-flexer'>Grammar/Mispellings<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>Your resume has gone through our Grammar Check and has passed!</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Grammar <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Your resume has gone through our Grammar Check and has failed.</span></li>)}
                 {/* <li>Mispellings <AiFillCheckCircle className='grade-check-icon' /></li> */}
                 {/* <li className='grade-item'>Consistent Tense **PENDING <MdPending className='grade-check-icon pending' /></li> */}
-                <li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Consistent Tense<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'></span></li>
-
                 {firstPerson ? (<li className='grade-item'><div className='grid-item-flexer'>Avoid First Person Pronouns<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>Your resume is free of first person pronouns such as I, We, Mine... Nice!</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Avoid First Person Pronouns <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Your resume includes first person pronouns such as I, We, Mine. This is a common mistake for many resumes and is generally avoided by professionals.</span></li>)}
                 {experienceFirst ? (<li className='grade-item'><div className='grid-item-flexer'>Experience First<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>The experience section of your resume comes before the education section and that is ideal for your level of experience.</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Experience First <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>The experience section of your resume comes AFTER the education section. With your level of experience it&apos;s important to include Experience first. </span></li>)}
                 <li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Correct Filename<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'></span></li>
                 <li className='grade-item locked-grade-item'><div className='grid-item-flexer'>No References<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'></span></li>
                 <li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Email is professional<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'></span></li>
                 <li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Hard & Soft Skills<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'></span></li>
+                <li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Consistent Tense<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'></span></li>
 
                 {/* <li className='grade-item'>PDF/Docx File Type <AiFillCheckCircle className='grade-check-icon' /></li>
                 <li className='grade-item'>Correct Filename **PENDING <MdPending className='grade-check-icon pending' /></li>

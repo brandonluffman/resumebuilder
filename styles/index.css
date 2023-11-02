@@ -89,7 +89,12 @@ basic {
     padding:0rem 2rem;
     padding-top:50px;
     display: flex;
-    align-items: center
+    align-items: center;
+    background-image: url('/resume-3d.png');
+    background-size: 25%;
+    background-position: center right 100px;
+    background-repeat: no-repeat;
+
 }
 .index-spotlight-div {
     /* display: ; */
@@ -365,7 +370,7 @@ basic {
 .index-features-grid {
     display: grid;
     grid-template-columns: repeat(2,2fr);
-    padding:0rem 6rem;
+    padding:0rem 3rem;
 }
 
 .index-features-grid-item {
@@ -379,8 +384,9 @@ basic {
 
 }
 .index-features-grid-copy {
-    font-size:1.5rem;
-    width:75%;
+    font-size:1.2rem;
+    letter-spacing: -0.1vw;
+    width:85%;
     margin: 0 auto;
 }
 .index-features-grid-title {
@@ -408,6 +414,7 @@ basic {
 
 .index-blog-container {
     text-align: center;
+    height: auto;
 }
 
 .index-blog-card-container {
@@ -415,6 +422,7 @@ basic {
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin-bottom: 4rem;
 }
 
 
@@ -440,6 +448,11 @@ basic {
     overflow: hidden;  
     display: flex;
     align-items: end; 
+    transition: 0.1s ease all;
+}
+.index-blog-card:hover {
+   transform: scale(1.02);
+   cursor: pointer;
 }
 .gradient-box {
     width: 700px;
@@ -535,7 +548,7 @@ basic {
     font-size:2rem;
     cursor: pointer;
     transition: 0.1s ease all;
-    margin:0rem 0rem;
+    margin:1rem 0rem;
     
 }
 
@@ -550,7 +563,9 @@ basic {
     font-size:2rem;
     transition: 0.2s ease all;
     opacity:0;
+    z-index:-1;
     transform: translateY(-10px);
+    font-size:0.1rem;
 }
 .faq-dropdown-content {
     position: relative;
@@ -560,7 +575,7 @@ basic {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     padding:1rem;
-    font-size:2rem;
+    font-size:1.5rem;
     transition: 0.2s ease all;
     opacity:1;
     transform: translateY(0px);
