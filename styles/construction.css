@@ -25,3 +25,12 @@
     z-index:0;
     margin-top:2rem;
 }
+
+@media (max-width: 768px) {
+    .construction-header {
+        width:95%;
+    }
+   .construction-img {
+    display: none;
+   }
+}

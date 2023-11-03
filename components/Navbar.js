@@ -159,7 +159,7 @@ const Navbar = () => {
                 <div className='mobile-nav'>
                   {/* Menu content here */}
                   <ul className=''>
-        <li className="nav-link dropdown" onClick={toggleDropdown}>
+        <li className="nav-link mobile-nav-link dropdown" onClick={toggleDropdown}>
           Features<RiArrowDropDownLine className='dropdown-icon'/>
           {/* {isDropdownOpen && ( */}
             <ul className="dropdown-content">
@@ -175,7 +175,7 @@ const Navbar = () => {
             </ul>
            {/* )}  */}
         </li>
-        <li className="nav-link dropdown" onClick={toggleDropdown}>
+        <li className="nav-link mobile-nav-link dropdown" onClick={toggleDropdown}>
           Examples<RiArrowDropDownLine className='dropdown-icon'/>
           {/* {isDropdownOpen && ( */}
             <ul className="dropdown-content">
@@ -194,7 +194,7 @@ const Navbar = () => {
             </ul>
            {/* )}  */}
         </li>        
-        <Link href='/pricing'><li className='nav-link'>Pricing</li></Link>
+        <li className='nav-link mobile-nav-link dropdown'><Link href='/pricing'>Pricing</Link></li>
         </ul>
                 </div>
               )}
