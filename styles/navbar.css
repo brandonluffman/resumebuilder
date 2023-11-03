@@ -274,11 +274,20 @@ margin:0.5rem 1rem;
     }
 }
 
+@media (max-width: 550px) {
+    .mobile-nav {
+        width:70%;
+    }
+}
+
 @media (max-width: 400px) {
     .profile-circle {
         display: none;
     }
     .navbar, .scroll {
         padding-left:0;
+    }
+    .mobile-nav {
+        width:70%;
     }
 }
