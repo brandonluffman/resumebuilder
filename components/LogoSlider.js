@@ -13,6 +13,29 @@ const LogoSlider = () => {
       speed: 50000,
       autoplaySpeed: 0,
       cssEase: 'linear',
+      responsive: [
+        {
+          breakpoint: 1024, // For devices with width less than 1024px
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+          }
+        },
+        {
+          breakpoint: 600, // For devices with width less than 600px
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 5,
+          }
+        },
+        {
+          breakpoint: 480, // For devices with width less than 480px
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 5,
+          }
+        }
+      ]
     });
 
     const logos = [
