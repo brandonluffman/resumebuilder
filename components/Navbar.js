@@ -20,7 +20,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 
-  const profileLetter = user?.user.email[0]
+  const profileLetter = user?.user?.email[0]
 
   // Function to toggle the menu state
   const toggleMenu = () => {
