@@ -19,6 +19,9 @@ const Navbar = () => {
   const [user, setUser] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+
+  const profileLetter = user?.user.email[0]
+
   // Function to toggle the menu state
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -118,10 +121,14 @@ const Navbar = () => {
         {user?.user !== null ? (
               <div className='nav-link nav-link-welcome'>
                 <div className='profile-circle'>
-
-                <div className='profile-nav'>        <button className='logout-nav-btn logout-logged-in btn nav-btn btn-tertiary' onClick={handleLogout}>
+                  <div className='profile-circle-letter'>{profileLetter}</div>
+                <div className='profile-nav'>     
+                <p className='profile-circle-email'>Hello {user?.user.email}</p>
+   
+                <button className='logout-nav-btn logout-logged-in btn nav-btn btn-tertiary' onClick={handleLogout}>
                   Logout
-                </button></div>
+                </button>
+                </div>
                 </div>
                 {/* <h1>Welcome, Brandon</h1> */}
         
@@ -160,9 +167,10 @@ const Navbar = () => {
                   {/* Menu content here */}
                   <ul className=''>
         <li className="nav-link mobile-nav-link dropdown" onClick={toggleDropdown}>
-          Features<RiArrowDropDownLine className='dropdown-icon'/>
+          Features<RiArrowDropDownLine className='dropdown-icon mobile-dropdown-icon'/>
+
           {/* {isDropdownOpen && ( */}
-            <ul className="dropdown-content">
+            <ul className="mobile-dropdown-content">
               <li>
               <Link href="/build"><IoIosCreate className='nav-link-icon' />Build a Resume</Link>
               </li>
@@ -173,12 +181,14 @@ const Navbar = () => {
                 <Link href="/tailor"><BsPenFill className='nav-link-icon' />Tailor a Resume</Link>
               </li>
             </ul>
+            </li>        
+
            {/* )}  */}
-        </li>
         <li className="nav-link mobile-nav-link dropdown" onClick={toggleDropdown}>
-          Examples<RiArrowDropDownLine className='dropdown-icon'/>
+          Examples<RiArrowDropDownLine className='dropdown-icon mobile-dropdown-icon'/>
+
           {/* {isDropdownOpen && ( */}
-            <ul className="dropdown-content">
+            <ul className="mobile-dropdown-content">
               <li>
               {/* <IoIosCreate className='nav-link-icon' /> */}
               <Link href="/resume-templates"><img src='/resume-icon.png' width='25' className='nav-link-icon'></img>Resumes</Link>
@@ -192,8 +202,9 @@ const Navbar = () => {
                 <Link href="/resignation-letter-templates"><img src='/resig-letter.png' width='25' className='nav-link-icon'></img>Resignation Letters</Link>
               </li>
             </ul>
+            </li>        
+
            {/* )}  */}
-        </li>        
         <li className='nav-link mobile-nav-link dropdown'><Link href='/pricing'>Pricing</Link></li>
         </ul>
                 </div>

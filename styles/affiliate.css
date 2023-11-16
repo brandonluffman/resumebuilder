@@ -1,0 +1,98 @@
+.affiliate-container {
+    /* padding:0rem 2rem; */
+    padding-top:120px;
+
+}
+
+.affiliate-content-container {
+    padding: 0rem 2rem;
+}
+
+.affiliate-header {
+    margin:0;
+    margin-bottom:5rem;
+    margin-top: 1rem;
+}
+
+.affiliate-tag {
+    text-transform: uppercase;
+    font-weight: 700;
+    color:rgb(36, 107, 238);
+
+}
+
+.affiliate-btn-container {
+    margin-bottom: 4rem;
+}
+
+.affiliate-btn {
+    font-size: 1rem;
+    margin-right: 1rem;
+}
+
+.affiliate-banner {
+    margin: 0 auto;
+    width:70%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom:4rem;
+}
+
+.affiliate-intro {
+    width:50%;
+    font-size: 1.5rem;
+}
+
+.affiliate-hr {
+    margin:3rem 0rem;
+    border:1px solid black;
+    border-color:rgb(230, 230, 230);
+}
+
+.affiliate-content {
+    letter-spacing: 0vw;
+    margin-bottom:2rem;
+    width:75%;
+}
+
+.affiliate-content-header {
+    margin:2rem 0rem;
+    margin-top:6rem;
+}
+
+.affiliate-list {
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+    margin-bottom:6rem;
+}
+
+.affiliate-list-header {
+    font-weight: 700;
+}
+
+.affiliate-partner-banner {
+    background-color: rgb(36, 107, 238);
+    color:white;
+    padding:2rem;
+    text-align: center;
+}
+
+.affiliate-partner-header {
+    margin-bottom:1rem;
+}
+
+.affiliate-partner-content {
+    margin-bottom:2rem;
+}
+
+.affiliate-partner-btn {
+    margin: 0 auto;
+    width: 400px;
+    text-align: center;
+    margin-bottom:4rem;
+}
+
+.affiliate-list-content {
+    width:75%;
+}

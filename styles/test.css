@@ -462,4 +462,12 @@ input[type="file"] {
     .test-btn {
         margin-bottom:2rem;
     }
+    .grade-item:hover {
+        height: auto;
+        padding-bottom: 8rem;
+        cursor: pointer;
+    }
+    .resume-includes {
+        font-size: 0.8rem;
+    }
 }

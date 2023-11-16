@@ -1,5 +1,126 @@
 .template-container {
+    height:700px;
+    /* text-align: center; */
+    display: flex;
+    padding:0rem 2rem;
     padding-top:100px;
-    height:100vh;
+
+}
+
+.template-grid-container {
+    display: flex;
+}
+
+.template-grid-img {
+    width:50%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px 2px rgba(0,0,0,0.1);
+    transition: 0.2s ease all;
+}
+
+.template-top-text {
+    width: 60%;
+
+}
+
+.template-header {
+    font-size: 3rem;
+    margin:0;
+    margin-bottom:2rem;
+    margin-top:0rem;
+}
+.template-subheader {
+    font-size: 1.5rem;
+    width:75%;
+    margin:0;
+    margin-bottom:4rem;
+    font-weight: 500;
+}
+
+.template-btn {
+    font-size: 1rem;
+    padding:1rem 1.5rem;
+    border-radius: 10px;
+}
+.template-top-img {
+    /* background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index:9999; */
+    width:40%;
+}
+.template-main-img {
+    width:70%;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.1);
+    /* position: absolute;
+    right:100px;
+    top:120px; */
+    margin-top:2rem;
+    
+}
+/* .reviews-stars {
+    justify-content: left;
+    display: flex;
+    text-align: left;
+    margin:0;
+} */
+
+
+.template-grid-img:hover {
+    transform: scale(1.02);
+    cursor:pointer;
+}
+
+.template-grid-item {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
     text-align: center;
+}
+
+.verified-icon {
+    color:rgb(119, 228, 255);
+    margin-top:3rem;
+    font-size: 2.5rem;
+    margin-bottom:0.5rem;
+}
+
+.template-grid-text {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.templates-grids-container {
+    margin-bottom:6rem;
+    padding:0rem 2rem;
+}
+
+.templates-header {
+    margin:3rem 0rem;
+}
+
+.templates-hr {
+    margin:4rem 0rem;
+    border:1px solid black;
+    border-color:rgb(230, 230, 230);
+}
+
+.templates-all {
+    /* justify-content: right;
+    margin:0 auto; */
+    padding:0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+
+.templates-all-container {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    margin-top:2rem;
 }

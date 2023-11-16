@@ -50,9 +50,9 @@ const Contact = () => {
             <MdClear className='thankyou-close' onClick={closeBtn} />
         </div>
     <form ref={inquiry} onSubmit={sendEmail} className='project-form'>
-        <h6 className='project-header'>Hey, let&apos;s get to work. <span className='hand-emoji'>&#128075;</span></h6>
-        <p className='project-subheader'>I&apos;m interested in... *</p>
-        <div className='form-app-selection'>
+        <h6 className='project-header'>Hey, let&apos;s get in touch. <span className='hand-emoji'>&#128075;</span></h6>
+        {/* <p className='project-subheader'>I&apos;m interested in... *</p> */}
+        {/* <div className='form-app-selection'>
                 <input id='select-1' type="radio" value="Business Website" className="radio-input" name="interest" />
                 <label className='radio-label' htmlFor='select-1'>Custom Chatbot</label>
                 <input id='select-2' type="radio" name="interest" value="Custom Website" className="radio-input"/>
@@ -63,16 +63,14 @@ const Contact = () => {
                 <label className='radio-label' htmlFor='select-4'>Data Allocation</label>
                 <input id='select-5' type="radio" name="interest" value="Local SEO" className="radio-input"/>
                 <label className='radio-label' htmlFor='select-5'>Other</label>
-                {/* <input id='select-6' type="radio" name="interest" value="SEO" className="radio-input"/>
-                <label className='radio-label' htmlFor='select-6'>SEO</label> */}
-        </div>
+        </div> */}
         <div className='form-inputs'>
                 <input type='text' placeholder='Your name *' className='form-input' name="name" required/><br></br>
                 <input type='email' placeholder='Your email *' className='form-input' name="email" required/><br></br>
-                <textarea placeholder='Tell us about your project *' className='form-input' name='message' required/>
+                <textarea placeholder='What can we help you with? *' className='form-input' name='message' required/>
         </div>
-        <p className='project-subheader'>Project Budget ($ USD) *</p>
-        <div className='form-budget'>
+        {/* <p className='project-subheader'>Project Budget ($ USD) *</p> */}
+        {/* <div className='form-budget'>
                     <input type="radio" name="budget" id='select-7' value="1-2k" className="radio-input"/>
                     <label className='radio-label budget-label' htmlFor='select-7'>1-2k</label>
                     <input type="radio" name="budget" id='select-8' value="2-5k" className="radio-input"/>
@@ -81,7 +79,7 @@ const Contact = () => {
                     <label className='radio-label budget-label' htmlFor='select-9'>5-10k</label>
                     <input type="radio" name="budget" id='select-10' value="10k+" className="radio-input"/>
                     <label className='radio-label budget-label' htmlFor='select-10'>10k+</label>
-        </div>
+        </div> */}
 {/* 
         <div className='form-attachment'>
                 <BsPaperclip className='paperclip-icon' /><input type='file' id='file-attachment' className='file-input' title=' ' name='attachment' />

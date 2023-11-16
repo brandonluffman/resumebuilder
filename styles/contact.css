@@ -1,7 +1,7 @@
 .project-contact-container {
     /* padding-top:17rem; */
     color:rgb(40,40,40);
-    background: #f3f3f3;
+    /* background: #f3f3f3; */
     border-bottom: 1px solid rgb(250, 250, 250);
     font-family: 'Montserrat', sans-serif !important;
     overflow: hidden;
@@ -9,9 +9,10 @@
     letter-spacing:-.04vw;
 }
 .project-form {
-    width:100%;
+    width:75%;
     /* margin-left: 15%; */
     transition:0.2s ease-in all;
+    margin: 0 auto;
 }
 .project-header {
     font-size:3rem;
@@ -111,6 +112,8 @@
 }
 .form-input::placeholder {
     color:rgb(190,190,190);
+    font-family: 'Montserrat', sans-serif;
+
 }
 .radio-label {
     padding:1rem 2rem;
@@ -193,6 +196,409 @@ input[type='file'] {
 
 .form-budget {
     display: block;
+}
+
+
+
+
+
+
+
+/* Contact Page */
+
+.project-contact-container {
+    /* color:rgb(255, 255, 255); */
+    font-family: 'Montserrat', sans-serif !important;
+    overflow: hidden;
+    font-weight:400;
+    letter-spacing:-.04vw;
+    /* padding-top:6rem; */
+    /* margin-bottom:2rem; */
+}
+.project-form {
+    width:70%;
+    margin-left: 15%;
+    transition:0.2s ease-in all;
+    padding-top:3rem;
+}
+.project-header {
+    font-size:3rem;
+    margin-bottom:4rem;
+}
+.project-subheader {
+    font-size:2rem;
+    /* color:rgb(190,190,190); */
+    margin-bottom:3rem;
+}
+
+.form-budget  {
+    display: flex;
+    /* margin-bottom:8rem; */
+}
+.form-app-selection {
+    display: block;
+    margin-bottom:6rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.radio-label {
+    margin-bottom:0rem;
+}
+.form-inputs {
+    margin-bottom:0rem;
+}
+.form-btn-p {
+    margin-top:0;
+}
+
+.thankyou-div {
+    position:fixed;
+    height:100vh;
+    top:0;
+    bottom:0;
+    right:0;
+    width:100vw;
+    background-color: white;
+    z-index:999999999;
+    margin-top:0 !important;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    display: inline-grid;
+}
+.thankyou-close {
+    position:absolute;
+    top:0;
+    right:0;
+    font-size:2rem;
+}
+.thankyou-close:hover {
+    cursor: pointer;
+}
+.thankyou-thanks {
+    font-size:2rem;
+}
+
+#btn-ring{
+    display: none;
+    margin-top:0.5rem;
+  }
+  #btn-ring:after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: ring 1.2s linear infinite;
+    margin-left:1rem;
+  }
+  @keyframes ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .form-btn-p {
+    margin-bottom:0rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+.form-input {
+    margin-bottom:4rem;
+    border:none;
+    height:auto;
+    width:100%;
+    /* color:rgb(255, 255, 255); */
+    background:none !important;
+    padding-left:0.3rem;
+    font-size: 2rem;
+    border-bottom:1px solid rgb(190,190,190);
+    transition: 0.3s;
+}
+.form-input:focus {
+    outline:none;
+    border-bottom: 1px solid black;
+}
+.form-input::placeholder {
+    color:rgb(190,190,190);
+}
+.radio-label {
+    padding:1rem 2rem !important;
+    border-radius:30px;
+    box-shadow:2px 5px 10px rgba(200, 200, 200, 0.4);
+    /* border:2px solid rgb(44, 44, 44); */
+    font-size:1rem;
+    text-align: center;
+    margin-right:1.25rem;
+    transition: 0.2s ease;
+    margin-bottom:1rem;
+}
+
+.radio-label:hover {
+    cursor:pointer;
+    background-color: rgb(230,230,230);
+    color:black;
+}
+.form-app-selection input[type="radio"], .form-budget input[type="radio"] {
+        display: none;
+}
+
+.form-app-selection input[type="radio" i]:checked + label, .form-budget input[type="radio" i]:checked + label {
+    background-color: rgb(36, 107, 238);
+    color:white;
+}
+.file-input::-webkit-file-upload-button {
+    visibility: hidden;
+    margin-bottom:6rem;
+}
+.file-input::before {
+        content: 'Add Attachment';
+        display: inline-block;
+        color: black;
+        outline: none;
+        cursor: pointer;
+        font-size: 1rem;
+        width:100%;
+        justify-content: center;
+        text-align: center;
+        transition: border-bottom 0.2s linear !important;
+}
+
+.form-attachment {
+    margin-bottom:2rem;
+}
+
+.paperclip-icon {
+    font-size:1rem;
+    margin-right: -20px;
+
+}
+.project-form-btn {
+    padding: 1rem 2.5rem;
+    font-size:1.3rem;
+    border:none;
+    border-radius:10px;
+    box-shadow: 1px 8px 15px rgba(0, 0, 0, 0.2);
+    transition:0.2s all ease;
+    z-index:999 !important;
+    font-weight: 500;
+    transition: 0.2s ease-in-out;
+    color: rgb(0, 133, 242);
+    border: 2px solid rgb(0, 133, 242);
+    background-color: black;
+    width:auto;
+    display: flex;
+    margin:0 auto;
+    margin-bottom: 6rem;
+    transition: 0.2s ease all;
+}
+
+.quote-btn {
+      padding: 0.6rem 1.5rem;
+    font-size:1.3rem;
+    border:none;
+    border-radius:40px;
+    box-shadow: 1px 4px 8px rgba(200, 200, 200, 0.2);
+    transition:0.2s all ease;
+    z-index:999 !important;
+    font-weight: 500;
+    margin-bottom: 6rem;
+    transition: 0.2s ease-in-out;
+    background-color: rgb(186, 166, 97);
+    color:rgb(250,250,250);
+    width:auto;
+    display: flex;
+    margin: 0 auto;
+    
+}
+.project-form-btn:hover{
+    transform:translateY(-2px);
+    cursor:pointer;
+    background-color: rgb(0, 133, 242);
+    color:white;
+}
+
+input[type='file'] {
+    color: transparent;
+  }
+
+.budget-label {
+    padding: 2rem 5rem;
+  }
+
+.form-budget {
+    display: block;
+}
+
+.quote-price {
+    width:100%;
+    justify-content: center;
+    text-align: center;
+    margin-bottom:4rem;
+    background-color: rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
+    padding:3rem 1rem;
+    border-radius:20px;
+    border: 2px solid rgba(186, 166, 97, .3);
+    box-shadow:1px 4px 8px rgba(186, 166, 97, .3);
+
+}
+
+.quote-price-header {
+    margin-top:0;
+}
+.quote-price-estimate {
+    font-size:5.5rem;
+    color:rgb(186, 166, 97);
+    margin: auto 0;
+    
+}
+
+.react-time-picker__inputGroup__input {
+    width:100px !important;
+    background-color: transparent;
+    border:none;
+    font-size: 1.5rem;
+    justify-content: center;
+    text-align: center;
+}
+.react-time-picker__wrapper {
+    display: flex;
+}
+
+.react-time-picker__inputGroup {
+    margin-right:2rem;
+}
+
+.react-time-picker__button {
+    margin: 0 1rem;
+}
+.form-input {
+    font-family: "DM Serif Display", sans-serif;
+}
+.form-inputs > textarea {
+    height:250px;
+}
+.time-form-input {
+    border-bottom:none;
+}
+
+.radio-label:first-of-type {
+    margin-left:0;
+}
+
+.form-app-selection {
+    margin-bottom:4rem !important;
+}
+
+.quote-project-details {
+    display: block;
+}
+
+@media only screen and (max-width: 870px) {
+    .project-form {
+        width:90%;
+        margin-left: 5%;
+    }
+
+    .budget-label {
+        padding: 1rem 5rem;
+      }
+
+      .radio-label {
+        margin:0.5rem 0.5rem;
+      }
+
+      .form-app-selection {
+        margin-bottom:2rem;
+    }
+
+    /* .project-form-btn {
+        padding: 1rem 3rem;
+        font-size:1.3rem;
+        border:none;
+        border-radius:40px;
+        box-shadow: 1px 8px 15px rgba(0, 0, 0, 0.2);
+        transition:0.2s all ease;
+        z-index:999 !important;
+        font-weight: 500;
+        transition: 0.2s ease-in-out;
+        background-color: rgb(186, 166, 97);
+        color:rgb(250,250,250);
+        width:auto;
+        display: flex;
+        margin:0 auto;
+        margin-bottom:6rem;
+    } */
+
+}
+
+
+@media only screen and (max-width: 500px) {
+    .project-header {
+        font-size: 2rem;
+        margin-bottom:1rem;
+    }
+    .project-subheader {
+        font-size:1.5rem;
+    }
+
+    .project-form {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .forn-app-selection {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .radio-label {
+        display: flex;
+        margin-left:0;
+        margin:1rem auto;
+        justify-content: center;
+    }
+    .radio-label:first-of-type {
+        margin-left:auto;
+    }
+    .form-input {
+        font-size:1.5rem;
+        margin-bottom:2rem;
+    }
+    .project-subheader {
+        margin-top:0;
+    }
+
+    p.project-subheader {
+        margin-bottom:0;
+    }
+
+    div > p.project-subheader {
+        margin-bottom:0;
+    }
+
+    .quote-project-details {
+        display: block;
+    }
+
+    .react-datepicker-wrapper {
+        width:100%;
+    }
+
+    .project-contact-container {
+        margin-bottom:0rem;
+    }
+
+    .quote-price {
+        padding: 1rem 1rem;
+        margin-top:2rem;
+    }
 }
 
 

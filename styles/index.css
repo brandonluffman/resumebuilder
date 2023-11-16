@@ -149,7 +149,7 @@ basic {
     height:2rem;
     width:2rem;
     animation: pulse 1s infinite alternate; /* Use the 'pulse' animation */
-
+    color:rgb(36, 107, 238);
 }
 
 @keyframes pulse {
@@ -608,7 +608,7 @@ basic {
     transition: 0.2s ease all;
     opacity:1;
     transform: translateY(0px);
-
+    letter-spacing: -0.05vw;
 }
 .dropdown-icon {
     font-size:2rem;

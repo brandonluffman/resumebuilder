@@ -2,10 +2,15 @@ import { useState } from 'react';
 import { supabase } from '../utils/auth';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import {CiMail} from 'react-icons/ci'
+import {IoIosUnlock} from 'react-icons/io'
+import {AiFillEye, AiFillEyeInvisible} from 'react-icons/ai'
+import Link from 'next/link'
 
 export default function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [visible, setVisible] = useState(false);
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -30,23 +35,26 @@ export default function Register() {
     <>
     <Navbar />
     <div className='login-container'>
-      <form onSubmit={handleRegister}>
-      <h1>Register</h1>
+    <div className='login-box'>
+    <h1>Register</h1>
 
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit" className='login-page-btn btn btn-primary' >Register</button>
-      </form>
+        <div className='login-avatar-div'>
+        <img src='/avatar.png' width='100'></img>
+        </div>
+        <form onSubmit={handleRegister}>
+        <div className='login-email-div'>
+            <CiMail  className='login-icon mail-icon'/>
+            <input className='login-input login-email-input' placeholder='Email' type='email' value={email} onChange={(e) => setEmail(e.target.value)} ></input>
+            {/* <button className='email-vis-button'></button>   */}
+        </div>
+        <div className='login-password-div'>
+            <IoIosUnlock className='login-icon lock-icon'/>
+            <input className='login-input login-password-input' placeholder='Password' type={visible ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)}></input>
+            <button className='password-vis-button' type='button' onClick={() => setVisible(!visible)}><AiFillEye className='visibility-icon'/></button>  
+        </div>
+        <button type='submit' className='login-button'>Register</button>
+        </form>
+    </div>
     </div>
     <Footer />
     </>

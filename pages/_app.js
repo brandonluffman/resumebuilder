@@ -15,6 +15,11 @@ import '../styles/contact.css'
 import '../styles/pricing.css'
 import '../styles/blog.css'
 import '../styles/templates.css'
+import '../styles/payment.css'
+import '../styles/reviews.css'
+import '../styles/chatbot.css'
+import '../styles/affiliate.css'
+import '../styles/partners.css'
 
 
 function MyApp({ Component, pageProps }) {

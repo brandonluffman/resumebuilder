@@ -14,6 +14,7 @@ import DropdownFAQ from '../components/DropdownFAQ'
 import LogoSlider from '../components/LogoSlider'
 import ImageSlider from '../components/ImageSlider'
 import HeaderSwitcher from '../components/HeaderSwitcher'
+import Chatbot from '../components/Chatbot'
 export default function Home() {
   const [showMe, setShowMe] = useState(false);
   const [isActive, setIsActive] = useState(false);
@@ -35,6 +36,7 @@ export default function Home() {
   return (
     <div>
     <Navbar />
+    <Chatbot />
     <div className="index-spotlight-container">
       <div className='index-spotlight-div'>
       <h1 className='index-spotlight-header'>Unlock Your Career Potential</h1>
@@ -152,7 +154,9 @@ export default function Home() {
         <img src='/cover-letter-3.png' className='cover-letter-img cover-img-3'></img>
 
         </div>
-        {/* <button type='button' className='index-cover-btn btn btn-black'>Build A Cover Letter</button> */}
+        <Link href='cover-letter-templates'><button type='button' className='index-cover-btn btn btn-black'>Check Out Our Examples</button></Link>
+
+        <Link href='cover-letter-builder'><button type='button' className='index-cover-btn btn btn-black'>Build A Cover Letter</button></Link>
 
       </div>
 

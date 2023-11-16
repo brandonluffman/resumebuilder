@@ -97,8 +97,11 @@ padding:0rem 0.2rem;
     font-weight: 500;
     color:#667085;
     letter-spacing: -0.05vw;
+    transition: 0.2s ease all;
 }
-
+.footer-link:hover {
+    color:rgb(200,200,200);
+}
 .copyright-footer-flexer {
     display: flex;
     width: 100%;
@@ -119,8 +122,10 @@ Link {
 }
 
 .footer-copyright-content {
-    margin:1rem 0rem 0.5rem 0rem;
     letter-spacing: -0.05vw;
+    margin:0;
+    padding:1rem 0rem 1rem 0rem;
+
 }
 
 .service-subelement > svg > path {
@@ -136,10 +141,13 @@ Link {
 
 .new-tag {
     background-color:rgb(157, 209, 255);
-    padding:0.2rem 0.5rem;
+    padding:0.3rem 0.6rem;
     border-radius: 20px;
     margin-left:0.5rem;
-    font-size: 0.9rem;
+
+    font-size: 0.8rem;
+    color:black !important;
+    text-transform: uppercase;
 }
 
 @media only screen and (max-width: 1000px) {

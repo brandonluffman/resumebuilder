@@ -44,7 +44,11 @@ const Footer = () => {
                             <p className='footer-links-header'>Resources</p>
                             <Link href='/pricing'><div className='footer-link'>Pricing</div></Link>
                             <Link href='/blogs'><div className='footer-link'>Blog</div></Link>
-                            <Link href='/guides'><div className='footer-link'>User Guides</div></Link>
+                            {/* <div className='copyright-footer-flexer'> */}
+                              <Link target='_blank' rel='noreferrer' href='https://www.privacypolicygenerator.info/live.php?token=X9rYsibwbs1UKYQ41C7KL0IBJSIEOkts'><div className='footer-link'>Privacy Policy</div></Link>
+                              <Link target='_blank' rel='noreferrer' href="https://www.termsofusegenerator.net/live.php?token=WtIAwIaSx5ilU5RgC3s2N2AtWAptbnTh"><div className='footer-link'>Terms of Use</div></Link>
+                            {/* </div> */}
+                            {/* <Link href='/guides'><div className='footer-link'>User Guides</div></Link> */}
 
                             {/* <p className='footer-link'><GoMail className='footer-contact-icon' /> info@resumebuilderai.com</p> */}
                             {/* <p className='footer-link'><IoIosPhonePortrait className='footer-contact-icon' /> (203) 822-2311</p> */}
@@ -54,7 +58,7 @@ const Footer = () => {
                             <Link href='/about'><div className='footer-link'>About</div></Link>
                             <Link href='/contact'><div className='footer-link'>Contact</div></Link>
                             <Link href='/reviews'><div className='footer-link'>User Reviews</div></Link>
-                            <Link href='/reviews'><p className='footer-link'>Affiliate <span className='new-tag'>New</span></p></Link>
+                            <Link href='/affiliate'><p className='footer-link'>Affiliate <span className='new-tag'>New</span></p></Link>
 
                             {/* <p className='footer-link'><IoIosPhonePortrait className='footer-contact-icon' /> (203) 822-2311</p> */}
                           </div>
@@ -62,10 +66,6 @@ const Footer = () => {
               </div>   
               <div className='copyright-footer'>
                   <p className='footer-copyright-content'>Copyright © {new Date().getFullYear()} ResumeBuilderAI - All Rights Reserved.</p>
-                  <div className='copyright-footer-flexer'>
-                  <Link target='_blank' rel='noreferrer' href='https://www.privacypolicygenerator.info/live.php?token=X9rYsibwbs1UKYQ41C7KL0IBJSIEOkts'><div className='footer-link tou-link'>Privacy Policy</div></Link>
-                  <Link target='_blank' rel='noreferrer' href="https://www.termsofusegenerator.net/live.php?token=WtIAwIaSx5ilU5RgC3s2N2AtWAptbnTh"><div className='footer-link tou-link'>Terms of Use</div></Link>
-                    </div>
               </div>
       </div>
     </footer>
