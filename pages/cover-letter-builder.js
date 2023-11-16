@@ -15,4 +15,4 @@ const coverLetterBuilder = () => {
   )
 }
 
-export default cover-letter-builder
+export default coverLetterBuilder
