@@ -20,6 +20,7 @@ import '../styles/reviews.css'
 import '../styles/chatbot.css'
 import '../styles/affiliate.css'
 import '../styles/partners.css'
+import '../styles/four.css'
 
 
 function MyApp({ Component, pageProps }) {
