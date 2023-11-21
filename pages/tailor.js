@@ -7,8 +7,10 @@ const tailor = () => {
   return (
     <>
     <Navbar />
-    <div className='build-container'>
-        <Construction />
+    <div className='tailor-container'>
+       <div className='tailor-container-percentage'>
+          
+       </div>
     </div>
     <Footer />
     </>
