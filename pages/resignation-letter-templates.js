@@ -42,8 +42,9 @@ const ResignationLetterTemplates = () => {
       <div className='template-top-text'>
       <MdVerified className='verified-icon'/>
         <h1 className='template-header'>Resignation Letter Examples</h1>
-        <h6 className='template-subheader'>ResumeBuilderAI features that make writing a resignation letter simple and effective. Need more help? Use ResumeBuilderAI&apos;s AI <Link href='/' className='blue-color-change'>Resignation Letter Builder</Link> to instantly generate resignation letters.</h6>
-        {user?.user ? (<Link href='/build'><button className='btn btn-primary template-btn'>Create your Resignation Letter - It&apos;s free</button></Link>):(<Link href='/register'><button className='btn btn-primary template-btn'>Create your Resignation Letter - It&apos;s free</button></Link>)}
+        <h6 className='template-subheader'>ResumeBuilderAI features that make writing a resignation letter simple and effective. Need more help? Use ResumeBuilderAI&apos;s AI <span className='blue-color-change'>Resignation Letter Builder</span> to instantly generate resignation letters.</h6>
+        <button className='btn btn-primary template-btn'>Create your Resignation Letter - It&apos;s free</button>
+        {/* {user?.user ? (<Link href='/build'><button className='btn btn-primary template-btn'>Create your Resignation Letter - It&apos;s free</button></Link>):(<Link href='/register'><button className='btn btn-primary template-btn'>Create your Resignation Letter - It&apos;s free</button></Link>)} */}
 
         {/* <ReviewStars className='review'/> */}
         </div>

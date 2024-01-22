@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import InputResume from '../components/InputResume'
 import GradeContainer from '../components/GradeContainer'
+import Construction from '../components/Construction'
 const test = () => {
   const resumeInfo = {
     'name': 'brandon',
@@ -24,33 +25,9 @@ const test = () => {
     <>
     <Navbar />
     <div className='test-container'>
-        <InputResume />
-        <GradeContainer />
-    </div>
-    <div className='test-resume-information-container'>
-    {/* <ul className='test-resume-menu'>
-        {Object.keys(resumeInfo).map((key) => (
-          <li key={key} className='resume-info-grid-item'>
-            <p className='resume-info-key'>{key}</p> 
-            <p className='resume-info-value'>{resumeInfo[key] || "Nothing"}</p>
-          </li>
-        ))}
-      </ul> */}
-      {/* <div className='test-resume-info-contact'>
-      </div>
-      <div className='test-resume-info-name'>
-      </div>
-      <div className='test-resume-info-phone'>
-      </div>
-      <div className='test-resume-info-email'>
-      <div className='test-resume-info-address'></div>
-      <div className='test-resume-info-links'></div>
-      <div className='test-resume-info-work'></div>
-      <div className='test-resume-info-education'></div>
-      <div className='test-resume-info-skills'></div>
-      <div className='test-resume-info-certifications'></div>
-      <div className='test-resume-info-summary'></div>
-      <div className='test-resume-info-objective'></div> */}
+        {/* <InputResume />
+        <GradeContainer /> */}
+        <Construction />
     </div>
     <Footer />
     </>

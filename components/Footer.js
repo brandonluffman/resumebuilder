@@ -18,10 +18,14 @@ const Footer = () => {
               </div>
               
               <div className='social-icons'>
-                <a href='https://twitter.com/PhxntomTech' target='_blank' rel='noreferrer' aria-label="Twitter"><FontAwesomeIcon className="fa-brands fa-twitter social-icon" icon={faTwitter} alt='Social Icon' /></a>
+              <FontAwesomeIcon className="fa-brands fa-twitter social-icon" icon={faTwitter} alt='Social Icon' />
+              <FontAwesomeIcon className="fa-brands fa-facebook social-icon" icon={faFacebookF} alt='Social Icon' />
+              <FontAwesomeIcon className="fa-brands fa-instagram social-icon" icon={faInstagram} alt='Social Icon' />
+              <FontAwesomeIcon className="fa-brands fa-linkedin social-icon" icon={faLinkedinIn} alt='Social Icon' />
+                {/* <a href='https://twitter.com/PhxntomTech' target='_blank' rel='noreferrer' aria-label="Twitter"><FontAwesomeIcon className="fa-brands fa-twitter social-icon" icon={faTwitter} alt='Social Icon' /></a>
                 <a href='https://www.facebook.com/profile.php?id=100084723462596' target='_blank' rel='noreferrer' aria-label="Facebook"><FontAwesomeIcon className="fa-brands fa-facebook social-icon" icon={faFacebookF} alt='Social Icon' /></a>
                 <a href='https://www.instagram.com/phxntomtechnologies/' target='_blank' rel='noreferrer' aria-label="Instagram"><FontAwesomeIcon className="fa-brands fa-instagram social-icon" icon={faInstagram} alt='Social Icon' /></a>
-                <a href='https://www.linkedin.com/company/phxntomtech' target='_blank' rel='noreferrer' aria-label="Linkedin" ><FontAwesomeIcon className="fa-brands fa-linkedin social-icon" icon={faLinkedinIn} alt='Social Icon' /></a>
+                <a href='https://www.linkedin.com/company/phxntomtech' target='_blank' rel='noreferrer' aria-label="Linkedin" ><FontAwesomeIcon className="fa-brands fa-linkedin social-icon" icon={faLinkedinIn} alt='Social Icon' /></a> */}
               </div>
               </div>
               
@@ -40,22 +44,23 @@ const Footer = () => {
                             <Link href='/resignation-letter-templates'><p className='footer-link'>Resignation</p></Link>
                             {/* <Link href='/'><div className='footer-link'>FAQs</div></Link> */}
                           </div>
-                          <div className='footer-links contact-links'>
-                            <p className='footer-links-header'>Resources</p>
-                            <Link href='/pricing'><div className='footer-link'>Pricing</div></Link>
-                            <Link href='/blogs'><div className='footer-link'>Blog</div></Link>
+                          {/* <div className='footer-links contact-links'> */}
+                            {/* <p className='footer-links-header'>Resources</p>
+                            <Link href='/pricing'><div className='footer-link'>Pricing</div></Link> */}
+                            {/* <Link href='/blogs'><div className='footer-link'>Blog</div></Link> */}
                             {/* <div className='copyright-footer-flexer'> */}
-                              <Link target='_blank' rel='noreferrer' href='https://www.privacypolicygenerator.info/live.php?token=X9rYsibwbs1UKYQ41C7KL0IBJSIEOkts'><div className='footer-link'>Privacy Policy</div></Link>
-                              <Link target='_blank' rel='noreferrer' href="https://www.termsofusegenerator.net/live.php?token=WtIAwIaSx5ilU5RgC3s2N2AtWAptbnTh"><div className='footer-link'>Terms of Use</div></Link>
+                              {/* <Link target='_blank' rel='noreferrer' href='https://www.privacypolicygenerator.info/live.php?token=X9rYsibwbs1UKYQ41C7KL0IBJSIEOkts'><div className='footer-link'>Privacy Policy</div></Link>
+                              <Link target='_blank' rel='noreferrer' href="https://www.termsofusegenerator.net/live.php?token=WtIAwIaSx5ilU5RgC3s2N2AtWAptbnTh"><div className='footer-link'>Terms of Use</div></Link> */}
                             {/* </div> */}
                             {/* <Link href='/guides'><div className='footer-link'>User Guides</div></Link> */}
 
                             {/* <p className='footer-link'><GoMail className='footer-contact-icon' /> info@resumebuilderai.com</p> */}
                             {/* <p className='footer-link'><IoIosPhonePortrait className='footer-contact-icon' /> (203) 822-2311</p> */}
-                          </div>
+                          {/* </div> */}
                           <div className='footer-links contact-links'>
                             <p className='footer-links-header'>Company</p>
-                            <Link href='/about'><div className='footer-link'>About</div></Link>
+                            {/* <Link href='/about'><div className='footer-link'>About</div></Link> */}
+                            <Link href='/pricing'><div className='footer-link'>Pricing</div></Link>
                             <Link href='/contact'><div className='footer-link'>Contact</div></Link>
                             <Link href='/reviews'><div className='footer-link'>User Reviews</div></Link>
                             <Link href='/affiliate'><p className='footer-link'>Affiliate <span className='new-tag'>New</span></p></Link>

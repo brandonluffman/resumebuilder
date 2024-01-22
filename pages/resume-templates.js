@@ -39,7 +39,8 @@ const ResumeTemplates = () => {
         <MdVerified className='verified-icon'/>
         <h1 className='template-header'>Resume Examples</h1>
         <h6 className='template-subheader'>Our resume examples will show you the skills, and achievements you need to land work in 2023.</h6>
-        {user?.user ? (<Link href='/build'><button className='btn btn-primary template-btn'>Create your resume - It&apos;s free</button></Link>):(<Link href='/register'><button className='btn btn-primary template-btn'>Create your resume - It&apos;s free</button></Link>)}
+        <button className='btn btn-primary template-btn'>Create your resume - It&apos;s free</button>
+        {/* {user?.user ? (<Link href='/build'><button className='btn btn-primary template-btn'>Create your resume - It&apos;s free</button></Link>):(<Link href='/register'><button className='btn btn-primary template-btn'>Create your resume - It&apos;s free</button></Link>)} */}
 
         {/* <ReviewStars className='review'/> */}
         </div>

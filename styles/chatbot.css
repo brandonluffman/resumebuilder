@@ -13,3 +13,19 @@
 .chatbot-img {
     width:100%;
 }
+
+.tag-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Adjust as needed */
+    background-color: #f0f0f0; /* Light grey background */
+}
+
+.tag {
+    padding: 8px 16px;
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+}

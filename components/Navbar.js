@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 // import {AiOutlineSchedule} from 'react-icons/ai';
 // import { BiLinkExternal } from 'react-icons/bi';
 import {RiArrowDropDownLine} from 'react-icons/ri'
-import { supabase } from '../utils/auth';
+// import { supabase } from '../utils/auth';
 import { IoIosCreate } from 'react-icons/io';
 import { SiSpeedtest } from 'react-icons/si'
 import { BsPenFill } from 'react-icons/bs'
@@ -35,28 +35,28 @@ const Navbar = () => {
     setIsActive(!isActive);
   }
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      const { data, error } = await supabase.auth.getUser();
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     const { data, error } = await supabase.auth.getUser();
 
-      if (data) {
-        setUser(data);
-        console.log(data)
-      } else {
-        console.error('Error fetching user:', error);
-      }
-    };
+  //     if (data) {
+  //       setUser(data);
+  //       console.log(data)
+  //     } else {
+  //       console.error('Error fetching user:', error);
+  //     }
+  //   };
 
-    fetchUser();
-  }, []);
+  //   fetchUser();
+  // }, []);
 
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
-    // Redirect or navigate to the login page
-    alert('Logout successful!');
-        // Redirect or navigate to the profile page
-    window.location.href = '/';
-  };
+  // const handleLogout = async () => {
+  //   await supabase.auth.signOut();
+  //   // Redirect or navigate to the login page
+  //   alert('Logout successful!');
+  //       // Redirect or navigate to the profile page
+  //   window.location.href = '/';
+  // };
 
   const changeBackground = () => {
     if (window.scrollY >= 40) {
@@ -117,7 +117,7 @@ const Navbar = () => {
         </li>        
         <Link href='/pricing'><li className='nav-link'>Pricing</li></Link>
         <div className='vertical-line'></div>
-        <div className='login-menu'>
+        {/* <div className='login-menu'>
         {user?.user !== null ? (
               <div className='nav-link nav-link-welcome'>
                 <div className='profile-circle'>
@@ -130,16 +130,11 @@ const Navbar = () => {
                 </button>
                 </div>
                 </div>
-                {/* <h1>Welcome, Brandon</h1> */}
-        
               </div>
             ) : (
               <div className='nav-link'>
                 <li className='nav-link nav-link-btn-li'>
                   <Link href='/login'>
-                    {/* <button type='button' className={navbar ? 'nav-link-btn nav-login-btn btn btn-primary':'nav-link-btn nav-login-btn-scrolled btn btn-primary'}>
-                      Log In
-                    </button> */}
                     <button type='button' className='nav-link-btn nav-login-btn-scrolled btn btn-primary'>
                       Login
                     </button>
@@ -154,7 +149,7 @@ const Navbar = () => {
                 </li>
               </div>
             )}
-            </div>
+            </div> */}
             </ul>
 
             <div className='hamburger-btn' onClick={toggleMenu}>

@@ -12,7 +12,7 @@ const affiliate = () => {
             <span className='affiliate-tag'>Affiliates</span>
             <h2 className='affiliate-header'>Partner with ResumeBuilder<span className='blue-color-change'>AI</span></h2>
             <div className='affiliate-btn-container'>
-            <Link href='/partners'><button className='affiliate-btn btn btn-primary'>Join the Program</button></Link>
+            <button className='affiliate-btn btn btn-primary'>Join the Program</button>
             <a href='#about'><button className='affiliate-btn btn btn-white'>Learn More</button></a>
             </div>
             <img src='/affiliate-banner.svg' className='affiliate-banner'></img>
@@ -63,7 +63,7 @@ const affiliate = () => {
             <div className='affiliate-partner-banner'>
                 <h3 className='affiliate-partner-header'>Ready to Partner?</h3>
                 <p className='affiliate-partner-content'>Ready to partner with us? Great! Let&apos;s get you started.</p>
-                <Link href='/partners'><button className='affiliate-partner-btn btn-white btn'>Join the Program</button></Link>
+                <button className='affiliate-partner-btn btn-white btn'>Join the Program</button>
             </div>
         </div>
         <Footer />

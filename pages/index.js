@@ -196,7 +196,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <Link href='/blogs'><button type='button' className='btn btn-tertiary'>View All</button></Link>
+        {/* <Link href='/blogs'><button type='button' className='btn btn-tertiary'>View All</button></Link> */}
 
       </div>
 
