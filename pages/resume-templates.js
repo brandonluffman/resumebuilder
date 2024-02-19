@@ -5,31 +5,9 @@ import Footer from '../components/Footer'
 import ReviewStars from '../components/ReviewStars'
 import TemplateGrid from '../components/TemplateGrid';
 import Link from 'next/link';
-import { supabase } from '../utils/auth';
 import { MdVerified } from 'react-icons/md'
 const ResumeTemplates = () => {
 
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    const fetchUser = async () => {
-      const { data, error } = await supabase.auth.getUser();
-
-      if (data) {
-        setUser(data);
-        console.log(data)
-      } else {
-        console.error('Error fetching user:', error);
-      }
-    };
-
-    fetchUser();
-  }, []);
-
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
-    // Redirect or navigate to the login page
-  };
 
   return (
     <>
