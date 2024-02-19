@@ -1,0 +1,56 @@
+.resume {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  .functional h2 {
+    color: #007BFF; /* Change the color for section headings */
+  }
+
+  .resume-contact-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .resume h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .resume h2 {
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+  }
+  
+  .resume h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .resume p {
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  .resume ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .resume li {
+    margin-bottom: 5px;
+  }
+  
+  .work-experience, .education, .certifications {
+    margin-bottom: 15px;
+  }
+  

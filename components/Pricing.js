@@ -1,22 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../utils/auth';
 import Link from 'next/link';
 
 const Pricing = () => {
-    const [user, setUser] = useState(null);
-
-    useEffect(() => {
-        const fetchUser = async () => {
-            const { data, error } = await supabase.auth.getUser();
-            if (data) {
-                setUser(data);
-                console.log(data);
-            } else {
-                console.error('Error fetching user:', error);
-            }
-        };
-        fetchUser();
-    }, []);
 
     const [active, setActive] = useState('monthly');
 

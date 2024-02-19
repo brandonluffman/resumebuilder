@@ -2,3 +2,138 @@
     padding-top:160px;
     padding-bottom:160px;
 }
+
+.tailor-form-container {
+    display: flex;
+    width: 100%;
+}
+
+.tailor-resumedrop, .tailor-jobdescription-container {
+    width: 50%;
+    padding:0rem 2rem;
+
+}
+
+.tailor-resumedrop {
+    padding:0rem 2rem;
+    position: relative;
+}
+
+.tailor-jobdescription-container {
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    /* gap: 10px; */
+    /* margin: 20px 0; */
+  }
+
+  .white-hr {
+    border-color: white !important; /* For a solid white line */
+    background-color: white !important;
+    height: 2px;
+    border: 1px solid white;
+  }
+  
+  .tailor-resume-label {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .tailor-jobdescription-container textarea {
+    width: 100%;
+    height: 85%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    outline: none;
+}
+.tailor-jobdescription-container input {
+    outline: none;
+}
+  
+  .tailor-jobdescription-container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .tailor-jobdescription-container .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tailor-jobdescription-container .btn:hover {
+    background-color: #0056b3;
+  }
+
+  .tailor-results-container {
+    text-align: center;
+  }
+  .tailor-results-container h4 {
+    font-size: 2rem;
+    color: blue;
+    /* border-bottom: 1px solid black; */
+  }
+  .tailor-btn {
+    margin-bottom: 4rem;
+  }
+
+  .tailor-results-grid {
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+  }
+
+  .tailor-results-grid li {
+    text-align: left;
+    letter-spacing: -0.05vw;
+
+  }
+
+  .analysis-results-flexer {
+    justify-content: space-around;
+  }
+  .analysis-results {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+  }
+  
+  .analysis-results ul {
+    /* list-style-type:circle; */
+    padding: 0;
+  }
+  .tailor-results-container ul {
+    list-style-type: circle;
+  }
+  .analysis-results li {
+    margin-bottom: 10px;
+    padding: 20px;
+    padding-left: 0;
+    border-bottom: 1px solid #ddd;
+    padding-right: 40px;
+  }
+  
+  .analysis-results li:last-child {
+    /* border-bottom: none; */
+  }
+  
+  .analysis-results li strong {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .suggested-results-container {
+    display: grid;
+    grid-template-columns: repeat(3,3fr);
+    list-style-type: none !important;
+  }

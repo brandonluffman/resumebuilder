@@ -10,6 +10,11 @@ body {
     scroll-behavior: smooth;
 }
 
+textarea, input {
+  font-family: 'Montserrat', sans-serif;
+
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -42,4 +47,41 @@ h6 {
 
 p {
   letter-spacing: 0vw;
+}
+
+.classic-flexer {
+  display: flex;
+  justify-content: center;
+}
+
+.flexer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-btn {
+  background-color: transparent;
+  color: black;
+  border: none;
+  font-size: 2rem;
+  border-radius: 5px;
+  padding: 0;
+  cursor: pointer;
+  transition: 0.2s ease all;
+}
+.add-btn:hover {
+  color: blue;
+}
+
+.btn-margin {
+  margin:0 auto;
+  display: flex;
+}
+
+.center-align {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

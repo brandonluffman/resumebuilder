@@ -1,0 +1,77 @@
+const sections = [
+    {
+      title: 'Sections',
+      grade: 'A',
+      items: [
+        { name: 'Experience First', status: 'check' },
+        { name: 'Dates Ordered Chronologically', status: 'failed' },
+        { name: 'Name', status: 'check' },
+        { name: 'Email', status: 'check' },
+        { name: 'Phone Number', status: 'check' },
+        { name: 'Address', status: 'check' },
+        { name: 'Summary', status: 'check' },
+        { name: 'Experience', status: 'check' },
+        { name: 'Education', status: 'check' },
+        { name: 'Skills', status: 'check' },
+      ],
+    },
+    {
+      title: 'Impact',
+      grade: 'A',
+      items: [
+        { name: 'Quantify Impact', status: 'check' },
+        { name: 'Unique Action Words', status: 'check' },
+        { name: 'Keyword Optimization', status: 'check' },
+        { name: 'Accomplishment Oriented Language', status: 'pending' },
+      ],
+    },
+    {
+      title: 'Brevity',
+      grade: 'A',
+      items: [
+        { name: 'Resume Length', status: 'check' },
+        { name: 'Use of Bullets', status: 'check' },
+        { name: 'Total Bullet Points', status: 'check' },
+        { name: 'Bullet Point Length', status: 'check' },
+        { name: 'Filler Word Analysis', status: 'lock' },
+        { name: 'One Page', status: 'check' },
+      ],
+    },
+    {
+      title: 'Styles',
+      grade: 'A',
+      items: [
+        { name: 'Buzzwords or Cliches', status: 'pending' },
+        { name: 'Readability', status: 'pending' },
+        { name: 'Dates', status: 'pending' },
+        { name: 'Active Voice analysis', status: 'pending' },
+        { name: 'Readability', status: 'lock' },
+        { name: 'Dates', status: 'lock' },
+        { name: 'Active Word Analysis', status: 'lock' },
+        { name: 'Inconsistencies', status: 'lock' },
+      ],
+    },
+    {
+      title: 'Crucial Details',
+      grade: 'A',
+      items: [
+        { name: 'Grammar/Mispellings', status: 'check' },
+        { name: 'Mispellings', status: 'check' },
+        { name: 'Consistent Tense', status: 'pending' },
+        { name: 'Avoid First Person Pronouns', status: 'check' },
+        { name: 'Experience First', status: 'check' },
+        { name: 'Correct Filename', status: 'lock' },
+        { name: 'No References', status: 'lock' },
+        { name: 'Email is professional', status: 'lock' },
+        { name: 'Hard & Soft Skills', status: 'lock' },
+        { name: 'Consistent Tense', status: 'lock' },
+        { name: 'PDF/Docx File Type', status: 'check' },
+        { name: 'Correct Filename', status: 'pending' },
+        { name: 'Remove References', status: 'pending' },
+        { name: 'Professional Email', status: 'pending' },
+        { name: 'Hard & Soft Skills', status: 'pending' },
+      ],
+    },
+  ];
+
+  export default sections;

@@ -1,26 +1,21 @@
 import React from 'react'
 import Link from "next/link";
 import { useState, useEffect } from "react";
-// import { MdMenu, MdClear } from 'react-icons/md';
-// import {AiOutlineSchedule} from 'react-icons/ai';
-// import { BiLinkExternal } from 'react-icons/bi';
 import {RiArrowDropDownLine} from 'react-icons/ri'
-// import { supabase } from '../utils/auth';
 import { IoIosCreate } from 'react-icons/io';
 import { SiSpeedtest } from 'react-icons/si'
 import { BsPenFill } from 'react-icons/bs'
 import { FiMenu } from 'react-icons/fi'
+
+
 const Navbar = () => {
 
   const [showMe, setShowMe] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [navbar, setNavbar] = useState(false);
-  const [user, setUser] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-
-  const profileLetter = user?.user?.email[0]
 
   // Function to toggle the menu state
   const toggleMenu = () => {
@@ -34,29 +29,6 @@ const Navbar = () => {
     setShowMe(!showMe);
     setIsActive(!isActive);
   }
-
-  // useEffect(() => {
-  //   const fetchUser = async () => {
-  //     const { data, error } = await supabase.auth.getUser();
-
-  //     if (data) {
-  //       setUser(data);
-  //       console.log(data)
-  //     } else {
-  //       console.error('Error fetching user:', error);
-  //     }
-  //   };
-
-  //   fetchUser();
-  // }, []);
-
-  // const handleLogout = async () => {
-  //   await supabase.auth.signOut();
-  //   // Redirect or navigate to the login page
-  //   alert('Logout successful!');
-  //       // Redirect or navigate to the profile page
-  //   window.location.href = '/';
-  // };
 
   const changeBackground = () => {
     if (window.scrollY >= 40) {
@@ -72,8 +44,6 @@ const Navbar = () => {
     window.addEventListener('scroll', changeBackground, true);
     return () => window.removeEventListener('scroll', changeBackground);
   }, []);
-
-  // const user = user.user;
 
 
   return (

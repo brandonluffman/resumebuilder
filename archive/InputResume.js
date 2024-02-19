@@ -6,8 +6,7 @@ import "react-circular-progressbar/dist/styles.css";
 import { useRef } from 'react';
 import Loader from "react-loader-spinner"; 
 import { AiFillCheckCircle, AiOutlineClose, AiTwotoneLock } from 'react-icons/ai';
-import { MdPending } from 'react-icons/md'
-import { supabase } from '../utils/auth';
+import { MdPending } from 'react-icons/md';
 import Link from 'next/link';
 
 export default function InputResume() {
@@ -28,8 +27,7 @@ export default function InputResume() {
   const [isLoading, setIsLoading] = useState(false);
   const [overallGrade, setOverallGrade] = useState('');
   const [experienceFirst, setExperienceFirst] = useState('');
-  const [user, setUser] = useState(null);
-
+  const user = false;
   const myAnchorRef = useRef(null);
 
 
@@ -43,53 +41,39 @@ export default function InputResume() {
       setIsLoading(true);
       const formData = new FormData();
       formData.append('file', file);
-  
-      const response = await fetch('https://resumeparserofficial-03af5455fec2.herokuapp.com/convert-pdf-to-text/', {
-        method: 'POST',
-        body: formData,
-      });
-      // const response = await fetch('http://127.0.0.1:8000/convert-pdf-to-text/', {
+      console.log(formData)
+      setIsLoading(false);
+
+      setResumeGrade(90.29)
+      setOverallGrade(90.29)
+      // const response = await fetch('https://resumeparserofficial-03af5455fec2.herokuapp.com/convert-pdf-to-text/', {
       //   method: 'POST',
       //   body: formData,
       // });
   
-      if (response.ok) {
-        const data = await response.json();
-        setPdfText(data.pdf_text);
-        setSegmentText(data.segments);
-        setResumeGrade(data.grade);
-        setDetectedCategories(data.detected_categories);
-        setQuantify(data.quantify);
-        setAction(data.action);
-        setThreeQuarters(data.threequarters);
-        setBulletCheck(data.bulletcheck);
-        setPageCount(data.pagecount)
-        setConsistency(data.constistency)
-        setGrammar(data.grammar)
-        setFirstPerson(data.first_person)
-        setOverallGrade(data.overallgrade);
-        setExperienceFirst(data.is_experience_first)
-        setIsLoading(false);
-      } else {
-          console.error('Error:', response.statusText);
-      }
+      // if (response.ok) {
+      //   const data = await response.json();
+      //   setPdfText(data.pdf_text);
+      //   setSegmentText(data.segments);
+      //   setResumeGrade(data.grade);
+      //   setDetectedCategories(data.detected_categories);
+      //   setQuantify(data.quantify);
+      //   setAction(data.action);
+      //   setThreeQuarters(data.threequarters);
+      //   setBulletCheck(data.bulletcheck);
+      //   setPageCount(data.pagecount)
+      //   setConsistency(data.constistency)
+      //   setGrammar(data.grammar)
+      //   setFirstPerson(data.first_person)
+      //   setOverallGrade(data.overallgrade);
+      //   setExperienceFirst(data.is_experience_first)
+      //   setIsLoading(false);
+      // } else {
+      //     console.error('Error:', response.statusText);
+      // }
     }
   };
-  useEffect(() => {
-    const fetchUser = async () => {
-      const { data, error } = await supabase.auth.getUser();
 
-      if (data) {
-        setUser(data);
-        console.log(data)
-      } else {
-        console.error('Error fetching user:', error);
-      }
-    };
-
-    fetchUser();
-  }, []);
-  
 
   const handleOnDrop = (acceptedFiles) => {
     console.log(acceptedFiles);
@@ -104,6 +88,7 @@ export default function InputResume() {
       myAnchorRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [resumeGrade]);
+
   const truthyCountBrevity = threequarters + bulletcheck + pagecount;
   const truthyImpact = quantify + action;
   const truthyStyles = constistency;
@@ -168,48 +153,23 @@ export default function InputResume() {
       </div>
         ) : (
     <div className='input-resume-container'>
-      <h2 className='test-header'>Have a resume?</h2>
+      <h1 className='test-header'>Test your Resume</h1>
       <div className='input-resume-drop'>
-      <DropzoneInput onDrop={handleOnDrop} accept="image/*" />
-      <button onClick={handleSubmit} className='btn btn-primary test-btn'>Test</button>
+      <DropzoneInput onDrop={handleOnDrop} accept="image/*" fileName={fileName} />
+      <button onClick={handleSubmit} className='btn btn-primary test-btn submit-btn'>Test</button>
      
-      {fileName ? ( <div className='filename-div'>{fileName}</div>):(<div className='no-file-div' >* No File Selected</div>)}
+      {/* {fileName ? ( <div className='filename-div'>{fileName}</div>):(<div className='no-file-div' >* No File Selected</div>)} */}
       </div>
       <div className={resumeGrade ? 'input-resume-grade-container' : 'none'}>
-      {/* <h2 className='test-extract-header'>Overall Grade</h2> */}
+      <h2 className='test-extract-header'>Overall Grade</h2>
 
-        <div className='test-extract-container' ref={myAnchorRef}>
-          <div>
-          <h2 className='test-extract-header'>ATS Compatibility</h2>
-
-          {
-            user?.user ? <div className='ats-score-container'><CircularProgressbar value={`20.5`} text={`20.5%`} /></div>: <div><div className='unlock-container ats-score-container'><CircularProgressbar value={`20.5`} text={`20.5%`} /></div>          <h5 className='unlock-header'>Unlock ATS Score?</h5><Link href='/login'><button className='unlock-btn btn btn-primary'>Login</button></Link></div>
-          }
-          </div>
-          <div>
-          <h2 className='test-extract-header'>Overall Grade</h2>
-
-          {resumeGrade && (
+        {resumeGrade && (
           <div className='test-grade-div'>
-            <CircularProgressbar value={overallGrade} text={`${overallGrade.toFixed(2)}%`} />
+            <CircularProgressbar value={overallGrade} text={overallGrade ? `${overallGrade.toFixed(2)}%`: '0'} />
           </div>
           )}
-          </div>
-          <div>
-          <h2 className='test-extract-header'>Job Description Compatibility</h2>
-             {
-            user?.user ? <div className='ats-score-container'><CircularProgressbar value={`20.5`} text={`20.5%`} /></div>: <div><div className='unlock-container ats-score-container'><CircularProgressbar value={`20.5`} text={`20.5%`} /></div><h5 className='unlock-header'>Tailor Your Resume?</h5><Link href='/tailor'><button className='unlock-btn btn btn-primary'>Tailor</button></Link></div>
-          }
-          </div>
-        </div>
-        <div className='grade-container-item'>
-        {/* <h2 className='test-extract-header'>ATS Compatibility</h2>
 
-          {
-            user ? <div className='ats-score-container'><CircularProgressbar value={`42.5`} text={`42.5%`} /></div>: <div><div className='unlock-container ats-score-container'><CircularProgressbar value={`42.5`} text={`42.5%`} /></div>          <h5 className='unlock-header'>Unlock ATS Score?</h5><button className='unlock-btn btn btn-primary'>Login</button></div>
-          } */}
-          
-        <h2 className='detected-categories-header'>Resume Report</h2>
+        <div className='grade-container-item'>
 
           <div className='grade-header-container'>
               <h6>Sections</h6>
@@ -258,7 +218,7 @@ export default function InputResume() {
               {quantify ? (<li className='grade-item'><div className='grid-item-flexer'>Quantify Impact<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>Your resume has been quantified , perfect !</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Quantify Impact <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Your resume seems to be missing key text signifiying your accomplishments through the use of numbers and percentages. It&apos;s important to quantify yuor experience to emphasize what has been done in an efficient to read manner for hiring managers.</span></li>)}
               {action ? (<li className='grade-item'><div className='grid-item-flexer'>Unique Action Words<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>Your resume includes Unique Action Words, nice!</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Unique Action Words <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>No Action words have been found. Often referred to as <q>power verbs</q>, Action words are crucial to a resume because they convey a proactive stance and demonstrate achievements and responsibilities. They help recruiters visualize the candidate&apos;s contributions and impact, making the resume more dynamic and compelling.</span></li>)}
               <li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Keyword Optimization<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes locked-includes'></span></li>
-              {/* <li className='grade-item'>Accomplishment Oriented Language **PENDING <MdPending className='grade-check-icon pending' /></li> */}
+              <li className='grade-item'>Accomplishment Oriented Language **PENDING <MdPending className='grade-check-icon pending' /></li>
               </ul>
         </div>
         <div className='grade-container-item'>
@@ -268,7 +228,7 @@ export default function InputResume() {
               {bulletcheck ? (<li className='grade-item'><div className='grid-item-flexer'>Use of Bullets<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>Your resume contains bullet points, perfect! This allows ATS to properly scan your resume.</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Use of Bullets <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Your resume does not contain bullet points. Bullet points allow for ATS to easily parse through your resume.</span></li>)}
               {bulletcheck ? (<li className='grade-item'><div className='grid-item-flexer'>Total Bullet Points <AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>You have between 3-5 bullet points per header, that is ideal!</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Total Bullet Points <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Our resume parser did not detect enough bullet points , the ideal amount of bullets per header is 3 to 5.</span></li>)}
               {bulletcheck ? (<li className='grade-item'><div className='grid-item-flexer'>Bullet Point Length<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>The length of your bulleted text is superb!</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Bullet Point Length <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>The length of your bulleted text is inadequate for a resume. Ensure that bulleted text spans 2 lines or sentences as a rule of thumb.</span></li>)}
-              {/* {bulletcheck ? (<li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Filler Word Analysis<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'>Your resume is FREE of common filler (<q>fluff</q>) words that can ruin a resume. </span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Filler Word Analysis <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Your resume CONTAINS common filler (<q>fluff</q>) words that can ruin a resume. *****INSERT FILLER WORDS *****8</span></li>)} */}
+              {bulletcheck ? (<li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Filler Word Analysis<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'>Your resume is FREE of common filler (<q>fluff</q>) words that can ruin a resume. </span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Filler Word Analysis <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Your resume CONTAINS common filler (<q>fluff</q>) words that can ruin a resume. *****INSERT FILLER WORDS *****8</span></li>)}
               {bulletcheck ? (<li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Filler Word Analysis<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'></span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Filler Word Analysis <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'></span></li>)}
               {pagecount ? (<li className='grade-item'><div className='grid-item-flexer'>One Page<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>Your resume consists of a single page, that is terrific. </span></li>):(<li className='grade-item'><div className='grid-item-flexer'>One Page <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Your attachment has too many files, it should only be one page.</span></li>)}
 
@@ -277,14 +237,13 @@ export default function InputResume() {
         <div className='grade-container-item'>
           <div className='grade-header-container'><h6>Styles</h6><span className={gradeStyles === 'A' ? 'grade-header gold' : (gradeStyles === 'C' ? 'grade-header silver' : 'grade-header')}>{gradeStyles}</span></div>
             <ul>
-                {/* <li className='grade-item'>Buzzwords or Cliches **PENDING <MdPending className='grade-check-icon pending' /></li>
+                <li className='grade-item'>Buzzwords or Cliches **PENDING <MdPending className='grade-check-icon pending' /></li>
                 <li className='grade-item'>Readability **PENDING <MdPending className='grade-check-icon pending' /></li>
                 <li className='grade-item'>Dates **PENDING <MdPending className='grade-check-icon pending' /></li>
-                <li className='grade-item'>Active Voice analysis **PENDING <MdPending className='grade-check-icon pending' /></li> */}
+                <li className='grade-item'>Active Voice analysis **PENDING <MdPending className='grade-check-icon pending' /></li>
                 <li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Readability<AiTwotoneLock className='grade-check-icon lock-icon' /></div> </li><span className='resume-includes locked-includes'></span>
                 <li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Dates<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'></span></li>
                 <li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Active Word Analysis<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'></span></li>
-
                 {constistency ? (<li className='grade-item'>Inconsistencies<AiFillCheckCircle className='grade-check-icon' /> <span className='resume-includes'>Our parser determined that the layout of your resume is consistent. This is ideal for ATS because it allows it to parse the information accurately since many use font characteristics as a method to extract.</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Inconsistencies <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Our parser determined that the layout of your resume is inconsistent. Having a consistent font size and color scheme for headers, bulleted text, dates, etc for ATS is preferred because it allows it to parse the information accurately since many use font characteristics as a method to extract.</span></li>)}
             </ul>
         </div>
@@ -292,8 +251,8 @@ export default function InputResume() {
             <div className='grade-header-container'><h6>Crucial Details</h6><span className={gradeDetails === 'A' ? 'grade-header gold' : (gradeDetails === 'C' ? 'grade-header silver' : 'grade-header')}>{gradeDetails}</span></div>
             <ul>
                 {grammar ? (<li className='grade-item'><div className='grid-item-flexer'>Grammar/Mispellings<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>Your resume has gone through our Grammar Check and has passed!</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Grammar <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Your resume has gone through our Grammar Check and has failed.</span></li>)}
-                {/* <li>Mispellings <AiFillCheckCircle className='grade-check-icon' /></li> */}
-                {/* <li className='grade-item'>Consistent Tense **PENDING <MdPending className='grade-check-icon pending' /></li> */}
+                <li>Mispellings <AiFillCheckCircle className='grade-check-icon' /></li>
+                <li className='grade-item'>Consistent Tense **PENDING <MdPending className='grade-check-icon pending' /></li>
                 {firstPerson ? (<li className='grade-item'><div className='grid-item-flexer'>Avoid First Person Pronouns<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>Your resume is free of first person pronouns such as I, We, Mine... Nice!</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Avoid First Person Pronouns <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>Your resume includes first person pronouns such as I, We, Mine. This is a common mistake for many resumes and is generally avoided by professionals.</span></li>)}
                 {experienceFirst ? (<li className='grade-item'><div className='grid-item-flexer'>Experience First<AiFillCheckCircle className='grade-check-icon' /></div> <span className='resume-includes'>The experience section of your resume comes before the education section and that is ideal for your level of experience.</span></li>):(<li className='grade-item'><div className='grid-item-flexer'>Experience First <AiOutlineClose className='grade-check-icon grade-check-red-icon' /></div> <span className='resume-includes'>The experience section of your resume comes AFTER the education section. With your level of experience it&apos;s important to include Experience first. </span></li>)}
                 <li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Correct Filename<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'></span></li>
@@ -301,30 +260,99 @@ export default function InputResume() {
                 <li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Email is professional<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'></span></li>
                 <li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Hard & Soft Skills<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'></span></li>
                 <li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Consistent Tense<AiTwotoneLock className='grade-check-icon lock-icon' /></div> <span className='resume-includes'></span></li>
-
-                {/* <li className='grade-item'>PDF/Docx File Type <AiFillCheckCircle className='grade-check-icon' /></li>
+                <li className='grade-item'>PDF/Docx File Type <AiFillCheckCircle className='grade-check-icon' /></li>
                 <li className='grade-item'>Correct Filename **PENDING <MdPending className='grade-check-icon pending' /></li>
                 <li className='grade-item'>Remove References **PENDING <MdPending className='grade-check-icon pending' /></li>
                 <li className='grade-item'>Professional Email **PENDING <MdPending className='grade-check-icon pending' /></li>
-                <li className='grade-item'>Hard & Soft Skills **PENDING <MdPending className='grade-check-icon pending' /></li> */}
+                <li className='grade-item'>Hard & Soft Skills **PENDING <MdPending className='grade-check-icon pending' /></li>
 
             </ul>
         </div>
-           {/* {pdfText ? (
-            <div className='test-extract-div test-extracted-div'>
-                <h6 className='test-extract-header'>ATS Score</h6>
-                {longestLineLength > 100 ? 
-                    <pre>{pdfText}</pre> :
-                    <pre>{pdfText}</pre>
-                }
-            </div>
-        ):(
-          <div className='test-extract-div no-extract'>None Yet </div>
-        )} */}
-        </div>
-        
+        </div>  
     </div>
        )}
        </div>
   );
 }
+
+
+        {/* <div className='grade-container-item'>
+            <div className='grade-header-container'>
+                <h6>Sections</h6>
+                <span className='grade-header gold gold-glisten-animation'>A</span>
+            </div>
+              <ul>
+                <li className='grade-item locked-grade-item'><div className='grid-item-flexer'>Experience First <AiFillCheckCircle className='grade-check-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Dates Ordered Chronologically <AiFillCheckCircle className='grade-check-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Name <AiFillCheckCircle className='grade-check-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Email <AiFillCheckCircle className='grade-check-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Phone Number <AiFillCheckCircle className='grade-check-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Address <AiFillCheckCircle className='grade-check-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Summary <AiFillCheckCircle className='grade-check-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Experience <AiFillCheckCircle className='grade-check-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Education <AiFillCheckCircle className='grade-check-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Skills <AiFillCheckCircle className='grade-check-icon' /></div></li>
+              </ul>
+        </div>
+        <div className='grade-container-item'>
+            <div className='grade-header-container'>
+            <h6>Impact</h6><span className='grade-header gold'>A</span>
+            </div>
+              <ul>
+                <li className='grade-item'><div className='grid-item-flexer'>Quantify Impact<AiFillCheckCircle className='grade-check-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Unique Action Words<AiFillCheckCircle className='grade-check-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Keyword Optimization<AiTwotoneLock className='grade-check-icon lock-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Accomplishment Oriented Language <MdPending className='grade-check-icon pending' /></div></li>
+              </ul>
+        </div>
+        <div className='grade-container-item'>
+            <div className='grade-header-container'>
+            <h6>Brevity</h6><span className='grade-header gold'>A</span>
+            </div>              
+                <ul>
+                <li className='grade-item'><div className='grid-item-flexer'>Resume Length<AiFillCheckCircle className='grade-check-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Use of Bullets<AiFillCheckCircle className='grade-check-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Total Bullet Points <AiFillCheckCircle className='grade-check-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Bullet Point Length<AiFillCheckCircle className='grade-check-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Filler Word Analysis<AiTwotoneLock className='grade-check-icon lock-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Filler Word Analysis<AiTwotoneLock className='grade-check-icon lock-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>One Page<AiFillCheckCircle className='grade-check-icon' /></div></li>
+              </ul>
+        </div>
+        <div className='grade-container-item'>
+            <div className='grade-header-container'>
+            <h6>Styles</h6><span className='grade-header gold'>A</span>
+            </div>
+            <ul>
+                <li className='grade-item'><div className='grid-item-flexer'>Buzzwords or Cliches <MdPending className='grade-check-icon pending' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Readability <MdPending className='grade-check-icon pending' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Dates <MdPending className='grade-check-icon pending' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Active Voice analysis <MdPending className='grade-check-icon pending' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Readability<AiTwotoneLock className='grade-check-icon lock-icon' /></div> </li>
+                <li className='grade-item'><div className='grid-item-flexer'>Dates<AiTwotoneLock className='grade-check-icon lock-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Active Word Analysis<AiTwotoneLock className='grade-check-icon lock-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Inconsistencies<AiTwotoneLock className='grade-check-icon lock-icon' /></div></li>
+            </ul>
+        </div>
+        <div className='grade-container-item'>
+            <div className='grade-header-container'>
+            <h6>Crucial Details</h6><span className='grade-header gold'>A</span>
+            </div>
+            <ul>
+                <li className='grade-item'><div className='grid-item-flexer'>Grammar/Mispellings<AiFillCheckCircle className='grade-check-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Mispellings <AiFillCheckCircle className='grade-check-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Consistent Tense <MdPending className='grade-check-icon pending' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Avoid First Person Pronouns<AiFillCheckCircle className='grade-check-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Experience First<AiFillCheckCircle className='grade-check-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Correct Filename<AiTwotoneLock className='grade-check-icon lock-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>No References<AiTwotoneLock className='grade-check-icon lock-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Email is professional<AiTwotoneLock className='grade-check-icon lock-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Hard & Soft Skills<AiTwotoneLock className='grade-check-icon lock-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Consistent Tense<AiTwotoneLock className='grade-check-icon lock-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>PDF/Docx File Type <AiFillCheckCircle className='grade-check-icon' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Correct Filename <MdPending className='grade-check-icon pending' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Remove References <MdPending className='grade-check-icon pending' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Professional Email <MdPending className='grade-check-icon pending' /></div></li>
+                <li className='grade-item'><div className='grid-item-flexer'>Hard & Soft Skills <MdPending className='grade-check-icon pending' /></div></li>
+            </ul>
+        </div> */}

@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { BsCloudArrowUp } from 'react-icons/bs';
-const DropzoneInput = ({ onDrop, accept }) => {
+const DropzoneInput = ({ onDrop, accept, fileName }) => {
+  const [file, setFile] = useState(null);
+  const [pdfText, setPdfText] = useState('');
+  // const [fileName, setFileName] = useState('');
+
+
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept
@@ -17,16 +22,11 @@ const DropzoneInput = ({ onDrop, accept }) => {
         <div className='custom-file-absolute'>
         <BsCloudArrowUp className='test-input-icon'/>
         <p>Drag n drop some files here, or click to select files</p>
-
-        {/* <p className='or-p'>or</p> */}
-        {/* <label className='test-input-label'>
-            Browse Files
-            <input type='file' className='test-input-browse'/>
-        </label> */}
         <p className='max-size-p'>Maximum file size is 100MB.</p>
         </div>
         </div>
       )}
+       {fileName ? ( <div className='filename-div'>{fileName}</div>):(<div className='no-file-div' >* No File Selected</div>)}
     </div>
   );
 };

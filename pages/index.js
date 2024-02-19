@@ -15,6 +15,7 @@ import LogoSlider from '../components/LogoSlider'
 import ImageSlider from '../components/ImageSlider'
 import HeaderSwitcher from '../components/HeaderSwitcher'
 import Chatbot from '../components/Chatbot'
+import Head from 'next/head'
 export default function Home() {
   const [showMe, setShowMe] = useState(false);
   const [isActive, setIsActive] = useState(false);
@@ -35,12 +36,28 @@ export default function Home() {
 
   return (
     <div>
+            <Head>
+          <title>ResumeBuilderAI | Create, Tailor, and Test Your Resume for Success</title>
+          <meta name="description" content="Unlock your career potential with ResumeBuilderAI. Effortlessly build a professional resume, tailor it to match job descriptions, and test its effectiveness. Start your journey to the perfect job today!" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta charSet="utf-8" />
+          <meta name="robots" content="index, follow" />
+          <link rel="icon" href="/resume-builder-logo.png" />
+          <link rel="apple-touch-icon" href="/resume-builder-logo.png" /> 
+          <link rel="canonical" href="https://theresumebuilderai.com"/>
+          <meta property="og:type" content="article" />
+           <meta property="og:title" content="Venum" />
+           <meta property="og:description" content="Unlock your career potential with ResumeBuilderAI. Effortlessly build a professional resume, tailor it to match job descriptions, and test its effectiveness. Start your journey to the perfect job today!" />
+           <meta property="og:image" content="/resume-builder-logo.png" />
+           <meta property="og:url" content="https://venum.vercel.app/" />
+           <meta property="og:site_name" content="Venum" />
+        </Head>
     <Navbar />
     <Chatbot />
     <div className="index-spotlight-container">
       <div className='index-spotlight-div'>
-      <h1 className='index-spotlight-header'>Unlock Your Career Potential</h1>
-      <h3 className='index-spotlight-subheader'>Build a resume guaranteed to crack the ATS & land your dream job. 🤝</h3>
+      <h1 className='index-spotlight-header'>Build Your Perfect Resume with <span className='blue-color-change'>ResumeBuilderAI</span></h1>
+      <h3 className='index-spotlight-subheader'>Build, test or tailor a resume guaranteed to crack the ATS & land your dream job. 🤝</h3>
       <div className='index-created'><span className='blue-color-change color-change-number'>3,452 </span> Resumes Created Today <GoDotFill className='index-dot' /></div>
       <Link href='/build'><button type='button' className='index-spotlight-btn btn btn-primary'>Build A Resume</button></Link>
       <Link href='/test'><button type='button' className='index-spotlight-btn btn btn-secondary'>Test Your Resume</button></Link>

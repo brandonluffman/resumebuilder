@@ -38,6 +38,11 @@ padding:0rem 0.2rem;
     font-size:2rem;
     margin: 1rem 1rem; 
     cursor:pointer; 
+    width: 30px;
+}
+
+.fa-facebook {
+    width: 20px !important;
 }
 
 .privacy-policy {

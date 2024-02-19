@@ -1,4 +1,171 @@
 .build-container {
-    padding-top:150px;
-    height:100vh;
+    padding:100px 0px;
+    /* height:100vh; */
+}
+
+.build-container h1 {
+    text-align: center;
+}
+
+.build-form {
+    width: 100%;
+    display: inline-block;
+    padding: 0rem 1rem;
+}
+
+.build-form label {
+    color: rgb(100, 100, 100);
+}
+
+.build-form input {
+    width: 100%;
+    background-color: rgb(210, 213, 255);
+    border: none;
+    /* border-bottom: 1px solid black; */
+    margin-bottom: 2rem;
+    outline: none;
+    color: black;
+    transition: 0.2s ease all;
+    border-bottom: 3px solid white;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    padding: 0.2rem 0rem 0.2rem 0.2rem;
+}
+
+.build-form input:focus {
+    border-bottom: 3px solid rgb(30, 0, 177);
+    transition: 0.2s ease all;
+}
+
+.build-form textarea {
+    width: 100%;
+    background-color: rgb(210, 213, 255);
+    border: none;
+    color: black;
+    transition: 0.2s ease all;
+    border-bottom: 3px solid white;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    padding: 0.2rem 0rem 0.2rem 0.2rem;
+    margin-bottom: 2rem;
+    outline: none;
+}
+
+.build-add-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.build-add-div input {
+    margin:0;
+}
+
+.multi-input-div input, .multi-input-div textarea {
+    margin-bottom: 0.5rem;
+}
+
+.input-append-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-append-list p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+  }
+
+  .build-close-btn {
+    background-color: transparent;
+    color: black;
+    border: none;
+    font-size: 2rem;
+    margin-bottom: -0.5rem;
+    cursor: pointer;
+    transition:0.2s ease all;
+  }
+
+  .build-close-btn:hover {
+    color:red;
+  }
+.multi-input-container {
+    margin-bottom: 2rem;
+}
+
+.resume-type-selection {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.resume-type-selection input {
+    margin-bottom: 0rem;
+}
+
+.resume-type-selection label {
+    display: inline-block;
+    position: relative;
+    /* padding-left: 25px; */
+    cursor: pointer;
+    user-select: none;
+    margin-right: 10px; /* Add some space between labels */
+    padding: 1rem 2rem; /* Add some padding to the label */
+    border-radius: 5px; /* Optional: add rounded corners */
+    z-index:9999999 !important;
+    min-width: 250px;
+    font-size: 1.5rem;
+    transition: 0.2s ease all;
+  }
+  
+  .resume-type-selection label:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .resume-type-selection input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .resume-type-selection input[type="radio"]:checked + label {
+    background-color: blue;
+    color: white;
+    font-weight: 800;
+    letter-spacing: 0vw;
+  }
+  
+  
+
+.submit-btn {
+    padding:0.75rem 2rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+
+.format-label {
+    margin-bottom: 2rem;
+}
+
+.build-form-contacts {
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+}
+
+.build-form-contacts div:nth-of-type(even) {
+    padding-left:1rem;
+}
+.build-form-contacts div:nth-of-type(odd) {
+    padding-right: 1rem;
 }

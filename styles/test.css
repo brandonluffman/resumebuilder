@@ -1,6 +1,6 @@
 .test-container {
     height:auto;
-    padding-top:100px;
+    padding-top:50px;
     overflow-x: hidden;
 }
 .input-resume-container {
@@ -13,6 +13,11 @@
     margin-bottom:4rem;
 }
 
+.test-resumedrop {
+    width: 75%;
+    margin:0 auto;
+}
+
 .checklist-cats-container {
     /* display: flex;
     width: 100%;
@@ -21,16 +26,17 @@
 
 .input-resume-drop {
     position: relative;
+    padding:0rem 2rem;
 }
 
 .test-grade-div {
     margin: 0 auto;
     width:auto;
     width:175px;
-    display: flex;
+    /* display: flex;
     text-align: center;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
 
 .test-checklist-header {
@@ -119,6 +125,7 @@
 .test-btn {
     margin:0 auto;
     display: flex;
+    margin-bottom: 4rem;
 }
 
 
@@ -134,7 +141,8 @@
 
 .custom-file-upload {
     border: 1px solid #ccc;
-    width:50%;
+    /* width:50%; */
+    min-width: 50%;
     height:400px;
     border-radius: 30px;
     cursor: pointer;
@@ -160,7 +168,12 @@ input[type="file"] {
 }
 
 .dropzone-container {
-    /* position: relative; */
+    position: relative;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 .test-input-icon {
@@ -201,13 +214,16 @@ input[type="file"] {
 
 .filename-div {
     position: absolute;
-    top:-105px;
+    top:0;
     bottom:0;
     right:0;
     left:0;
     margin:auto auto;
-    width:45%;
-    height:350px;
+    /* width:45%; */
+    height:100%;
+    width: 100%;
+    border:1px solid rgb(255, 255, 255);
+    /* height: 100px; */
     font-weight: 700;
     letter-spacing: 0vw;
     color:rgb(37,138,240);
@@ -216,16 +232,18 @@ input[type="file"] {
     align-items: center;
     text-align: center;
     justify-content: center;
-    border-radius: 20px;
+    border-radius: 30px;
+    background: linear-gradient(to right, rgb(36, 107, 238), rgb(125, 207, 255));
+    color: white;
 }
 .filename-div {
-    width:47%;
-    height:74%;
+    /* width:47%;
+    height:74%; */
 }
 .no-file-div {
     position: absolute;
-    bottom:150px;
-    right:30%;
+    bottom:5px;
+    right:8%;
     
 }
 .custom-file-absolute > p {
@@ -429,10 +447,10 @@ input[type="file"] {
     .no-file-div {
         right:20%;
     }
-    .filename-div {
+    /* .filename-div {
         width:71%;
         height:74%;
-    }
+    } */
 }
 @media (max-width: 768px) {
     /* .custom-file-upload {
