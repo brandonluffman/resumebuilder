@@ -58,7 +58,7 @@ export default function Home() {
       <div className='index-spotlight-div'>
       <h1 className='index-spotlight-header'>Build Your Perfect Resume with <span className='blue-color-change'>ResumeBuilderAI</span></h1>
       <h3 className='index-spotlight-subheader'>Build, test or tailor a resume guaranteed to crack the ATS & land your dream job. 🤝</h3>
-      <div className='index-created'><span className='blue-color-change color-change-number'>3,452 </span> Resumes Created Today <GoDotFill className='index-dot' /></div>
+      <div className='index-created'><span className='blue-color-change color-change-number'>868 </span> Resumes Created Today <GoDotFill className='index-dot' /></div>
       <Link href='/build'><button type='button' className='index-spotlight-btn btn btn-primary'>Build A Resume</button></Link>
       <Link href='/test'><button type='button' className='index-spotlight-btn btn btn-secondary'>Test Your Resume</button></Link>
       </div>
@@ -195,7 +195,7 @@ export default function Home() {
           <div className='index-blog-card'>
           <div className="gradient-box"></div>
           <div className='index-blog-card-content'>
-            <h2 className='index-blog-title'>The universal guide on how to write the perfect resume</h2>
+            <h2 className='index-blog-title'>Cracking the ATS: A Formal Guide</h2>
             <span className='index-blog-tag'>ATS</span>
             <div className='index-blog-bottom-div'>
               <p className='index-blog-bottom-copy'>Resume Guide <GoDotFill className='index-blog-bottom-dot' /> 8 Min Read</p>

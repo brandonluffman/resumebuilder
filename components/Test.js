@@ -68,35 +68,64 @@ const Test = () => {
     };
 
     const sections = result && [
-      {
+        {
           title: 'Contact Information',
           grade: 'A',
           items: [
-              { name: `Phone Number`, status: result['Phone Number'] ? 'check': 'failed' },
-              { name: `Email Address`, status: result['Email Address'] ? 'check': 'failed' },
-              { name: `Address`, status: result['Address'] ? 'check' : 'failed' },
+            {
+              name: 'Phone Number',
+              status: result['Phone Number'] ? 'check' : 'failed',
+              message: result['Phone Number'] ? 'Great! Having a phone number makes it easy for employers to contact you.' : 'Missing phone number. Make sure to include it so employers can easily reach out to you.'
+            },
+            {
+              name: 'Email Address',
+              status: result['Email Address'] ? 'check' : 'failed',
+              message: result['Email Address'] ? 'Awesome! A professional email address is crucial for communication.' : 'Missing email address. It\'s important to have a professional email for potential employers to contact you.'
+            },
+            {
+              name: 'Address',
+              status: result['Address'] ? 'check' : 'failed',
+              message: result['Address'] ? 'Good job! Including your address helps employers know your location.' : 'No address found. Consider adding it to help employers understand your proximity to the job location.'
+            }
           ],
-      },
-      {
+        },
+        {
           title: 'Resume Sections',
           grade: 'A',
           items: Object.entries(result.Categories).map(([key, value]) => ({
-              name: `${key} Section`,
-              status: value ? 'check' : 'failed',
+            name: `${key} Section`,
+            status: value ? 'check' : 'failed',
+            message: value ? `Nice! Having a ${key} section adds structure to your resume.` : `Missing ${key} section. Consider adding it to highlight your ${key.toLowerCase()} in your resume.`
           })),
-      },
-      {
+        },
+        {
           title: 'Resume Quality',
           grade: 'A',
           items: [
-              { name: 'Is One Page', status: result['Is One Page'] ? 'check' : 'failed' },
-              { name: 'Avoids First Person Pronouns', status: result['Contains First Person Pronouns'] ? 'check': 'failed' },
-              { name: 'Has Action Words', status: result['Has Action Words'] ? 'check' : 'failed' },
-              { name: 'Accomplishments Quantified', status: result['Is Quantified'] ? 'check' : 'failed' },
-
+            {
+              name: 'Is One Page',
+              status: result['Is One Page'] ? 'check' : 'failed',
+              message: result['Is One Page'] ? 'Excellent! A one-page resume is concise and keeps the reader\'s attention.' : 'Your resume is more than one page. Try to condense it to make it more impactful.'
+            },
+            {
+              name: 'Avoids First Person Pronouns',
+              status: result['Contains First Person Pronouns'] ? 'check' : 'failed',
+              message: result['Contains First Person Pronouns'] ? 'Well done! Avoiding first-person pronouns keeps your resume professional.' : 'Try to avoid first-person pronouns to maintain a professional tone.'
+            },
+            {
+              name: 'Has Action Words',
+              status: result['Has Action Words'] ? 'check' : 'failed',
+              message: result['Has Action Words'] ? 'Fantastic! Using action words makes your accomplishments stand out.' : 'Lacking action words. Consider using them to highlight your achievements more effectively.'
+            },
+            {
+              name: 'Accomplishments Quantified',
+              status: result['Is Quantified'] ? 'check' : 'failed',
+              message: result['Is Quantified'] ? 'Great! Quantifying accomplishments provides clear evidence of your impact.' : 'Your accomplishments are not quantified. Try to include numbers to demonstrate your achievements.'
+            }
           ],
-      },
-  ];
+        }
+      ];
+      
 
   return (
     <div className='test-container'>
@@ -133,6 +162,7 @@ const Test = () => {
                               {item.status === 'pending' && <MdPending className='grade-check-icon pending' />}
                               {item.status === 'lock' && <AiTwotoneLock className='grade-check-icon lock-icon' />}
                               </div>
+                              <span className='resume-includes'>{item.message}</span>
                           </li>
                           ))}
                       </ul>
