@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas'
 import { BsDownload, BsFilePdf } from 'react-icons/bs';
+import { IoMdDownload } from 'react-icons/io';
 
 
 const FunctionalResumeTemplate = ({ formData, setFormData }) => {
@@ -27,9 +28,18 @@ const FunctionalResumeTemplate = ({ formData, setFormData }) => {
   };
     return (
       <div>
+                <button className='btn-margin download-btn' onClick={downloadResumeAsPDF}><IoMdDownload /></button>
+
       <div id='resume' className="resume functional">
         <h1>{formData.name}</h1>
-        <p className='resume-contact-info'>{formData.email} | {formData.phone}</p>
+        <h1>{formData.jobTitle}</h1>
+        <div className='resume-contact-container'>
+          <p className='resume-contact-info'>{formData.email}</p>
+          |
+           <p>{formData.phone}</p>
+           |
+           <p>{formData.cityState}</p>
+          </div>
 
        {/* <h2>Professional Summary</h2>
       <QuillEditor
@@ -38,18 +48,28 @@ const FunctionalResumeTemplate = ({ formData, setFormData }) => {
       /> */}
   
         <h2>Skills</h2>
-        <ul>
+        <p>{formData.skills.join(', ')}</p>
+
+        {/* <ul>
           {formData.skills.map((skill, index) => (
             <li key={index}>{skill}</li>
           ))}
-        </ul>
+        </ul> */}
   
         <h2>Professional Experience</h2>
         {formData.workExperience.map((experience, index) => (
           <div key={index}>
             <h3>{experience.title}</h3>
-            <p>{experience.company} | {experience.yearsOfEmployment}</p>
-            <p>{experience.accomplishments}</p>
+            <div className='work-flexer'>
+              <p>{experience.company}</p>
+              <p>{experience.yearsOfEmployment}</p>
+              </div>
+            {/* <p>{experience.accomplishments}</p> */}
+            <ul className='accomplishments-list'>
+                <li>Led the development and implementation of a responsive web application using React and Node.js, resulting in a 30% increase in user engagement and a 20% reduction in page load times.</li>
+                <li>Designed and maintained a RESTful API using Python and Flask, ensuring seamless data integration and scalability for a growing user base of over 50,000.</li>
+                <li>Collaborated with cross-functional teams to implement agile methodologies, improving project delivery times by 25% and enhancing team productivity and communication.</li>
+              </ul>
           </div>
         ))}
   
@@ -57,23 +77,32 @@ const FunctionalResumeTemplate = ({ formData, setFormData }) => {
         {formData.education.map((edu, index) => (
           <div key={index}>
             <h3>{edu.schoolName}</h3>
-            <p>{edu.degree} in {edu.major} | {edu.dates}</p>
+            <div className='work-flexer'>
+              <p>{edu.degree} | {edu.major}</p>
+              <p>{edu.dates}</p>
+              </div>
           </div>
         ))}
-  
-        <h2>Certifications</h2>
-        {formData.certifications.map((cert, index) => (
-          <div key={index}>
-            <h3>{cert.certTitle}</h3>
-            <p>{cert.certificationDonor} | {cert.dateAwarded}</p>
-          </div>
-        ))}
-  
-        <h2>Personal Interests</h2>
-        <p>{formData.personalInterests}</p>
-</div>
-<button onClick={downloadResumeAsPDF} className='btn-margin'><BsDownload /></button>
 
+        {formData.certifications.length > 0 && (
+          <div>
+            <h2>Certifications</h2>
+            {formData.certifications.map((cert, index) => (
+              <div key={index}>
+                <h3>{cert.certTitle}</h3>
+                <p>{cert.certificationDonor} | {cert.dateAwarded}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
+{formData.personalInterests.length > 0 && 
+      <div>
+          <h2>Personal Interests</h2>
+          <p>{formData.personalInterests.join(', ')}</p>
+          </div>
+    }
+      </div>
       </div>
     );
   };

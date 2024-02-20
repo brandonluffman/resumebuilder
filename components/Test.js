@@ -6,7 +6,7 @@ import 'react-circular-progressbar/dist/styles.css'; // Don't forget to import t
 import { AiFillCheckCircle, AiOutlineClose, AiTwotoneLock } from 'react-icons/ai';
 import { MdPending } from 'react-icons/md';
 import Loading from './Loading';
-
+import Router from 'next/router';
 const Test = () => {
     const [file, setFile] = useState(null);
     const [fileName, setFileName] = useState('');
@@ -14,12 +14,13 @@ const Test = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [result, setResult] = useState('')
     const myAnchorRef = useRef(null);
+    const loadingRef = useRef(null);
 
-    useEffect(() => {
-        if (overallGrade != 0 && myAnchorRef.current) {
-          myAnchorRef.current.scrollIntoView({ behavior: 'smooth' });
-        }
-    }, [overallGrade]);
+    // useEffect(() => {
+    //     if (overallGrade != 0 && myAnchorRef.current) {
+    //       myAnchorRef.current.scrollIntoView({ behavior: 'smooth' });
+    //     }
+    // }, [overallGrade]);
 
     const handleOnDrop = (acceptedFiles) => {
         setFileName(acceptedFiles[0].path)
@@ -30,8 +31,10 @@ const Test = () => {
         event.preventDefault();
         if (file) {
             setIsLoading(true);
+            Router.push("#loading")
             const formData = new FormData();
             formData.append('file', file);
+
 
             try {
                 const response = await fetch('https://resumeparser-irx7.onrender.com/parse-resume/', {
@@ -45,7 +48,9 @@ const Test = () => {
                     setIsLoading(false);
                     console.log(data)
                     setOverallGrade(data["Resume Grade"] * 100)
-                    // Calculate overall grade here and setOverallGrade
+                    console.log(overallGrade)
+                    setFile(null);
+                    setFileName('');
                 } else {
                     throw new Error('Failed to parse resume');
                 }
@@ -80,7 +85,7 @@ const Test = () => {
           grade: 'A',
           items: [
               { name: 'Is One Page', status: result['Is One Page'] ? 'check' : 'failed' },
-              { name: 'Contains First Person Pronouns', status: result['Contains First Person Pronouns'] ? 'check': 'failed' },
+              { name: 'Avoids First Person Pronouns', status: result['Contains First Person Pronouns'] ? 'check': 'failed' },
               { name: 'Has Action Words', status: result['Has Action Words'] ? 'check' : 'failed' },
               { name: 'Accomplishments Quantified', status: result['Is Quantified'] ? 'check' : 'failed' },
 
@@ -95,7 +100,9 @@ const Test = () => {
             <DropzoneInput onDrop={handleOnDrop} accept="image/*" fileName={fileName} />
             </div>
             <button onClick={handleSubmit} className='btn btn-primary test-btn submit-btn'>Test</button>
-            {isLoading && <Loading />}
+            <div id='loading'>
+            {isLoading && <Loading ref={loadingRef} />}
+            </div>
             {result && (
               <div>
               <div ref={myAnchorRef} className='test-grade-div'>

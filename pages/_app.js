@@ -23,6 +23,7 @@ import '../styles/partners.css'
 import '../styles/four.css'
 import '../styles/loading.css'
 import '../styles/resumetemplate.css'
+import '../styles/cover-letter.css'
 
 
 function MyApp({ Component, pageProps }) {

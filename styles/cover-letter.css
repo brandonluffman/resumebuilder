@@ -1,0 +1,31 @@
+.cl-builder-container {
+    padding-top:100px;
+    padding-bottom: 100px;
+}
+
+.cover-letter-analysis {
+    /* display: flex;
+    justify-content: center; */
+}
+
+.cover-letter-analysis {
+    padding:0rem 2rem;
+    justify-content: center;
+    display: flex;
+}
+.cover-letter-analysis pre {
+    /* width: 50%; */
+    /* text-align: center; */
+    font-size:1rem;
+    white-space: pre-wrap;
+    width: 50%;
+    border: 1px solid rgb(230, 230, 230);
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 0vw;
+    padding:2rem 2rem;
+    border-radius: 20px;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+}
+.cover-letter-resume {
+
+}

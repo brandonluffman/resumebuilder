@@ -51,6 +51,27 @@
     outline: none;
 }
 
+.build-form-combine {
+    display: flex;
+    gap:20px;
+}
+
+.build-form-combine .multi-input-container {
+    width: 100%;
+}
+
+/* .build-form-combine .multi-input-container:nth-of-type(1) {
+    padding-right: 0.5rem;
+}
+
+.build-form-combine .multi-input-container:nth-of-type(2) {
+    padding: 0rem 0.5rem;
+}
+
+.build-form-combine .multi-input-container:nth-of-type(3) {
+    padding: 0rem 0.5rem;
+} */
+
 .build-add-div {
     display: flex;
     justify-content: space-between;
@@ -122,7 +143,7 @@
     margin-right: 10px; /* Add some space between labels */
     padding: 1rem 2rem; /* Add some padding to the label */
     border-radius: 5px; /* Optional: add rounded corners */
-    z-index:9999999 !important;
+    z-index:999 !important;
     min-width: 250px;
     font-size: 1.5rem;
     transition: 0.2s ease all;
@@ -144,6 +165,12 @@
     font-weight: 800;
     letter-spacing: 0vw;
   }
+
+  /* .add-btn-bg {
+    border: 1px solid blue;
+    display: flex;
+    margin-bottom: .1rem;
+  } */
   
   
 
@@ -155,7 +182,8 @@
 
 
 .format-label {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.15rem;
 }
 
 .build-form-contacts {

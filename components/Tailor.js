@@ -2,6 +2,7 @@ import { useState } from 'react';
 import DropzoneInput from './DropzoneInput';
 import Loading from './Loading';
 import ResumeTemplate from './ResumeTemplate';
+import Router from 'next/router';
 
 const Tailor = () => {
   const [resume, setResume] = useState('');
@@ -12,16 +13,6 @@ const Tailor = () => {
   const [fileName, setFileName] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   if (name === 'resume') {
-  //     setResume(value);
-  //   } else if (name === 'jobDescription') {
-  //     setJobDescription(value);
-  //   }
-  // };
-
   const handleChange = (event) => {
     setJobDescription(event.target.value);
 };
@@ -29,6 +20,8 @@ const Tailor = () => {
 const handleSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true)
+    Router.push("#loading")
+
     if (file && jobDescription) {
         const formData = new FormData();
         formData.append('resume', file);
@@ -43,7 +36,7 @@ const handleSubmit = async (event) => {
             if (response.ok) {
                 const data = await response.json();
                 setAnalysisResults(data);
-                console.log(data)
+                // console.log(data)
             } else {
                 throw new Error('Failed to analyze texts');
             }
@@ -56,14 +49,15 @@ const handleSubmit = async (event) => {
 };
 
   const handleOnDrop = (acceptedFiles) => {
-    console.log(acceptedFiles);
-    console.log(acceptedFiles[0].path)
+    // console.log(acceptedFiles);
+    // console.log(acceptedFiles[0].path)
     setFileName(acceptedFiles[0].path)
     setFile(acceptedFiles[0]);
   };
 
   return (
     <div>
+      <h2>Tailor Your Resume</h2>
  <form onSubmit={handleSubmit} className='tailor-form'>
             <div className='tailor-form-container'>
                 <div className='tailor-resumedrop'>
@@ -74,15 +68,17 @@ const handleSubmit = async (event) => {
                 <div className='tailor-jobdescription-container'>
                     <label htmlFor="jobDescription" className='tailor-resume-label'>Job Description:</label>
                     <hr className='white-hr'></hr>
-                    <textarea id="jobDescription" name="jobDescription" value={jobDescription} onChange={handleChange}></textarea>
+                    <textarea id="jobDescription" name="jobDescription" value={jobDescription} onChange={handleChange} placeholder='Paste the Job Description here....'></textarea>
                     {/* <p>or</p>
                     <input type='text' placeholder='paste the link here...' /> */}
                 </div>
             </div>
             <button className='btn btn-primary btn-margin tailor-btn' type="submit">Analyze</button>
+            <div id='loading'>
             {isLoading && <Loading />}
+            </div>
 
-            {analysisResults && (
+            {analysisResults && Object.keys(analysisResults).length > 0 && (
               <div className='analysis-results-container'>
                 <div className='analysis-results'>
                     <h3>Analysis Results</h3>

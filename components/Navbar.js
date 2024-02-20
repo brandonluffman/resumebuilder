@@ -55,13 +55,16 @@ const Navbar = () => {
           {/* {isDropdownOpen && ( */}
             <ul className="dropdown-content">
               <li>
-              <Link href="/build"><IoIosCreate className='nav-link-icon' />Build a Resume</Link>
+              <Link href="/build"><IoIosCreate className='nav-link-icon' />Resume Builder</Link>
               </li>
               <li>
-              <Link href="/test"><SiSpeedtest className='nav-link-icon' />Test a Resume</Link>
+              <Link href="/test"><SiSpeedtest className='nav-link-icon' />Resume Test</Link>
               </li>
               <li>
                 <Link href="/tailor"><BsPenFill className='nav-link-icon' />Tailor a Resume</Link>
+              </li>
+              <li>
+                <Link href="/cover-letter-builder"><BsPenFill className='nav-link-icon' />Cover Letter Generator</Link>
               </li>
             </ul>
            {/* )}  */}
