@@ -61,14 +61,18 @@ const FunctionalResumeTemplate = ({ formData, setFormData }) => {
           <div key={index}>
             <h3>{experience.title}</h3>
             <div className='work-flexer'>
-              <p>{experience.company}</p>
-              <p>{experience.yearsOfEmployment}</p>
+              <p className='work-company'>{experience.company}</p>
+              <div className='work-dates'>
+              <p>{experience.startDate}</p>
+              <p> - </p>
+              <p>{experience.endDate}</p>
+              </div>
               </div>
             {/* <p>{experience.accomplishments}</p> */}
             <ul className='accomplishments-list'>
-                <li>Led the development and implementation of a responsive web application using React and Node.js, resulting in a 30% increase in user engagement and a 20% reduction in page load times.</li>
-                <li>Designed and maintained a RESTful API using Python and Flask, ensuring seamless data integration and scalability for a growing user base of over 50,000.</li>
-                <li>Collaborated with cross-functional teams to implement agile methodologies, improving project delivery times by 25% and enhancing team productivity and communication.</li>
+              {experience.accomplishments.map((accomplishment, index) => (
+                  <li key={index}>{accomplishment}</li>
+                ))}
               </ul>
           </div>
         ))}
@@ -79,7 +83,11 @@ const FunctionalResumeTemplate = ({ formData, setFormData }) => {
             <h3>{edu.schoolName}</h3>
             <div className='work-flexer'>
               <p>{edu.degree} | {edu.major}</p>
-              <p>{edu.dates}</p>
+              <div className='work-dates'>
+              <p>{edu.startYear}</p>
+              <p>-</p>
+              <p>{edu.endYear}</p>
+              </div>
               </div>
           </div>
         ))}

@@ -104,7 +104,7 @@
     justify-content: space-between;
   }
 
-  .work-flexer p:first-of-type {
+  .work-company {
     font-size: 1.1rem;
   }
 
@@ -113,4 +113,9 @@
     list-style-type:circle;
     letter-spacing: 0vw;
     padding:0rem 1rem;
+  }
+
+  .work-dates {
+    display: flex;
+    align-items: center;
   }

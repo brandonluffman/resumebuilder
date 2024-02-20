@@ -25,45 +25,19 @@ const BuildForm = () => {
     schoolName: '',
     major: '',
     degree: '',
-    dates: ''
+    startYear: '',
+    endYear: ''
   });
 
   const [newWorkExperience, setNewWorkExperience] = useState({
     title: '',
     company: '',
-    yearsOfEmployment: '',
-    accomplishments: ''
+    startDate: '',
+    endDate: '',
+    isCurrentlyWorking: false,
+    accomplishments: ['']
   });
   
-  
-    // const [formData, setFormData] = useState({
-    //     name: '',
-    //     email: '',
-    //     phone: '',
-    //     professionalSummary: '',
-
-    //     links: [],
-    //     cityState: '',
-    //     workExperience: [{
-    //       title: '',
-    //       accomplishments: '',
-    //       company: '',
-    //       yearsOfEmployment: ''
-    //     }],
-    //     skills: [],
-    //     education: [{
-    //       schoolName: '',
-    //       major: '',
-    //       degree: '',
-    //       dates: ''
-    //     }],
-    //     certifications: [{
-    //       certTitle: '',
-    //       certificationDonor: '',
-    //       dateAwarded: ''
-    //     }],
-    //     personalInterests: [],
-    //   });
 
     const [formData, setFormData] = useState({
       name: '',
@@ -116,13 +90,35 @@ const BuildForm = () => {
         setFormData({ ...formData, skills: filteredSkills });
       };
 
-      const addWorkExperience = () => {
-        if (newWorkExperience.title || newWorkExperience.company || newWorkExperience.yearsOfEmployment || newWorkExperience.accomplishments) {
-          setFormData({ ...formData, workExperience: [...formData.workExperience, newWorkExperience] });
-          setNewWorkExperience({ title: '', company: '', yearsOfEmployment: '', accomplishments: '' });
-        }
+
+      const addAccomplishment = () => {
+        setNewWorkExperience({
+          ...newWorkExperience,
+          accomplishments: [...newWorkExperience.accomplishments, '']
+        });
       };
       
+      const updateAccomplishment = (index, value) => {
+        const updatedAccomplishments = newWorkExperience.accomplishments.map((item, i) => i === index ? value : item);
+        setNewWorkExperience({ ...newWorkExperience, accomplishments: updatedAccomplishments });
+      };
+      
+      const removeAccomplishment = (index) => {
+        const filteredAccomplishments = newWorkExperience.accomplishments.filter((_, i) => i !== index);
+        setNewWorkExperience({ ...newWorkExperience, accomplishments: filteredAccomplishments });
+      };
+
+
+      const addWorkExperience = () => {
+        if (newWorkExperience.title || newWorkExperience.company || newWorkExperience.startDate || newWorkExperience.endDate || newWorkExperience.accomplishments) {
+          const workExperienceToAdd = {
+            ...newWorkExperience,
+            endDate: newWorkExperience.isCurrentlyWorking ? 'Present' : newWorkExperience.endDate
+          };
+          setFormData({ ...formData, workExperience: [...formData.workExperience, workExperienceToAdd] });
+          setNewWorkExperience({ title: '', company: '', startDate: '', endDate: '', isCurrentlyWorking: false, accomplishments: [''] });
+        }
+      };
       
       const updateWorkExperience = (index, key, value) => {
         const updatedWorkExperience = formData.workExperience.map((experience, i) => {
@@ -140,9 +136,9 @@ const BuildForm = () => {
       };
 
       const addEducation = () => {
-        if (newEducation.schoolName || newEducation.major || newEducation.degree || newEducation.dates) {
+        if (newEducation.schoolName || newEducation.major || newEducation.degree || newEducation.startYear || newEducation.endYear) {
           setFormData({ ...formData, education: [...formData.education, newEducation] });
-          setNewEducation({ schoolName: '', major: '', degree: '', dates: '' });
+          setNewEducation({ schoolName: '', major: '', degree: '', startYear: '', endYear: '' });
         }
       };
       
@@ -271,58 +267,80 @@ const BuildForm = () => {
 
   <div className='build-form-combine'>
 
-    {/* Work Experience */}
     <div className='multi-input-container'>
-  <div className='build-add-div'>
-    <label>Work Experience</label>
-    <button type="button" onClick={addWorkExperience} className='add-btn'><IoMdAdd /></button>
-  </div>
+    <div className='build-add-div'>
+        <label>Work Experience</label>
+    </div>
 
-  <div className='multi-input-div'>
-    <input type="text" placeholder="Title" value={newWorkExperience.title} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, title: e.target.value })} />
-    <input type="text" placeholder="Company" value={newWorkExperience.company} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, company: e.target.value })}  />
-    <input type="text" placeholder="Years of Employment" value={newWorkExperience.yearsOfEmployment} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, yearsOfEmployment: e.target.value })} />
-    <textarea placeholder="Accomplishments" value={newWorkExperience.accomplishments} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, accomplishments: e.target.value })} />
-  </div>
-
-  {formData.workExperience.map((experience, index) => (
-    (experience.title || experience.company || experience.yearsOfEmployment || experience.accomplishments) && (
-      <div key={index} className='multi-input-div input-append-list'>
-        <p>Title: <b>{experience.title}</b></p>
-        <p>Company: <b>{experience.company}</b></p>
-        <p>Years of Employment: <b>{experience.yearsOfEmployment}</b></p>
-        <p>Accomplishments: <b>{experience.accomplishments}</b></p>
-        <button className='build-close-btn' type="button" onClick={() => deleteWorkExperience(index)}><IoMdClose /></button>
-      </div>
-    )
-  ))}
-</div>
-  
-    {/* Education */}
-    <div className='multi-input-container'>
-      <div className='build-add-div'>
-        <label>Education</label>
-        <button type="button" onClick={addEducation} className='add-btn'><IoMdAdd /></button>
-      </div>
-
-      <div className='multi-input-div'>
-        <input type="text" placeholder="School Name" value={newEducation.schoolName} onChange={(e) => setNewEducation({ ...newEducation, schoolName: e.target.value })} />
-        <input type="text" placeholder="Major" value={newEducation.major} onChange={(e) => setNewEducation({ ...newEducation, major: e.target.value })} />
-        <input type="text" placeholder="Degree" value={newEducation.degree} onChange={(e) => setNewEducation({ ...newEducation, degree: e.target.value })} />
-        <input type="text" placeholder="Dates (e.g., 2018-2022)" value={newEducation.dates} onChange={(e) => setNewEducation({ ...newEducation, dates: e.target.value })} pattern="\d{4}-\d{4}" title="Please enter dates in the format YYYY-YYYY."  />
-      </div>
-
-      {formData.education.map((edu, index) => (
-        (edu.schoolName || edu.major || edu.degree || edu.dates) && (
-          <div key={index} className='multi-input-div input-append-list'>
-            <p>School Name: <b>{edu.schoolName}</b></p>
-            <p>Major: <b>{edu.major}</b></p>
-            <p>Degree: <b>{edu.degree}</b></p>
-            <p>Dates: <b>{edu.dates}</b></p>
-            <button type="button" className='build-close-btn' onClick={() => deleteEducation(index)}><IoMdClose /></button>
+    <div className='multi-input-div'>
+        <input type="text" placeholder="Title" value={newWorkExperience.title} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, title: e.target.value })} />
+        <input type="text" placeholder="Company" value={newWorkExperience.company} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, company: e.target.value })}  />
+        <input type="text" placeholder="Start Year" value={newWorkExperience.startDate} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, startDate: e.target.value })} maxLength="4" />
+        <input type="text" placeholder="End Year" value={newWorkExperience.endDate} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, endDate: e.target.value })} maxLength="4" />
+        <div className='work-radio'>
+            <input type="radio" id="currentlyWorking" name="currentWork"   checked={newWorkExperience.isCurrentlyWorking} value="Present" onChange={(e) => setNewWorkExperience({ ...newWorkExperience, endDate: e.target.value })} />
+            <label htmlFor="currentlyWorking">Currently Working Here</label>
+        </div>
+        {newWorkExperience.accomplishments.map((item, index) => (
+          <div key={index} className='accomplishment-input'>
+            <div className='accomplishment-btns'>
+            <button type="button" className='accomplishment-delete' onClick={() => removeAccomplishment(index)}><IoMdClose /></button>
+            <button type="button" onClick={addAccomplishment} className='add-btn'><IoMdAdd /></button>
+            </div>
+            <textarea type="text" placeholder="Accomplishment" value={item} onChange={(e) => updateAccomplishment(index, e.target.value)} />
           </div>
-        )
-      ))}
+        ))}
+                <button type="button" onClick={addWorkExperience} className='add-btn work-add-btn'><IoMdAdd className='work-add-icon'/> Add Work Experience</button>
+
+      </div>
+
+      {formData.workExperience.map((experience, index) => (
+          (experience.title || experience.company || experience.startDate || experience.endDate || experience.accomplishments.length) && (
+            <div key={index} className='multi-input-div input-append-list work-append-list'>
+              <button className='build-close-btn' type="button" onClick={() => deleteWorkExperience(index)}><IoMdClose /></button>
+              <p>Title: <b>{experience.title}</b></p>
+              <p>Company: <b>{experience.company}</b></p>
+              <p>Start Date: <b>{experience.startDate}</b></p>
+              <p>End Date: <b>{experience.endDate}</b></p>
+              <p>Accomplishments:</p>
+              <ul>
+                {experience.accomplishments.map((acc, i) => (
+                  <li key={i}>{acc}</li>
+                ))}
+              </ul>
+            </div>
+          )
+        ))}
+</div>
+
+
+    <div className='multi-input-container'>
+        <div className='build-add-div'>
+            <label>Education</label>
+        </div>
+
+        <div className='multi-input-div'>
+            <input type="text" placeholder="School Name" value={newEducation.schoolName} onChange={(e) => setNewEducation({ ...newEducation, schoolName: e.target.value })} />
+            <input type="text" placeholder="Major" value={newEducation.major} onChange={(e) => setNewEducation({ ...newEducation, major: e.target.value })} />
+            <input type="text" placeholder="Degree" value={newEducation.degree} onChange={(e) => setNewEducation({ ...newEducation, degree: e.target.value })} />
+            <input type="text" placeholder="Start Year" value={newEducation.startYear} onChange={(e) => setNewEducation({ ...newEducation, startYear: e.target.value })} maxLength="4" />
+            <input type="text" placeholder="End Year" value={newEducation.endYear} onChange={(e) => setNewEducation({ ...newEducation, endYear: e.target.value })} maxLength="4" />
+        </div>
+
+        {formData.education.map((edu, index) => (
+            (edu.schoolName || edu.major || edu.degree || edu.startYear || edu.endYear) && (
+                <div key={index} className='multi-input-div input-append-list work-append-list'>
+                   <button type="button" className='build-close-btn' onClick={() => deleteEducation(index)}><IoMdClose /></button>
+                    <p>School Name: <b>{edu.schoolName}</b></p>
+                    <p>Major: <b>{edu.major}</b></p>
+                    <p>Degree: <b>{edu.degree}</b></p>
+                    <p>Start Year: <b>{edu.startYear}</b></p>
+                    <p>End Year: <b>{edu.endYear}</b></p>
+                </div>
+            )
+        ))}
+                        <button type="button" onClick={addEducation} className='add-btn work-add-btn'><IoMdAdd className='work-add-icon'/> Add Work Experience</button>
+
     </div>
 
     {/* Certifications */}
