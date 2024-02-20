@@ -198,7 +198,7 @@ export default function Home() {
             <h2 className='index-blog-title'>The universal guide on how to write the perfect resume</h2>
             <span className='index-blog-tag'>ATS</span>
             <div className='index-blog-bottom-div'>
-              <p className='index-blog-bottom-copy'>Resume Guide <GoDotFill className='index-blog-bottom-dot' /> 52 Min Read</p>
+              <p className='index-blog-bottom-copy'>Resume Guide <GoDotFill className='index-blog-bottom-dot' /> 8 Min Read</p>
             </div>
             </div>
           </div>
@@ -208,7 +208,7 @@ export default function Home() {
             <h2 className='index-blog-title'>The universal guide on how to write the perfect resume</h2>
             <span className='index-blog-tag'>Resume</span>
             <div className='index-blog-bottom-div'>
-              <p className='index-blog-bottom-copy'>Resume Guide <GoDotFill className='index-blog-bottom-dot' /> 52 Min Read</p>
+              <p className='index-blog-bottom-copy'>Resume Guide <GoDotFill className='index-blog-bottom-dot' /> 6 Min Read</p>
             </div>
             </div>
           </div>
