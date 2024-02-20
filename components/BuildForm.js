@@ -5,8 +5,6 @@ import Loading from './Loading';
 import ChronologicalResumeTemplate from './ChronologicalResumeTemplate';
 import FunctionalResumeTemplate from './FunctionalResumeTemplate';
 import CombinationResumeTemplate from './CombinationResumeTemplate';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
 
 const BuildForm = () => {
   const [isLoading, setIsLoading] = useState(false);

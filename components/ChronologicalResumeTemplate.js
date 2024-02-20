@@ -4,7 +4,48 @@ import html2canvas from 'html2canvas'
 import { BsFilePdf, BsFilePdfFill } from 'react-icons/bs';
 import { AiFillFilePdf } from 'react-icons/ai';
 import { IoMdDownload } from 'react-icons/io';
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
+
 const ChronologicalResumeTemplate = ({ formData }) => {
+
+  // const downloadResumeAsPDF = () => {
+  //   const resumeElement = document.getElementById('resume');
+
+  //   const opt = {
+  //     margin:       1,
+  //     filename:     'resume.pdf',
+  //     image:        { type: 'jpeg', quality: 0.98 },
+  //     html2canvas:  { scale: 2 },
+  //     jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+  //   };
+
+  //   html2pdf().from(resumeElement).set(opt).save();
+  // };
+
+  // const downloadResumeAsPDF = () => {
+  //   const resumeElement = document.getElementById('resume');
+  //   const content = resumeElement.innerText; // Get the text content of the resume
+
+  //   const docDefinition = {
+  //     content: [
+  //       {
+  //         text: content,
+  //         style: 'header'
+  //       }
+  //     ],
+  //     styles: {
+  //       header: {
+  //         fontSize: 18,
+  //         bold: true
+  //       }
+  //     }
+  //   };
+
+  //   pdfMake.createPdf(docDefinition).download('resume.pdf');
+  // };
 
     const downloadResumeAsPDF = async () => {
         const resumeElement = document.getElementById('resume');
@@ -45,7 +86,7 @@ const ChronologicalResumeTemplate = ({ formData }) => {
               <p className='work-company'>{experience.company}</p>
               <div className='work-dates'>
               <p>{experience.startDate}</p>
-              <p> - </p>
+              <p>-</p>
               <p>{experience.endDate}</p>
               </div>
               </div>

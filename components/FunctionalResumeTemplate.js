@@ -64,7 +64,7 @@ const FunctionalResumeTemplate = ({ formData, setFormData }) => {
               <p className='work-company'>{experience.company}</p>
               <div className='work-dates'>
               <p>{experience.startDate}</p>
-              <p> - </p>
+              <p>-</p>
               <p>{experience.endDate}</p>
               </div>
               </div>

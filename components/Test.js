@@ -30,6 +30,11 @@ const Test = () => {
       const handleSubmit = async (event) => {
         event.preventDefault();
         if (file) {
+            const fileType = file.type;
+            if (fileType !== 'application/pdf') {
+                alert('Please submit a file in PDF format.');
+                return;
+            }
             setIsLoading(true);
             Router.push("#loading")
             const formData = new FormData();
@@ -48,7 +53,7 @@ const Test = () => {
                     setIsLoading(false);
                     console.log(data)
                     setOverallGrade(data["Resume Grade"] * 100)
-                    console.log(overallGrade)
+                    console.log(data["Resume Grade"] * 100)
                     setFile(null);
                     setFileName('');
                 } else {
@@ -107,7 +112,7 @@ const Test = () => {
               <div>
               <div ref={myAnchorRef} className='test-grade-div'>
                   <h2 className='test-extract-header'>Overall Grade</h2>
-                  <CircularProgressbar value={overallGrade} text={overallGrade ? `${overallGrade}%`: '0'} />
+                  <CircularProgressbar value={overallGrade.toFixed(0)} text={overallGrade ? `${overallGrade.toFixed(0)}%`: '0'} />
               </div>
               
 
