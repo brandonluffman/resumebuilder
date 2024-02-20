@@ -1,6 +1,12 @@
 .tailor-container {
-    padding-top:160px;
+    padding-top:80px;
     padding-bottom:160px;
+}
+
+.tailor-container h2 {
+  text-align: center;
+  font-size: 2rem;
+
 }
 
 .tailor-form-container {

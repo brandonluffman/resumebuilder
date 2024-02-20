@@ -11,6 +11,7 @@
     margin:0;
     text-align: center;
     margin-bottom:4rem;
+    font-size: 2rem;
 }
 
 .test-resumedrop {
@@ -469,10 +470,10 @@ input[type="file"] {
         right:15%;
         bottom:120px;
     }
-    .test-header {
+    /* .test-header {
         line-height: 6vh;
         margin-bottom: 3rem;
-    }
+    } */
     .filename-div {
         width:85%;
         height:68%;

@@ -279,10 +279,10 @@ const BuildForm = () => {
   </div>
 
   <div className='multi-input-div'>
-    <input type="text" placeholder="Title" value={newWorkExperience.title} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, title: e.target.value })} required />
-    <input type="text" placeholder="Company" value={newWorkExperience.company} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, company: e.target.value })} required />
-    <input type="text" placeholder="Years of Employment" value={newWorkExperience.yearsOfEmployment} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, yearsOfEmployment: e.target.value })} required />
-    <textarea placeholder="Accomplishments" value={newWorkExperience.accomplishments} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, accomplishments: e.target.value })} required />
+    <input type="text" placeholder="Title" value={newWorkExperience.title} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, title: e.target.value })} />
+    <input type="text" placeholder="Company" value={newWorkExperience.company} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, company: e.target.value })}  />
+    <input type="text" placeholder="Years of Employment" value={newWorkExperience.yearsOfEmployment} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, yearsOfEmployment: e.target.value })} />
+    <textarea placeholder="Accomplishments" value={newWorkExperience.accomplishments} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, accomplishments: e.target.value })} />
   </div>
 
   {formData.workExperience.map((experience, index) => (
@@ -306,10 +306,10 @@ const BuildForm = () => {
       </div>
 
       <div className='multi-input-div'>
-        <input type="text" placeholder="School Name" value={newEducation.schoolName} onChange={(e) => setNewEducation({ ...newEducation, schoolName: e.target.value })} required />
-        <input type="text" placeholder="Major" value={newEducation.major} onChange={(e) => setNewEducation({ ...newEducation, major: e.target.value })} required />
-        <input type="text" placeholder="Degree" value={newEducation.degree} onChange={(e) => setNewEducation({ ...newEducation, degree: e.target.value })} required />
-        <input type="text" placeholder="Dates (e.g., 2018-2022)" value={newEducation.dates} onChange={(e) => setNewEducation({ ...newEducation, dates: e.target.value })} pattern="\d{4}-\d{4}" title="Please enter dates in the format YYYY-YYYY." required />
+        <input type="text" placeholder="School Name" value={newEducation.schoolName} onChange={(e) => setNewEducation({ ...newEducation, schoolName: e.target.value })} />
+        <input type="text" placeholder="Major" value={newEducation.major} onChange={(e) => setNewEducation({ ...newEducation, major: e.target.value })} />
+        <input type="text" placeholder="Degree" value={newEducation.degree} onChange={(e) => setNewEducation({ ...newEducation, degree: e.target.value })} />
+        <input type="text" placeholder="Dates (e.g., 2018-2022)" value={newEducation.dates} onChange={(e) => setNewEducation({ ...newEducation, dates: e.target.value })} pattern="\d{4}-\d{4}" title="Please enter dates in the format YYYY-YYYY."  />
       </div>
 
       {formData.education.map((edu, index) => (
@@ -358,7 +358,7 @@ const BuildForm = () => {
 <div className='multi-input-container'>
     <label htmlFor="skills">Skills</label>
     <div className='build-add-div'>
-    <input type="text" name="newSkill"      value={newSkill}    onChange={(e) => setNewSkill(e.target.value)}  onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); addSkill(); } }} required />
+    <input type="text" name="newSkill"      value={newSkill}    onChange={(e) => setNewSkill(e.target.value)}  onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); addSkill(); } }} />
     <button type="button" onClick={addSkill} className='add-btn'><IoMdAdd /></button>
   </div>
 
