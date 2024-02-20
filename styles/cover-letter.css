@@ -3,6 +3,10 @@
     padding-bottom: 100px;
 }
 
+.cl-builder-container h1 {
+    text-align: center;
+}
+
 .cover-letter-analysis {
     /* display: flex;
     justify-content: center; */

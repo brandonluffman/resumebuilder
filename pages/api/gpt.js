@@ -1,5 +1,5 @@
 export const config = {
-    maxDuration: 300,
+    maxDuration: 10,
 };
 
 // Define a single handler function

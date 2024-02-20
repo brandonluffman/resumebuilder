@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import {RiArrowDropDownLine} from 'react-icons/ri'
+import {RiAiGenerate, RiArrowDropDownLine} from 'react-icons/ri'
 import { IoIosCreate } from 'react-icons/io';
 import { SiSpeedtest } from 'react-icons/si'
 import { BsPenFill } from 'react-icons/bs'
@@ -64,7 +64,7 @@ const Navbar = () => {
                 <Link href="/tailor"><BsPenFill className='nav-link-icon' />Tailor a Resume</Link>
               </li>
               <li>
-                <Link href="/cover-letter-builder"><BsPenFill className='nav-link-icon' />Cover Letter Generator</Link>
+                <Link href="/cover-letter-builder"><RiAiGenerate className='nav-link-icon' />Cover Letter Generator</Link>
               </li>
             </ul>
            {/* )}  */}
