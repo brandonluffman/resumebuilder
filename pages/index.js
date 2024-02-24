@@ -36,7 +36,7 @@ export default function Home() {
 
   return (
     <div>
-            <Head>
+        <Head>
           <title>ResumeBuilderAI | Create, Tailor, and Test Your Resume for Success</title>
           <meta name="description" content="Unlock your career potential with ResumeBuilderAI. Effortlessly build a professional resume, tailor it to match job descriptions, and test its effectiveness. Start your journey to the perfect job today!" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
