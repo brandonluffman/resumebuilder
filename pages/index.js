@@ -49,7 +49,7 @@ export default function Home() {
            <meta property="og:title" content="ResumeBuilderAI" />
            <meta property="og:description" content="Unlock your career potential with ResumeBuilderAI. Effortlessly build a professional resume, tailor it to match job descriptions, and test its effectiveness. Start your journey to the perfect job today!" />
            <meta property="og:image" content="/resume-builder-logo.png" />
-           <meta property="og:url" content="https://venum.vercel.app/" />
+           <meta property="og:url" content="https://theresumebuilderai.com/" />
            <meta property="og:site_name" content="ResumeBuilderAI" />
         </Head>
     <Navbar />
