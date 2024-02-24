@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { IoMdAdd, IoMdClose, IoMdInformation, IoMdInformationCircle } from 'react-icons/io';
 import ResumeTemplate from './ResumeTemplate';
 import Loading from './Loading';
 import ChronologicalResumeTemplate from './ChronologicalResumeTemplate';
 import FunctionalResumeTemplate from './FunctionalResumeTemplate';
 import CombinationResumeTemplate from './CombinationResumeTemplate';
+import Router from 'next/router';
 
 const BuildForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -13,6 +14,10 @@ const BuildForm = () => {
   const [newSkill, setNewSkill] = useState('');
   const [newInterest, setNewInterest] = useState('')
   const [newLink, setNewLink] = useState('');
+  const formRef = useRef(null);
+  const [submittedData, setSubmittedData] = useState(null);
+
+
   const [newCertification, setNewCertification] = useState({
     certTitle: '',
     certificationDonor: '',
@@ -57,16 +62,53 @@ const BuildForm = () => {
         setFormData({ ...formData, [name]: value });
       };
     
+      // const handleSubmit = (e) => {
+      //   setIsLoading(true)
+      //   e.preventDefault();
+      //   // console.log(formData);
+      //   setTimeout(() => {
+      //     setIsLoading(false);
+      //   }, 2000);
+      //   setResumeReady(true);
+      //   formRef.current.reset();
+
+
+      // };
+
       const handleSubmit = (e) => {
-        setIsLoading(true)
         e.preventDefault();
-        // console.log(formData);
+        setIsLoading(true);
+      
+        // Simulate an asynchronous operation like an API call
         setTimeout(() => {
           setIsLoading(false);
-          // Handle the response or update the state with the results
+          setResumeReady(true);
+      
+          // Set the submittedData state with the current formData
+          setSubmittedData(formData);
+      
+          // Reset the formData state
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            professionalSummary: '',
+            links: [],
+            cityState: '',
+            workExperience: [],
+            skills: [],
+            education: [],
+            certifications: [],
+            personalInterests: [],
+            jobTitle: '',
+          });
+      
+          // Reset other states if needed
+          // ...
         }, 2000);
-        setResumeReady(true);
+        Router.push("#resume")
 
+      
         // Submit the form data to your backend or API
       };
 
@@ -212,7 +254,7 @@ const BuildForm = () => {
 
   return (
     <>
-    <form onSubmit={handleSubmit} className='build-form'   onKeyDown={(e) => {
+    <form onSubmit={handleSubmit} className='build-form' ref={formRef}   onKeyDown={(e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
     }
@@ -244,7 +286,7 @@ const BuildForm = () => {
 
       <div className='build-form-contacts'>
         <div>
-    <label htmlFor="name">Name</label>
+    <label htmlFor="name">Name (First & Last)</label>
     <input     type="text"     id="name"      name="name"      value={formData.name}      onChange={handleChange} required />
     </div>
     <div>
@@ -274,11 +316,11 @@ const BuildForm = () => {
         <input type="text" placeholder="Title" value={newWorkExperience.title} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, title: e.target.value })} />
         <input type="text" placeholder="Company" value={newWorkExperience.company} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, company: e.target.value })}  />
         <input type="text" placeholder="Start Year" value={newWorkExperience.startDate} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, startDate: e.target.value })} maxLength="4" />
-        <input type="text" placeholder="End Year" value={newWorkExperience.endDate} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, endDate: e.target.value })} maxLength="4" />
-        <div className='work-radio'>
+        <input type="text" placeholder="End Year ('Present' if still working)" value={newWorkExperience.endDate} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, endDate: e.target.value })} />
+        {/* <div className='work-radio'>
             <input type="radio" id="currentlyWorking" name="currentWork"   checked={newWorkExperience.isCurrentlyWorking} value="Present" onChange={(e) => setNewWorkExperience({ ...newWorkExperience, endDate: e.target.value })} />
             <label htmlFor="currentlyWorking">Currently Working Here</label>
-        </div>
+        </div> */}
         {newWorkExperience.accomplishments.map((item, index) => (
           <div key={index} className='accomplishment-input'>
             <div className='accomplishment-btns'>
@@ -288,7 +330,7 @@ const BuildForm = () => {
             <textarea type="text" placeholder="Accomplishment" value={item} onChange={(e) => updateAccomplishment(index, e.target.value)} />
           </div>
         ))}
-                <button type="button" onClick={addWorkExperience} className='add-btn work-add-btn'><IoMdAdd className='work-add-icon'/> Add Work Experience</button>
+                <button type="button" onClick={addWorkExperience} className='add-btn work-add-btn'>Add Work Experience</button>
 
       </div>
 
@@ -337,7 +379,7 @@ const BuildForm = () => {
                 </div>
             )
         ))}
-                        <button type="button" onClick={addEducation} className='add-btn work-add-btn'><IoMdAdd className='work-add-icon'/> Add Work Experience</button>
+                        <button type="button" onClick={addEducation} className='add-btn work-add-btn'>Add Education</button>
 
     </div>
 
@@ -346,7 +388,7 @@ const BuildForm = () => {
 <div className='multi-input-container'>
   <div className='build-add-div'>
     <label>Certifications (optional)</label>
-    <button type="button" onClick={addCertification} className='add-btn'><IoMdAdd /></button>
+    {/* <button type="button" onClick={addCertification} className='add-btn'><IoMdAdd /></button> */}
   </div>
 
   <div className='multi-input-div'>
@@ -365,7 +407,10 @@ const BuildForm = () => {
     </div>
   )
 ))}
+<button type="button" onClick={addCertification} className='add-btn work-add-btn'>Add Certification</button>
+
 </div>
+
 </div>
 
 
@@ -422,17 +467,17 @@ const BuildForm = () => {
 
     <button className='btn btn-primary btn-margin submit-btn' type="submit">Build</button>
   </form>
-
+<div id='resume'>
   {isLoading && <Loading />}
-
+  </div>
 {/* {resumeReady && !isLoading &&  <ResumeTemplate formData={formData} />} */}
-  {resumeReady && !isLoading && (
-    <>
-      {selectedTemplate === 'functional' && <FunctionalResumeTemplate formData={formData} setFormData={setFormData} />}
-      {selectedTemplate === 'chronological' && <ChronologicalResumeTemplate formData={formData} />}
-      {selectedTemplate === 'combination' && <CombinationResumeTemplate formData={formData} />}
-    </>
-  )}
+{resumeReady && !isLoading && (
+  <>
+    {selectedTemplate === 'functional' && <FunctionalResumeTemplate formData={submittedData} />}
+    {selectedTemplate === 'chronological' && <ChronologicalResumeTemplate formData={submittedData} />}
+    {selectedTemplate === 'combination' && <CombinationResumeTemplate formData={submittedData} />}
+  </>
+)}
 </>
   )
 }

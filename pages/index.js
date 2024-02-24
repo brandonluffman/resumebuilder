@@ -46,11 +46,11 @@ export default function Home() {
           <link rel="apple-touch-icon" href="/resume-builder-logo.png" /> 
           <link rel="canonical" href="https://theresumebuilderai.com"/>
           <meta property="og:type" content="article" />
-           <meta property="og:title" content="Venum" />
+           <meta property="og:title" content="ResumeBuilderAI" />
            <meta property="og:description" content="Unlock your career potential with ResumeBuilderAI. Effortlessly build a professional resume, tailor it to match job descriptions, and test its effectiveness. Start your journey to the perfect job today!" />
            <meta property="og:image" content="/resume-builder-logo.png" />
            <meta property="og:url" content="https://venum.vercel.app/" />
-           <meta property="og:site_name" content="Venum" />
+           <meta property="og:site_name" content="ResumeBuilderAI" />
         </Head>
     <Navbar />
     <Chatbot />

@@ -4,6 +4,8 @@ import Loading from './Loading';
 import ResumeTemplate from './ResumeTemplate';
 import Router from 'next/router';
 
+
+
 const Tailor = () => {
   const [resume, setResume] = useState('');
   const [jobDescription, setJobDescription] = useState('');
@@ -17,35 +19,53 @@ const Tailor = () => {
     setJobDescription(event.target.value);
 };
 
+
 const handleSubmit = async (event) => {
-    event.preventDefault();
-    setIsLoading(true)
-    Router.push("#loading")
+  event.preventDefault();
+  setIsLoading(true);
+  Router.push("#loading")
 
-    if (file && jobDescription) {
-        const formData = new FormData();
-        formData.append('resume', file);
-        formData.append('job_description', jobDescription);
+  if (file && jobDescription) {
+      const formData = new FormData();
+      formData.append('file', file);
 
-        try {
-            const response = await fetch('https://resumeparser-irx7.onrender.com/analyze-texts/', {
-                method: 'POST',
-                body: formData,
-            });
+      try {
+          const resumeResponse = await fetch('https://resumeparser-irx7.onrender.com/extract-text/', {
+              method: 'POST',
+              body: formData,
+          });
 
-            if (response.ok) {
-                const data = await response.json();
-                setAnalysisResults(data);
-                // console.log(data)
-            } else {
-                throw new Error('Failed to analyze texts');
-            }
-        } catch (error) {
-            console.error(error);
-            setAnalysisResults(null);
-        }
-        setIsLoading(false)
-    }
+          if (resumeResponse.ok) {
+
+              const resumeText = await resumeResponse.text();
+
+              const prompt = `Given my resume\n:${resumeText}\n\n and the following job description:\n${jobDescription}.\n\nProvide suggestions to tailor my resume.`;
+              console.log(prompt)
+              const gptResponse = await fetch("/api/gpt", {
+                  method: "POST",
+                  headers: {
+                  "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({ prompt }),
+              });
+
+              if (gptResponse.ok) {
+                  const gptData = await gptResponse.json();
+                  setAnalysisResults(gptData.choices[0].text);
+              } else {
+                  throw new Error(`Failed to generate cover letter: ${gptResponse.status} ${gptResponse.statusText}`);
+              }
+
+           } else {
+              throw new Error(`Failed to analyze resume: ${resumeResponse.status} ${resumeResponse.statusText}`);
+          }
+
+      } catch (error) {
+          console.error('Error:', error);
+          setAnalysisResults(null);
+      }
+      setIsLoading(false);
+  }
 };
 
   const handleOnDrop = (acceptedFiles) => {
@@ -77,8 +97,24 @@ const handleSubmit = async (event) => {
             <div id='loading'>
             {isLoading && <Loading />}
             </div>
+            </form>
+            {analysisResults && (
+              <div className='analysis-results-container'>
+                <div className='analysis-results'>
+                    <p>Analysis Results</p>
+                    <pre>{analysisResults}</pre>
+                  </div>
+                </div>
+            )}
+            
+    </div>
+  );
+};
 
-            {analysisResults && Object.keys(analysisResults).length > 0 && (
+export default Tailor;
+
+
+{/* {analysisResults && Object.keys(analysisResults).length > 0 && (
               <div className='analysis-results-container'>
                 <div className='analysis-results'>
                     <h3>Analysis Results</h3>
@@ -116,8 +152,7 @@ const handleSubmit = async (event) => {
                 </div>
               
                    </div>
-            )}
-        </form>
+            )} */}
       {/* {analysisResults.length > 0 && (
         <div className="analysis-results">
           <h2>Suggestions</h2>
@@ -132,8 +167,3 @@ const handleSubmit = async (event) => {
             <h2>Suggested Resume</h2>
         <ResumeTemplate formData={formData} />
       </div> */}
-    </div>
-  );
-};
-
-export default Tailor;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import DropzoneInput from './DropzoneInput'
-import { CircularProgressbar } from 'react-circular-progressbar';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css'; // Don't forget to import the styles
 // import sections from '../public/sections.js'; // Adjust the path according to your file structure
 import { AiFillCheckCircle, AiOutlineClose, AiTwotoneLock } from 'react-icons/ai';
@@ -67,6 +67,16 @@ const Test = () => {
         }
     };
 
+    const getColor = (grade) => {
+      if (grade >= 66.67) {
+        return 'green';
+      } else if (grade >= 33.33) {
+        return 'orange';
+      } else {
+        return 'red';
+      }
+    };
+
     const sections = result && [
         {
           title: 'Contact Information',
@@ -123,6 +133,32 @@ const Test = () => {
               message: result['Is Quantified'] ? 'Great! Quantifying accomplishments provides clear evidence of your impact.' : 'Your accomplishments are not quantified. Try to include numbers to demonstrate your achievements.'
             }
           ],
+        },
+        {
+          title: 'Crucial Details',
+          grade: 'A',
+          items: [
+            {
+              name: 'PDF Format',
+              status: 'check',
+              message: 'Great! PDF is the best format to use for resumes and ensures that all hiring managers have the ability to view.'
+            },
+            {
+              name: 'Formatting Consistency',
+              status: 'check',
+              message: 'Well done! The font sizes and margins are consistent across the page and meet industry standards.'
+            },
+            {
+              name: 'Grammar/Mispellings',
+              status: 'check',
+              message: 'Fantastic! Your resume is free of any grammar mistakes or mispellings.'
+            },
+            {
+              name: 'Professional Email Address',
+              status: 'check',
+              message: 'Bravo! The email address displayed in the resume is professional.'
+            }
+          ],
         }
       ];
       
@@ -141,8 +177,15 @@ const Test = () => {
               <div>
               <div ref={myAnchorRef} className='test-grade-div'>
                   <h2 className='test-extract-header'>Overall Grade</h2>
-                  <CircularProgressbar value={overallGrade.toFixed(0)} text={overallGrade ? `${overallGrade.toFixed(0)}%`: '0'} />
-              </div>
+                  <CircularProgressbar
+                      value={overallGrade.toFixed(0)}
+                      text={`${overallGrade ? overallGrade.toFixed(0) : '0'}%`}
+                      styles={buildStyles({
+                        pathColor: getColor(overallGrade),
+                        textColor: getColor(overallGrade),
+                      })}
+                    />
+                    </div>
               
 
               <div className='grade-main-container'>

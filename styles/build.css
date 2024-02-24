@@ -239,19 +239,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: rgb(37,138,240);
     color: white;
     font-weight: 500;
-    color: black;
+    /* color: black; */
     width: 100%;
-    border: 2px solid blue;
+    border: 2px solid rgb(113, 113, 255);
     font-size: 1.25rem;
     padding:0.5rem 2rem;
     margin-bottom: 1rem;
 }
 
 .work-add-btn:hover {
-    background-color: blue;
-    color: white;
-    border: 2px solid white;
+    background-color: white;
+    color: rgb(37,138,240);
+    border: 2px solid rgb(37,138,240);
 }
