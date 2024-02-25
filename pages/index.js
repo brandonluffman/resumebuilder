@@ -250,7 +250,7 @@ export default function Home() {
 
       <div className='index-join-container'>
         <div className='index-join-div'>
-          <h2 className='index-join-header'>Join over <span className='blue-color-change'>30,917,000</span> users worldwide</h2>
+          <h2 className='index-join-header'>Join over <span className='blue-color-change'>3,000</span> users worldwide</h2>
           <p className='index-join-p'>Start for free — try our resume builder now</p>
           </div>
       </div>
