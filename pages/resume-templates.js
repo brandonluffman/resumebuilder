@@ -48,15 +48,15 @@ const ResumeTemplates = () => {
 
     <div className='templates-grids-container'>
         <h3 className='templates-header'>Most popular resume examples</h3>
-        <TemplateGrid />
+        <TemplateGrid type='resume' />
         <hr className='templates-hr'></hr>
         <h3 className='templates-header'>Programming Resume Examples</h3>
-        <TemplateGrid />
+        <TemplateGrid type='resume' />
         <div className='templates-all-container'>
         <button className='templates-all btn btn-primary'>View All</button>
         </div>
         <h3 className='templates-header'>Marketing Resume Examples</h3>
-        <TemplateGrid />
+        <TemplateGrid type='resume' />
         <div className='templates-all-container'>
         <button className='templates-all btn btn-primary'>View All</button>
         </div>

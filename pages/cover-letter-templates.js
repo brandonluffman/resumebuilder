@@ -48,15 +48,15 @@ const CoverLetterTemplates = () => {
     </div>
     <div className='templates-grids-container'>
         <h3 className='templates-header'>Most Popular Cover Letter Examples</h3>
-        <TemplateGrid />
+        <TemplateGrid type='coverLetter'/>
         <hr className='templates-hr'></hr>
         <h3 className='templates-header'>Programming Cover Letter Examples</h3>
-        <TemplateGrid />
+        <TemplateGrid type='coverLetter' />
         <div className='templates-all-container'>
         <button className='templates-all btn btn-primary'>View All</button>
         </div>
         <h3 className='templates-header'>Marketing Cover Letter Examples</h3>
-        <TemplateGrid />
+        <TemplateGrid type='coverLetter' />
         <div className='templates-all-container'>
         <button className='templates-all btn btn-primary'>View All</button>
         </div>

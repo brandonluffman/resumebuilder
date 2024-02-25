@@ -51,16 +51,20 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     z-index:9999; */
     width:40%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .template-main-img {
-    width:70%;
+    width:350px;
     margin: 0 auto;
     border-radius: 20px;
     box-shadow: 1px 1px 8px rgba(0,0,0,0.1);
     /* position: absolute;
     right:100px;
     top:120px; */
-    margin-top:2rem;
+    /* margin-top:2rem; */
     
 }
 /* .reviews-stars {
