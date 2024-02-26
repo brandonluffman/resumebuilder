@@ -247,6 +247,8 @@ input[type="file"] {
     position: absolute;
     bottom:5px;
     right:8%;
+    font-weight: 700;
+    letter-spacing: -0.1vw;
     
 }
 .custom-file-absolute > p {
@@ -462,15 +464,15 @@ input[type="file"] {
 }
 @media (max-width: 500px) {
     .custom-file-upload {
-        width:90%;
+        width:95%;
         height: 300px;
     }
     .custom-file-absolute {
         top:15%;
     }
     .no-file-div {
-        right:15%;
-        bottom:120px;
+        right:5%;
+        bottom:10px;
     }
     /* .test-header {
         line-height: 6vh;
@@ -490,5 +492,9 @@ input[type="file"] {
     }
     .resume-includes {
         font-size: 0.8rem;
+    }
+
+    .test-resumedrop {
+        width: 100%;
     }
 }

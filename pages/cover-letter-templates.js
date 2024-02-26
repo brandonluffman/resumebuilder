@@ -37,7 +37,7 @@ const CoverLetterTemplates = () => {
       <MdVerified className='verified-icon'/>
         <h1 className='template-header'>Cover Letter Examples</h1>
         <h6 className='template-subheader'>Supercharge your job search with ResumeBuilderAI templates. Need more help? Use ResumeBuilderAI&apos;s AI <span className='blue-color-change'>Cover Letter Builder</span> to instantly generate tailored cover letters.</h6>
-        <Link href='/cover-letter-builder'><button className='btn btn-primary template-btn'>Create your Cover Letter - It&apos;s free</button></Link>
+        <Link href='/cover-letter-builder'><button className='btn btn-primary template-btn'>Generate Cover Letter</button></Link>
         {/* {user?.user ? (<Link href='/cover-letter-builder'><button className='btn btn-primary template-btn'>Create your Cover Letter - It&apos;s free</button></Link>):(<Link href='/register'><button className='btn btn-primary template-btn'>Create your Cover Letter - It&apos;s free</button></Link>)} */}
 
         {/* <ReviewStars className='review'/> */}

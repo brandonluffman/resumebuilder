@@ -87,7 +87,7 @@ const reviews = () => {
         </div>
         <h2 className='reviews-supercharge'><span className='blue-color-change'>Supercharge</span> your Job Search with ResumeBuilder<span className='blue-color-change'>AI</span></h2>
         <h6 className='reviews-supercharge-subheader'>Get started for free and find out what you can accomplish with the power of ResumeBuilder<span className='blue-color-change'>AI</span>.</h6>
-        <Link href='/register'><button className='reviews-supercharge-btn btn btn-primary'>Create your free account now</button></Link>
+        {/* <Link href='/register'><button className='reviews-supercharge-btn btn btn-primary'>Create your free account now</button></Link> */}
     </div>
     <Footer />
     </>

@@ -618,17 +618,26 @@ input[type='file'] {
 
 @media only screen and (max-width: 600px) {
     .project-header {
-        font-size:3.5rem;
+        font-size:2.5rem;
+        margin-top: 0rem;
+        margin-bottom: 2rem;
     }
 
     .project-subheader {
         font-size:3rem;
     }
     .form-input {
-        font-size: 3rem;
+        font-size: 1.5rem;
     }
     .project-form-btn {
         font-size: 2rem;
     }
+
+    .project-form {
+        padding-top: 100px;
+    }
   
+    .form-btn-p {
+        font-size: 1rem;
+    }
 }

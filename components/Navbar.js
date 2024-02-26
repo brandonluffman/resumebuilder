@@ -130,56 +130,31 @@ const Navbar = () => {
               </div>
 
               {/* Mobile navigation menu */}
-              {isMenuOpen && (
-                <div className='mobile-nav'>
+
+                <div className={isMenuOpen ? 'mobile-nav mobile-nav-closed':'mobile-nav mobile-nav-open'}>
                   {/* Menu content here */}
                   <ul className=''>
-        <li className="nav-link mobile-nav-link dropdown" onClick={toggleDropdown}>
-          Features<RiArrowDropDownLine className='dropdown-icon mobile-dropdown-icon'/>
-
-          {/* {isDropdownOpen && ( */}
-            <ul className="mobile-dropdown-content">
-              <li>
-              <Link href="/build"><IoIosCreate className='nav-link-icon' />Build a Resume</Link>
-              </li>
-              <li>
-              <Link href="/test"><SiSpeedtest className='nav-link-icon' />Test a Resume</Link>
-              </li>
-              <li>
-                <Link href="/tailor"><BsPenFill className='nav-link-icon' />Tailor a Resume</Link>
-              </li>
-            </ul>
-            </li>        
-
-           {/* )}  */}
-        <li className="nav-link mobile-nav-link dropdown" onClick={toggleDropdown}>
-          Examples<RiArrowDropDownLine className='dropdown-icon mobile-dropdown-icon'/>
-
-          {/* {isDropdownOpen && ( */}
-            <ul className="mobile-dropdown-content">
-              <li>
-              {/* <IoIosCreate className='nav-link-icon' /> */}
-              <Link href="/resume-templates"><img src='/resume-icon.png' width='25' className='nav-link-icon'></img>Resumes</Link>
-              </li>
-              <li>
-                {/* <SiSpeedtest className='nav-link-icon' /> */}
-                <Link href="/cover-letter-templates"><img src='/cover-letter-icon.png' width='25' className='nav-link-icon'></img>Cover Letters</Link>
-              </li>
-              <li>
-                {/* <BsPenFill className='nav-link-icon' /> */}
-                <Link href="/resignation-letter-templates"><img src='/resig-letter.png' width='25' className='nav-link-icon'></img>Resignation Letters</Link>
-              </li>
-            </ul>
-            </li>        
-
-           {/* )}  */}
-        <li className='nav-link mobile-nav-link dropdown'><Link href='/pricing'>Pricing</Link></li>
-        </ul>
+                    <h6>Features</h6>
+                    <Link href='/build'><li>Resume Builder</li></Link>
+                    <Link href='/test'><li>Resume Tester</li></Link>
+                    <Link href='/tailor'><li>Resume Tailor</li></Link>
+                    <Link href='/cover-letter-builder'><li>Cover Letter Generator</li></Link>
+                    <h6>Examples</h6>
+                    <Link href='/resume-templates'><li>Resume Examples</li></Link>
+                    <Link href='/cover-letter-templates'><li>Cover Letter Examples</li></Link>
+                    <Link href='/resignation-letter-templates'><li>Resignation Letter Examples</li></Link>
+                    <h6>Company</h6>
+                    <Link href='/pricing'><li>Pricing</li></Link>
+                    <Link href='/reviews'><li>Reviews</li></Link>
+                    <Link href='/affiliate'><li>Affiliate</li></Link>
+                    <Link href='/contact'><li>Contact</li></Link>
+                  </ul>
                 </div>
-              )}
-      {/* </ul> */}
     </nav>
   )
 }
 
 export default Navbar
+
+
+

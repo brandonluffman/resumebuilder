@@ -20,19 +20,19 @@ const TemplateGrid = ({ type }) => {
     <div className='template-grid-container'>
       <div className='template-grid-item'>
         <img src={imgSrc} className='template-grid-img'></img>
-        <p className='template-grid-text'>Account Executive</p> 
+        {/* <p className='template-grid-text'>Account Executive</p>  */}
       </div>
       <div className='template-grid-item'>
         <img src={imgSrc} className='template-grid-img'></img>
-        <p className='template-grid-text'>Startup Founder</p> 
+        {/* <p className='template-grid-text'>Startup Founder</p>  */}
       </div>
       <div className='template-grid-item'>
         <img src={imgSrc} className='template-grid-img'></img>
-        <p className='template-grid-text'>Software Engineer Intern</p> 
+        {/* <p className='template-grid-text'>Software Engineer Intern</p>  */}
       </div>
       <div className='template-grid-item'>
         <img src={imgSrc} className='template-grid-img'></img>
-        <p className='template-grid-text'>Entry Level Data Scientist</p> 
+        {/* <p className='template-grid-text'>Entry Level Data Scientist</p>  */}
       </div>
     </div>
   )

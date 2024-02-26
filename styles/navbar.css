@@ -292,7 +292,8 @@ margin:0.5rem 1rem;
 .hamburger-menu-icon {
     font-size: 1.5rem;
 }
-.mobile-nav {
+
+.mobile-nav-open {
     position: absolute;
     list-style-type: none;
     right:0px;
@@ -303,6 +304,22 @@ margin:0.5rem 1rem;
     width:40%;
     box-shadow: 1px 3px 12px rgba(0, 0, 0, 0.15);
     padding-top:5rem;
+    transform:translateX(400px);
+    transition: 0.2s ease all;
+
+}
+.mobile-nav-closed {
+    position: absolute;
+    list-style-type: none;
+    right:0px;
+    top:0px;
+    height:100vh;
+    background-color: white;
+    padding:2rem;
+    width:40%;
+    box-shadow: 1px 3px 12px rgba(0, 0, 0, 0.15);
+    padding-top:5rem;
+    transition: 0.2s ease all;
   }
   .mobile-nav > ul {
     list-style-type: none;
@@ -326,6 +343,26 @@ margin:0.5rem 1rem;
     display: block;
     opacity: 1;
   }
+
+.mobile-nav h6 {
+    margin:0;
+    color: rgb(36, 107, 238);
+    text-transform: uppercase;
+    letter-spacing: normal;
+    font-size: 1rem;
+    margin:1rem 0rem;
+}
+
+.mobile-nav li {
+    font-weight: 700;
+    letter-spacing: -0.1vw;
+    transition: 0.2s ease all;
+    margin:0.5rem 0rem;
+}
+
+.mobile-nav li:hover {
+    color: rgb(200,200,200);
+}
 @media (max-width: 1000px) {
     .nav-link {
         min-width: 100px;

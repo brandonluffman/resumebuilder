@@ -808,9 +808,10 @@ basic {
     .index-created {
         font-size:1.2rem;
         padding:0.5rem 0.75rem;
+        top:77px;
     }
     .index-blog-card {
-        width:95%;
+        width:100%;
         margin:2rem auto;
     }
     .index-dot {
@@ -823,8 +824,8 @@ basic {
         width:300px;
     }
     .index-spotlight-header {
-        font-size: 2.5rem;
-        line-height: 5vh;
+        font-size: 2rem;
+        /* line-height: 5vh; */
     }
     .index-spotlight-subheader {
         font-size: 1.25rem;
@@ -837,5 +838,21 @@ basic {
         font-size: 1.5rem;
         padding:0rem 1rem;
 
+    }
+
+    .index-banner-header {
+        font-size: 2rem;
+    }
+
+    .index-banner-subheader {
+        width: 80%;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .index-blog-card {
+        padding:0.5rem 0.5rem;
     }
 }

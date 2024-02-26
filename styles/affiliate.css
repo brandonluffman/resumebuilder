@@ -96,3 +96,42 @@
 .affiliate-list-content {
     width:75%;
 }
+
+@media (max-width: 500px) {
+    .affiliate-btn {
+        margin-bottom: 1rem;
+    }
+
+    .affiliate-banner {
+        width: 100%;
+    }
+
+    .affiliate-intro {
+        width: 100%;
+    }
+
+    .affiliate-content {
+        width: 100%;
+    }
+
+    .affiliate-list {
+        padding-left: 0rem;
+        list-style-type: none;
+    }
+
+    .affiliate-list li {
+        padding:0rem 0.5rem;
+    }
+
+    .affiliate-content-container {
+        padding: 0rem 1rem;
+    }
+
+    .affiliate-list-content {
+        width: 100%;
+    }
+
+    .affiliate-partner-btn {
+        width: 100%;
+    }
+}

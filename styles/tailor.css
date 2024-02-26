@@ -147,3 +147,24 @@
     grid-template-columns: repeat(3,3fr);
     list-style-type: none !important;
   }
+
+@media (max-width: 500px) {
+
+  .tailor-form-container {
+    display: block;
+    margin-bottom: 2rem;
+  }
+.tailor-resumedrop, .tailor-jobdescription-container {
+  width: 100%;
+  }
+  .tailor-resumedrop, .tailor-jobdescription-container{
+      padding: 0rem 1rem;
+  }
+  .tailor-resumedrop .custom-file-upload {
+   width: 100%;
+  }
+
+  .tailor-jobdescription-container textarea {
+    min-height: 200px;
+  }
+}
