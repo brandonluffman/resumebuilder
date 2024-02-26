@@ -169,7 +169,7 @@
 }
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
 
         .test-header {
             padding:0rem 1rem;
@@ -177,11 +177,18 @@
         .grade-container-item > ul {
             margin: 0;
             padding: 0;
-            width: 90%;
+            width: 100%;
             margin: 0 auto;
         }
         
         .grade-header-container {
-            width:90%;
+            width:100%;
         }
+        .grade-main-container {
+            grid-template-columns: repeat(1,1fr);
         }
+
+        .test-grade-div {
+            margin-bottom: 2rem;
+        }
+}

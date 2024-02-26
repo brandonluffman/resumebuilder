@@ -303,7 +303,7 @@ margin:0.5rem 1rem;
     padding:2rem;
     width:40%;
     box-shadow: 1px 3px 12px rgba(0, 0, 0, 0.15);
-    padding-top:5rem;
+    /* padding-top:5rem; */
     transform:translateX(400px);
     transition: 0.2s ease all;
 
@@ -318,7 +318,7 @@ margin:0.5rem 1rem;
     padding:2rem;
     width:40%;
     box-shadow: 1px 3px 12px rgba(0, 0, 0, 0.15);
-    padding-top:5rem;
+    /* padding-top:5rem; */
     transition: 0.2s ease all;
   }
   .mobile-nav > ul {
@@ -350,14 +350,14 @@ margin:0.5rem 1rem;
     text-transform: uppercase;
     letter-spacing: normal;
     font-size: 1rem;
-    margin:1rem 0rem;
+    margin:2rem 0rem 0.5rem 0rem;
 }
 
 .mobile-nav li {
     font-weight: 700;
     letter-spacing: -0.1vw;
     transition: 0.2s ease all;
-    margin:0.5rem 0rem;
+    margin:1rem 0.5rem;
 }
 
 .mobile-nav li:hover {
