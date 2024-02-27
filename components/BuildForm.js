@@ -316,7 +316,7 @@ const BuildForm = () => {
         <input type="text" placeholder="Title" value={newWorkExperience.title} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, title: e.target.value })} />
         <input type="text" placeholder="Company" value={newWorkExperience.company} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, company: e.target.value })}  />
         <input type="text" placeholder="Start Year" value={newWorkExperience.startDate} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, startDate: e.target.value })} maxLength="4" />
-        <input type="text" placeholder="End Year ('Present' if still working)" value={newWorkExperience.endDate} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, endDate: e.target.value })} />
+        <input type="text" placeholder="End Year" value={newWorkExperience.endDate} onChange={(e) => setNewWorkExperience({ ...newWorkExperience, endDate: e.target.value })} />
         {/* <div className='work-radio'>
             <input type="radio" id="currentlyWorking" name="currentWork"   checked={newWorkExperience.isCurrentlyWorking} value="Present" onChange={(e) => setNewWorkExperience({ ...newWorkExperience, endDate: e.target.value })} />
             <label htmlFor="currentlyWorking">Currently Working Here</label>
