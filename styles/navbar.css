@@ -304,7 +304,7 @@ margin:0.5rem 1rem;
     width:40%;
     box-shadow: 1px 3px 12px rgba(0, 0, 0, 0.15);
     /* padding-top:5rem; */
-    transform:translateX(400px);
+    transform:translateX(800px);
     transition: 0.2s ease all;
 
 }

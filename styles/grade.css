@@ -167,6 +167,15 @@
     align-items: center;
     grid-template-columns: repeat(1,1fr);
 }
+.grade-main-container {
+    grid-template-columns: repeat(1,1fr);
+}
+.grade-container-item > ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin: 0 auto;
+}
     }
 
     @media (max-width: 500px) {

@@ -446,9 +446,9 @@ input[type="file"] {
 
 
 @media (max-width: 919px) {
-    .custom-file-upload {
+    /* .custom-file-upload {
         width:75%;
-    }
+    } */
     .no-file-div {
         right:20%;
     }
@@ -456,6 +456,8 @@ input[type="file"] {
         width:71%;
         height:74%;
     } */
+
+
 }
 @media (max-width: 768px) {
     /* .custom-file-upload {

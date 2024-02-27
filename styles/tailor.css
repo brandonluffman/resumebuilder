@@ -148,6 +148,12 @@
     list-style-type: none !important;
   }
 
+  @media (max-width: 919px) {
+    .tailor-resumedrop, .tailor-jobdescription-container {
+        padding:0rem 1rem;
+    }
+  }
+
 @media (max-width: 500px) {
 
   .tailor-form-container {
