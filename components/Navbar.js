@@ -66,6 +66,9 @@ const Navbar = () => {
               <li>
                 <Link href="/cover-letter-builder"><RiAiGenerate className='nav-link-icon' />Cover Letter Generator</Link>
               </li>
+              <li>
+                <Link href="/apply"><RiAiGenerate className='nav-link-icon' />Automate Apply</Link>
+              </li>
             </ul>
            {/* )}  */}
         </li>
